@@ -1,0 +1,41 @@
+[{
+        "pk": 1,
+        "model": "products.category",
+        "fields": {
+            "name": "personal_items",
+            "friendly_name": "Personal items"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.category",
+        "fields": {
+            "name": "clothing_accessories",
+            "friendly_name": "Clothing & Accessories"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.category",
+        "fields": {
+            "name": "furniture_decoration",
+            "friendly_name": "Furniture & Decoration"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.category",
+        "fields": {
+            "name": "necessity",
+            "friendly_name": "Necessity"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.category",
+        "fields": {
+            "name": "handmade",
+            "friendly_name": "Handmade product"
+        }
+    }
+]

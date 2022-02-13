@@ -1,0 +1,521 @@
+[{
+      "pk": 1,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs6625273",
+         "name": "Hand made chocolate eggs(12pcs)",
+         "description": "12 pieces of handmade chocolate eggs with a special gift card.",
+         "price": 1.5,
+         "category": 5,
+         "image_url": "https://i.imgur.com/Ucno1to.jpg",
+         "image": "rs6625273.jpg"
+      }
+   },
+   {
+      "pk": 2,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs2850487",
+         "name": "Knitted vest(L)",
+         "description": "A vest purchase from shop 2 years ago but unused at last. Large size.",
+         "price": 70.0,
+         "category": 2,
+         "image_url": "https://i.imgur.com/k08s8VS.jpg?1",
+         "image": "rs2850487.jpg"
+      }
+   },
+   {
+      "pk": 3,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs0965981",
+         "name": "Glass necklace",
+         "description": "An old necklace find from somewhere before relocation. Now hope to sell to someone who want to wear it.",
+         "price": 8.5,
+         "category": 2,
+         "image_url": "https://i.imgur.com/9mnCpFg.jpg?1",
+         "image": "rs0965981.jpg"
+      }
+   },
+   {
+      "pk": 4,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs3921864",
+         "name": "Earphone",
+         "description": "An earphone no longer used because it is not avaliable on the new mobile phone.",
+         "price": 15.0,
+         "category": 1,
+         "image_url": "https://i.imgur.com/UFBBKDI.jpg?1",
+         "image": "rs3921864.jpg"
+      }
+   },
+   {
+      "pk": 5,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs0045055",
+         "name": "Tie (for men's)",
+         "description": "A tie purshase from amazon and now want to resell it because dresscode changed.",
+         "price": 10.0,
+         "category": 2,
+         "image_url": "https://i.imgur.com/VTuSRFu.jpg?1",
+         "image": "rs0045055.jpg"
+      }
+   },
+   {
+      "pk": 6,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs5901640",
+         "name": "Angel shaped decoration",
+         "description": "A souvenir purchase from a foreign store.",
+         "price": 25.0,
+         "category": 3,
+         "image_url": "https://i.imgur.com/UF78i5J.jpg?1",
+         "image": "rs5901640.jpg"
+      }
+   },
+   {
+      "pk": 7,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs6912766",
+         "name": "Matryoshka doll",
+         "description": "A set of matryoshka doll purchase from street stall.",
+         "price": 7.0,
+         "category": 3,
+         "image_url": "https://i.imgur.com/aj2ULim.jpg?1",
+         "image": "rs6912766.jpg"
+      }
+   },
+   {
+      "pk": 8,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs1413420",
+         "name": "Blue earring",
+         "description": "A blue earring woven from silk threads and beads",
+         "price": 17.5,
+         "category": 2,
+         "image_url": "https://i.imgur.com/2AMAOZQ.jpg?1",
+         "image": "rs1413420.jpg"
+      }
+   },
+   {
+      "pk": 9,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs4406805",
+         "name": "Cotton swab(20 pcs)",
+         "description": "Pack of 20 cotton swab. Remainings from school activities",
+         "price": 1.0,
+         "category": 4,
+         "image_url": "https://i.imgur.com/psBuc1e.jpg?1",
+         "image": "rs4406805.jpg"
+      }
+   },
+   {
+      "pk": 10,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs1556713",
+         "name": "Wooden necklace",
+         "description": "A handmade wooden necklace purchase from instgram store.",
+         "price": 8.5,
+         "category": 2,
+         "image_url": "https://i.imgur.com/YsvxEu8.jpg?1",
+         "image": "rs1556713.jpg"
+      }
+   },
+   {
+      "pk": 11,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs1112598",
+         "name": "Desk lamp",
+         "description": "An blacc, small size(20 x 80cm) lamp can use in desk or room",
+         "price": 32.5,
+         "category": 3,
+         "image_url": "https://i.imgur.com/WIiBk3m.jpg?1",
+         "image": "rs1112598.jpg"
+      }
+   },
+   {
+      "pk": 12,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs6102050",
+         "name": "Santa decoration",
+         "description": "A 80 x 60cm santa shaped decoration",
+         "price": 15.0,
+         "category": 3,
+         "image_url": "https://i.imgur.com/uvEwu0r.jpg?1",
+         "image": "rs6102050.jpg"
+      }
+   },
+   {
+      "pk": 13,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs7606642",
+         "name": "human decoration",
+         "description": "A wooden 60 x 15(cm) human like decoration.",
+         "price": 15.0,
+         "category": 3,
+         "image_url": "https://i.imgur.com/44hDNw1.jpg?1",
+         "image": "rs7606642.jpg"
+      }
+   },
+   {
+      "pk": 14,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs4846170",
+         "name": "Brown Handbag",
+         "description": "A medium handbage purchase from web store 3 years ago, clean and still look like a new one.",
+         "price": 45.5,
+         "category": 1,
+         "image_url": "https://i.imgur.com/hgQ532W.jpg?1",
+         "image": "rs4846170.jpg"
+      }
+   },
+   {
+      "pk": 15,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs1866149",
+         "name": "Large sofa",
+         "description": "This is a 230 x 110 x 150 sofa provide with 2 seat. Purchase from local store 2 years ago.",
+         "price": 55.0,
+         "category": 3,
+         "image_url": "https://i.imgur.com/YEF6Sre.jpg?1",
+         "image": "rs1866149.jpg"
+      }
+   },
+   {
+      "pk": 16,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs1493112",
+         "name": "Non Prescription glasses (2 pcs)",
+         "description": "These Non Prescription glasses was school activities remainings.",
+         "price": 14.0,
+         "category": 2,
+         "image_url": "https://i.imgur.com/OVForMQ.jpg?1",
+         "image": "rs1493112.jpg"
+      }
+   },
+   {
+      "pk": 17,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs7578805",
+         "name": "Keyboard & mouse set",
+         "description": "USB Mouse and keyboard set, use for desktop computer.",
+         "price": 14.0,
+         "category": 1,
+         "image_url": "https://i.imgur.com/uaqfQ7e.jpg?1",
+         "image": "rs7578805.jpg"
+      }
+   },
+   {
+      "pk": 18,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs0815494",
+         "name": "Headphone(Black)",
+         "description": "A over-ear gaming headphone with microphone, support USB and bluetooth",
+         "price": 18.0,
+         "category": 1,
+         "image_url": "https://i.imgur.com/xjBf8Jd.jpg?1",
+         "image": "rs0815494.jpg"
+      }
+   },
+   {
+      "pk": 19,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs8709600",
+         "name": "RITUAL skin care gift set",
+         "description": "A gift set contain hydrophilic oil and face serum, was recieve these as gift month ago but never use.",
+         "price": 35.0,
+         "category": 4,
+         "image_url": "https://i.imgur.com/nZ7AwMm.jpg?1",
+         "image": "rs8709600.jpg"
+      }
+   },
+   {
+      "pk": 20,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs9859962",
+         "name": "Smashbox foundation",
+         "description": "This smashbox foundation was recieve these as gift a month ago but never use.",
+         "price": 23.0,
+         "category": 4,
+         "image_url": "https://i.imgur.com/Y0vf9hm.jpg?1",
+         "image": "rs9859962.jpg"
+      }
+   },
+   {
+      "pk": 21,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs1478442",
+         "name": "Nike shoes(black)",
+         "description": "A nike shoes purchase from shop 5 month ago. 6 in UK size.",
+         "price": 60.0,
+         "category": 2,
+         "image_url": "https://i.imgur.com/AxHWSWc.jpg?1",
+         "image": "rs1478442.jpg"
+      }
+   },
+   {
+      "pk": 22,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs7881483",
+         "name": "Chair(White)",
+         "description": "A classic wooden white chair. 80 x 90 x 60 cm, can be use for anywhere.",
+         "price": 30.0,
+         "category": 3,
+         "image_url": "https://i.imgur.com/1zq5r36.jpg?1",
+         "image": "rs7881483.jpg"
+      }
+   },
+   {
+      "pk": 23,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs5424917",
+         "name": "Coat(L, Brown)",
+         "description": "A men's L size coat purchase from store.",
+         "price": 70.0,
+         "category": 2,
+         "image_url": "https://i.imgur.com/YvD7T8p.jpg?1",
+         "image": "rs5424917.jpg"
+      }
+   },
+   {
+      "pk": 24,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs6046164",
+         "name": "Sliver bracelet",
+         "description": "A sliver bracelet purchase from instagram store.",
+         "price": 20.0,
+         "category": 2,
+         "image_url": "https://i.imgur.com/fG4YOVY.jpg?1",
+         "image": "rs6046164.jpg"
+      }
+   },
+   {
+      "pk": 25,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs0292999",
+         "name": "Leather shoes(Black)",
+         "description": "A black dress shoes purchse from amazon. 6 in UK size.",
+         "price": 45.0,
+         "category": 2,
+         "image_url": "https://i.imgur.com/by8Icir.jpg?1",
+         "image": "rs0292999.jpg"
+      }
+   },
+   {
+      "pk": 26,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs9817940",
+         "name": "Juhette Armand skincare gift set",
+         "description": "An unopened gift set of Juhette Armand skincare product.",
+         "price": 25.0,
+         "category": 4,
+         "image_url": "https://i.imgur.com/yV4c23P.jpg?1",
+         "image": "rs9817940.jpg"
+      }
+   },
+   {
+      "pk": 27,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs6341572",
+         "name": "Handmade chocolate cake",
+         "description": "A 6\" handmade chocolate cake with some customer details if you need, delivery in UK only.",
+         "price": 12.0,
+         "category": 5,
+         "image_url": "https://i.imgur.com/4NY1Qhe.jpg?1",
+         "image": "rs6341572.jpg"
+      }
+   },
+   {
+      "pk": 28,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs1364562",
+         "name": "Cartoon doll",
+         "description": "A small cartoon doll with childhood memory.",
+         "price": 12.0,
+         "category": 3,
+         "image_url": "https://i.imgur.com/S5fORPf.jpg?1",
+         "image": "rs1364562.jpg"
+      }
+   },
+   {
+      "pk": 29,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs0637076",
+         "name": "Nike shoes(blue)",
+         "description": "A blue nike shoes from instagram store. 6 in UK size.",
+         "price": 60.0,
+         "category": 2,
+         "image_url": "https://i.imgur.com/IDkmNzF.jpg?1",
+         "image": "rs0637076.jpg"
+      }
+   },
+   {
+      "pk": 30,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs0045982",
+         "name": "Woolen sweater(L)",
+         "description": "A blue and grey, large size woolen sweater.",
+         "price": 33.5,
+         "category": 2,
+         "image_url": "https://i.imgur.com/D3EEVxB.jpg?1",
+         "image": "rs0045982.jpg"
+      }
+   },
+   {
+      "pk": 31,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs0019090",
+         "name": "Men's shoes(blue)",
+         "description": "A blue men's shoes from unkown brand. 6 in UK size.",
+         "price": 40.0,
+         "category": 2,
+         "image_url": "https://i.imgur.com/MwQJc5u.jpg?1",
+         "image": "rs0019090.jpg"
+      }
+   },
+   {
+      "pk": 32,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs9157926",
+         "name": "Kodak Power Flash",
+         "description": "A single use camera from kodak. Some of the remaining of school activies.",
+         "price": 20.0,
+         "category": 1,
+         "image_url": "https://i.imgur.com/hnVxfm5.jpg?1",
+         "image": "rs9157926.jpg"
+      }
+   },
+   {
+      "pk": 33,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs6165936",
+         "name": "E-sport mouse",
+         "description": "A mouse with e-sport used design of a unknown brand.",
+         "price": 30.0,
+         "category": 1,
+         "image_url": "https://i.imgur.com/8g8gjX1.jpg?1",
+         "image": "rs6165936.jpg"
+      }
+   },
+   {
+      "pk": 34,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs5962944",
+         "name": "Audio tade",
+         "description": "A old fashion audio tade with some unknown audio.",
+         "price": 1.0,
+         "category": 1,
+         "image_url": "https://i.imgur.com/SkXuJ3P.jpg?1",
+         "image": "rs5962944.jpg"
+      }
+   },
+   {
+      "pk": 35,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs0943150",
+         "name": "Lantern(red)",
+         "description": "A red lantern can use indoors and outdoor.",
+         "price": 20.0,
+         "category": 1,
+         "image_url": "https://i.imgur.com/hspjrJY.jpg?1",
+         "image": "rs0943150.jpg"
+      }
+   },
+   {
+      "pk": 36,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs1598508",
+         "name": "Shoes(light yellow)",
+         "description": "A light yellow shoes from unknown brand. 6 in UK size.",
+         "price": 50.0,
+         "category": 2,
+         "image_url": "https://i.imgur.com/0HO8gfC.jpg?1",
+         "image": "rs1598508.jpg"
+      }
+   },
+   {
+      "pk": 37,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs0266706",
+         "name": "Handmade cookies(12pcs)",
+         "description": "12pcs of handmade cookies. You can also require a gift card but it is optional.",
+         "price": 2.0,
+         "category": 5,
+         "image_url": "https://i.imgur.com/DHF14ZO.jpg?1",
+         "image": "rs0266706.jpg"
+      }
+   },
+   {
+      "pk": 38,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs4406796",
+         "name": "Bathroom set",
+         "description": "A set of tools about all things could be use in bathroom.",
+         "price": 15.5,
+         "category": 4,
+         "image_url": "https://i.imgur.com/aAUGTtx.jpg?1",
+         "image": "rs4406796.jpg"
+      }
+   },
+   {
+      "pk": 39,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs5786759",
+         "name": "Teddy bear",
+         "description": "A simple, small size teddy bear.",
+         "price": 8.5,
+         "category": 3,
+         "image_url": "https://i.imgur.com/TJ20mxp.jpg?1",
+         "image": "rs5786759.jpg"
+      }
+   },
+   {
+      "pk": 40,
+      "model": "products.product",
+      "fields": {
+         "sku": "rs6623763",
+         "name": "Keyboard(red & grey)",
+         "description": "A japanese style keyboard, support USB 3.0 only.",
+         "price": 10.0,
+         "category": 1,
+         "image_url": "https://i.imgur.com/nmR1Pkb.jpg?1",
+         "image": "rs6623763.jpg"
+      }
+   }
+]
