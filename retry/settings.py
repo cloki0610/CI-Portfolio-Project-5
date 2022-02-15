@@ -53,10 +53,16 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+ACCOUNT_USERNAME_MIN_LENGTH = 6
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

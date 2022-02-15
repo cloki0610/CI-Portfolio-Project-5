@@ -64,6 +64,7 @@ Planned Features the website should have:
 
 ### **Structure Plane**
 <hr>
+
 1. As a User, I want to be able to view a list of products, so that I can add my interested item to my cart.
 2. As a User, I want to be able to view a specific category of products, so that I can easily find my interested products.
 3. As a User, I want to be able to view individual product details, so that I can identify all information about the product.
