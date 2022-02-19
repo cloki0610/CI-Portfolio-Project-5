@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:wght@300&display=swap');
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background-color: #e3e3e3 !important;
+}
+
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+main {
+  min-height: 900px !important;
+}
+
+p {
+  word-break: break-word;
+  white-space: normal;
+}
+
+.icon-title {
+  font-family: 'Rubik Mono One', sans-serif;
+  font-size: 28px;
+  color: #FFF1CE!important;
+}
+
+.bg-nav{
+  background-color: #139487;
+}
