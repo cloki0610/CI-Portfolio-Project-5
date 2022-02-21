@@ -1,0 +1,68 @@
+<nav class="navbar navbar-light bg-nav d-lg-none fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand icon-title" href="{% url 'home' %}"><i class="fas fa-cog fa-spin" style="color:#D29D2B;"></i>Retry</a>
+        <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-start bs-auto" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header bg-nav">
+                <a class="navbar-brand icon-title" href="{% url 'home' %}"><i class="fas fa-cog fa-spin" style="color:#D29D2B;"></i>Retry</a>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item mb-2">
+                        <form class="d-flex" method="GET" action="">
+                            <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shopping Cart<span class="d-inline float-end">$0.00</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="category" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Category
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="category">
+                            <li><a class="dropdown-item" href="#">Personal items</a></li>
+                            <li><a class="dropdown-item" href="#">Clothing & Accessories</a></li>
+                            <li><a class="dropdown-item" href="#">Furniture & Decoration</a></li>
+                            <li><a class="dropdown-item" href="#">Necessity</a></li>
+                            <li><a class="dropdown-item" href="#">Handmade product</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="account" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Account
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="account">
+                            <li><a class="dropdown-item" href="#">Sign Up</a></li>
+                            <li><a class="dropdown-item" href="#">Sign In</a></li>
+                            <li><a class="dropdown-item" href="#">My Profile</a></li>
+                            <li><a class="dropdown-item" href="#">My Orders</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Our Partners</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
