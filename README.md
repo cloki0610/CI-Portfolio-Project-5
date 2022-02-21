@@ -113,14 +113,11 @@ All image file uploads from the user should store and be protected in AWS S3 sto
 <hr>
 
 #### **Color Sheme**
-Background color: \
-font color: \
-Nav bar background color: \
-Nav bar font color: \
-standard border color: \
-Color for represent fiction category: \
-Color for represent non-Fiction category: \
-Color for represent Lifestyle category: 
+Background color: #fafafa\
+font color: #3a3a3a\
+Navbar background color: #139487\
+Navbar font color: #FFF1CE\
+Navbar icon color: #D29D2B\
 
 #### **Typography**
 
@@ -205,6 +202,10 @@ Color for represent Lifestyle category:
 ## **Credits**
 ### **Code**
 <hr>
+
+## **Media**
+ - Pexels
+ All images come from and copyrighted by Pexels, the images will be remove or replaced if their policy have changed.
 
 ### **Acknowledgment**
 <hr>
