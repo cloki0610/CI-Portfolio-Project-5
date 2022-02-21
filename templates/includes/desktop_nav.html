@@ -2,32 +2,32 @@
     <div class="container-fluid">
         <a class="navbar-brand icon-title" href="{% url 'home' %}"><i class="fas fa-cog fa-spin" style="color:#D29D2B;"></i>Retry</a>
         <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ms-auto fw-bold">
+            <ul class="navbar-nav ms-auto fw-bold align-items-center">
                 <li class="nav-item">
                     <a class="nav-link font-nav" href="#">
-                        $0.00
+                        <div class="row">
+                            <span class="col-2 align-self-center">
+                                <i class="fas fa-shopping-cart"></i>
+                            </span>
+                            <span class="col-10">
+                                <p class="mb-0">Shopping Cart</p>
+                                <span style="font-size:8px;">$0.00</span>
+                            </span>
+                        </div>
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle font-nav" href="#" id="search-lg" role="button"
+                    <a class="nav-link dropdown-toggle font-nav" href="#" id="category-lg" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-search"></i>
+                        <span class="me-2"><i class="fas fa-boxes"></i></span>Category
                     </a>
-                    <ul class="dropdown-menu bg-sub" aria-labelledby="search-lg" style="min-width: 300px;">
-                        <li class="mx-3">
+                    <ul class="dropdown-menu bg-sub" aria-labelledby="category-lg" style="min-width: 300px;">
+                        <li class="mx-2">
                             <form class="d-flex" method="GET" action="">
                                 <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search">
                                 <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
                             </form>
                         </li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle font-nav" href="#" id="category-lg" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Category
-                    </a>
-                    <ul class="dropdown-menu bg-sub" aria-labelledby="category-lg">
                         <li><a class="dropdown-item font-sub" href="#">Personal items</a></li>
                         <li><a class="dropdown-item font-sub" href="#">Clothing & Accessories</a></li>
                         <li><a class="dropdown-item font-sub" href="#">Furniture & Decoration</a></li>
@@ -38,7 +38,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle font-nav" href="#" id="account-lg" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        Account
+                        <span class="me-2"><i class="fas fa-user"></i></span>My Account
                     </a>
                     <ul class="dropdown-menu bg-sub" aria-labelledby="account-lg">
                         <li><a class="dropdown-item font-sub" href="#">Sign Up</a></li>
@@ -54,7 +54,7 @@
                 <li class="nav-item dropdown me-5">
                     <a class="nav-link dropdown-toggle font-nav" href="#" id="about-lg" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        About
+                        <span class="me-2"><i class="fas fa-address-card"></i></span>About
                     </a>
                     <ul class="dropdown-menu bg-sub" aria-labelledby="about-lg">
                         <li><a class="dropdown-item font-sub" href="#">Our Team</a></li>

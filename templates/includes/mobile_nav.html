@@ -1,6 +1,7 @@
 <nav class="navbar navbar-light bg-nav d-lg-none fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand icon-title" href="{% url 'home' %}"><i class="fas fa-cog fa-spin" style="color:#D29D2B;"></i>Retry</a>
+        <a class="navbar-brand icon-title" href="{% url 'home' %}"><i class="fas fa-cog fa-spin"
+                style="color:#D29D2B;"></i>Retry</a>
         <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -8,7 +9,8 @@
         <div class="offcanvas offcanvas-start bs-auto" tabindex="-1" id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header bg-nav">
-                <a class="navbar-brand icon-title" href="{% url 'home' %}"><i class="fas fa-cog fa-spin" style="color:#D29D2B;"></i>Retry</a>
+                <a class="navbar-brand icon-title" href="{% url 'home' %}"><i class="fas fa-cog fa-spin"
+                        style="color:#D29D2B;"></i>Retry</a>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                     aria-label="Close"></button>
             </div>
@@ -16,20 +18,24 @@
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item mb-2">
                         <form class="d-flex" method="GET" action="">
-                            <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search">
+                            <input class="form-control me-2" type="search" name="q" placeholder="Search"
+                                aria-label="Search">
                             <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
                         </form>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><span class="me-2"><i
+                                    class="fas fa-home"></i></span>Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Shopping Cart<span class="d-inline float-end">$0.00</span></a>
+                        <a class="nav-link" href="#"><span class="me-2"><i
+                                    class="fas fa-shopping-cart"></i></span>Shopping Cart<span
+                                class="d-inline float-end">$0.00</span></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="category" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            Category
+                            <span class="me-2"><i class="fas fa-boxes"></i></span>Category
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="category">
                             <li><a class="dropdown-item" href="#">Personal items</a></li>
@@ -42,7 +48,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="account" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            Account
+                            <span class="me-2"><i class="fas fa-user"></i></span>My Account
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="account">
                             <li><a class="dropdown-item" href="#">Sign Up</a></li>
@@ -56,10 +62,14 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Our Partners</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="about" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <span class="me-2"><i class="fas fa-address-card"></i></span>About
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="about">
+                            <li><a class="dropdown-item" href="#">Our Team</a></li>
+                            <li><a class="dropdown-item" href="#">Our Partners</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
