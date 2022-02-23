@@ -24,28 +24,24 @@
     <div class="row gx-0 mx-auto w-75">
     {% for product in products_page %}
         <div class="col-md-3 mx-auto">
-            <div class="card w-100 border-0 product-card">
-                {% if product.image %}
-                <div class="p-1">
-                    <a href="#">
+            <a href="" class="link-dark">
+                <div class="card w-100 border-0 product-card">
+                    {% if product.image %}
+                    <div class="p-1">
                         <img src="{{ product.image.url }}" class="card-img-top img-thumbnail img-fluid" alt="{{ product.name }}" style="height:200px">
-                    </a>
                     </div>
-                {% else %}
-                <div class="p-1">
-                    <a href="#">
+                    {% else %}
+                    <div class="p-1">
                         <img src="{{ MEDIA_URL }}no-pictures.png" class="card-img-top img-thumbnail img-fluid" alt="{{ product.name }}" style="height:200px">
-                    </a>
+                    </div>
+                    {% endif %}
+                    <div class="card-body py-0 h-75">
+                        <p class="card-text mb-0"><strong>{{ product.name }}</strong></p>
+                        <p class="card-text mb-0"><small>{{ product.category.get_friendly_name }}</small></p>
+                        <p class="card-text mb-0"><small>{{ product.price }}</small></p>
+                    </div>
                 </div>
-                {% endif %}
-                <div class="card-body py-0 h-75">
-                    <a href="" class="link-dark">
-                        <p class="card-text product-card-body mb-0"><strong>{{ product.name }}</strong></p>
-                        <p class="card-text product-card-body mb-0"><small>{{ product.category.get_friendly_name }}</small></p>
-                        <p class="card-text product-card-body mb-0"><small>{{ product.price }}</small></p>
-                    </a>
-                </div>
-            </div>
+            </a>
         </div>
     {% if forloop.counter|divisibleby:4 and forloop.counter is not 8 %}
     </div>

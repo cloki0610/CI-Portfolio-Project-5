@@ -75,6 +75,6 @@ p {
 
 .product-card:hover {
   background-color: #139487;
-  color: white;
+  color: #fafafa!important;
   transition: 1s;
 }
