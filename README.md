@@ -206,6 +206,8 @@ Navbar icon color: #D29D2B\
 ## **Media**
  - Pexels
  All images come from and copyrighted by Pexels, the images will be remove or replaced if their policy have changed.
+ - Flaticon
+ The no image icon come from this website.
 
 ### **Acknowledgment**
 <hr>

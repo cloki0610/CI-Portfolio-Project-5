@@ -69,6 +69,10 @@ p {
 }
 
 /* product */
+.page-navbar {
+  padding-right: 0px;
+}
+
 .product-card:hover {
   background-color: #139487;
   color: white;
