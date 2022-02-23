@@ -26,13 +26,19 @@
         <div class="col-md-3 mx-auto">
             <a href="#" class="link-dark">
                 <div class="card w-100 h-100 border-0 product-card">
+                    {% if product.image %}
                     <div class="p-1">
                         <img src="{{ product.image.url }}" class="card-img-top img-thumbnail" alt="{{ product.name }}" style="height: 200px; min-width: 150px;">
                     </div>
-                    <div class="card-body">
-                        <div class="card-text">{{ product.name }}</div>
+                    {% else %}
+                    <div class="p-1">
+                        <img src="{{ MEDIA_URL }}no-pictures.png" class="card-img-top img-thumbnail" alt="{{ product.name }}" style="height: 200px; min-width: 150px;">
+                    </div>
+                    {% endif %}
+                    <div class="card-body fs-6">
+                        <div class="card-text"><strong>{{ product.name }}</strong></div>
                         <div class="card-text"><small>{{ product.category.get_friendly_name }}</small></div>
-                        <div class="card-text"><small></small>{{ product.price }}</small></div>
+                        <div class="card-text"><small>{{ product.price }}</small></div>
                     </div>
                 </div>
             </a>
