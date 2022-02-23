@@ -3,5 +3,16 @@ from django.contrib import admin
 from .models import Product, Category
 
 
-admin.site.register(Category)
-admin.site.register(Product)
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    """ Show model in admin site with follow rules """
+    list_display = ('name', 'friendly_name')
+
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    """ Show model in admin site with follow rules """
+    list_filter = ('category',)
+    list_display = ('name', 'category', 'description', 'price')
+    search_fields = ['name', 'description']
+    ordering = ('sku',)

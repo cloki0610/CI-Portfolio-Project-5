@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light bg-nav d-lg-none fixed-top">
+<nav class="navbar navbar-light bg-nav d-lg-none sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand icon-title" href="{% url 'home' %}"><i class="fas fa-cog fa-spin"
                 style="color:#D29D2B;"></i>Retry</a>
@@ -38,6 +38,7 @@
                             <span class="me-2"><i class="fas fa-boxes"></i></span>Category
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="category">
+                            <li><a class="dropdown-item" href="{% url 'products' %}">All Products</a></li>
                             <li><a class="dropdown-item" href="#">Personal items</a></li>
                             <li><a class="dropdown-item" href="#">Clothing & Accessories</a></li>
                             <li><a class="dropdown-item" href="#">Furniture & Decoration</a></li>

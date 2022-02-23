@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content%}
+<div class="bg-main"></div>
+<div class="container-fluid min-vh-100 card-group">
+    <div class="row mx-auto w-75 mt-1">
+        <nav aria-label="page-navbar" style="padding-right: 0px">
+            <ul class="pagination pagination-sm justify-content-end my-1">
+                {% for page_num in products_page.paginator.page_range %}
+                {% if products_page.number is page_num %}
+                <li class="page-item active" aria-current="page">
+                    <span class="page-link bg-success">{{ page_num }}</span>
+                </li>
+                {% else %}
+                <li class="page-item">
+                    <a href="?page={{ page_num }}" class="page-link link-dark">{{ page_num }}</a>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+    <div class="row gx-0 mx-auto w-75">
+    {% for product in products_page %}
+        <div class="col-md-3 mx-auto">
+            <a href="#" class="link-dark">
+                <div class="card w-100 h-100 border-0 product-card">
+                    <div class="p-1">
+                        <img src="{{ product.image.url }}" class="card-img-top img-thumbnail" alt="{{ product.name }}" style="height: 200px; min-width: 150px;">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text">{{ product.name }}</div>
+                        <div class="card-text"><small>{{ product.category.get_friendly_name }}</small></div>
+                        <div class="card-text"><small></small>{{ product.price }}</small></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    {% if forloop.counter|divisibleby:4 and forloop.counter is not 8 %}
+    </div>
+    <div class="row gx-0 mx-auto w-75">
+    {% endif %}
+    {% empty %}
+    <p class="text-center fs-2">Here is no any product yet.</p>
+    {% endfor %}
+    </div>
+</div>
+{% endblock%}
