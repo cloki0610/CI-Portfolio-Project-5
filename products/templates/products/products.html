@@ -3,8 +3,8 @@
 
 {% block content%}
 <div class="bg-main"></div>
-<div class="container-fluid min-vh-100 card-group mt-5">
-    <div class="row mx-auto w-75 my-auto mt-5">
+<div class="container-fluid min-vh-100 card-group pt-5">
+    <div class="row mx-auto w-75 my-auto pt-5">
         <nav aria-label="page-navbar" class="page-navbar">
             <ul class="pagination pagination-sm justify-content-end my-0">
                 {% for page_num in products_page.paginator.page_range %}
@@ -24,21 +24,21 @@
     <div class="row gx-0 mx-auto w-75">
     {% for product in products_page %}
         <div class="col-md-3 mx-auto">
-            <a href="" class="link-dark">
+            <a href="{% url 'product_detail' product.id %}" class="link-dark">
                 <div class="card w-100 border-0 product-card">
                     {% if product.image %}
                     <div class="p-1">
-                        <img src="{{ product.image.url }}" class="card-img-top img-thumbnail img-fluid" alt="{{ product.name }}" style="height:200px">
+                        <img src="{{ product.image.url }}" class="card-img-top img-thumbnail img-fluid" alt="{{ product.name }}" style="height:190px">
                     </div>
                     {% else %}
                     <div class="p-1">
-                        <img src="{{ MEDIA_URL }}no-pictures.png" class="card-img-top img-thumbnail img-fluid" alt="{{ product.name }}" style="height:200px">
+                        <img src="{{ MEDIA_URL }}no-pictures.png" class="card-img-top img-thumbnail img-fluid" alt="{{ product.name }}" style="height:190px">
                     </div>
                     {% endif %}
                     <div class="card-body py-0 h-75">
-                        <p class="card-text mb-0"><strong>{{ product.name }}</strong></p>
-                        <p class="card-text mb-0"><small>{{ product.category.get_friendly_name }}</small></p>
-                        <p class="card-text mb-0"><small>{{ product.price }}</small></p>
+                        <p class="card-text mb-0">{{ product.name }}</p>
+                        <p class="card-text mb-0 fw-bold">${{ product.price }}</p>
+                        <p class="card-text mb-0 fst-italic"><small>{{ product.category.get_friendly_name }}</small></p>
                     </div>
                 </div>
             </a>
