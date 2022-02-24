@@ -4,7 +4,7 @@
 {% block content%}
 <div class="bg-main"></div>
 <div class="container-fluid min-vh-100 card-group pt-5">
-    <div class="row mx-auto w-75 my-auto pt-5">
+    <div class="row mx-auto w-75 pt-5">
         <nav aria-label="page-navbar" class="page-navbar">
             <ul class="pagination pagination-sm justify-content-end my-0">
                 {% for page_num in products_page.paginator.page_range %}
@@ -23,9 +23,9 @@
     </div>
     <div class="row gx-0 mx-auto w-75">
     {% for product in products_page %}
-        <div class="col-md-3 mx-auto">
+        <div class="col-md-3">
             <a href="{% url 'product_detail' product.id %}" class="link-dark">
-                <div class="card w-100 border-0 product-card">
+                <div class="card w-100 border-0 product-card mb-5 mb-md-0">
                     {% if product.image %}
                     <div class="p-1">
                         <img src="{{ product.image.url }}" class="card-img-top img-thumbnail img-fluid" alt="{{ product.name }}" style="height:190px">

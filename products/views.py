@@ -1,8 +1,10 @@
 """ Views of products """
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import View
 from django.core.paginator import Paginator
-from .models import Product
+from django.contrib import messages
+from django.db.models import Q
+from .models import Product, Category
 
 
 class ProductsView(View):
@@ -10,9 +12,24 @@ class ProductsView(View):
 
     def get(self, request):
         """ GET method """
-        all_products = Product.objects.all().order_by('name')
+        products = Product.objects.all().order_by('name')
+        category = None
+        query = None
+        if 'category' in request.GET:
+            category = request.GET['category'].split(',')
+            products = products.filter(category__name__in=category)
+            category = Category.objects.filter(name__in=category)
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request,
+                               "Please enter a keyword for search")
+                return redirect(reverse('products'))
+            queries = Q(name__icontains=query
+                        ) | Q(description__icontains=query)
+            products = products.filter(queries)
         # use paginator to manage the result
-        products_paginator = Paginator(all_products, 8)
+        products_paginator = Paginator(products, 8)
         page_number = request.GET.get('page')
         products_page = products_paginator.get_page(page_number)
 
@@ -21,7 +38,9 @@ class ProductsView(View):
             request,
             "products/products.html",
             {
-                "products_page": products_page
+                "products_page": products_page,
+                "search_keyword": query,
+                "category": category
             }
         )
 
