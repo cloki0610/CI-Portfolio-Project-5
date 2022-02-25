@@ -5,7 +5,7 @@
 <div class="bg-main"></div>
 <div class="container-fluid min-vh-100 card-group pt-5">
     <div class="row mx-auto w-75 pt-5">
-        <nav aria-label="page-navbar" class="page-navbar">
+        <nav aria-label="page-navbar" class="page-navbar col-md-4 order-md-last">
             <ul class="pagination pagination-sm justify-content-end my-0">
                 {% for page_num in products_page.paginator.page_range %}
                 {% if products_page.number is page_num %}
@@ -20,36 +20,96 @@
                 {% endfor %}
             </ul>
         </nav>
+        <div class="col-md-4 text-center">
+            <span class="fw-bolder">
+                {% if category %}
+                {% for item in category %}
+                {{ item.get_friendly_name }}
+                {% endfor %}
+                {% else %}
+                All Products
+                {% endif %}
+                 - {{ products_page.start_index }} of
+                {{ products_page.end_index }}</span>
+        </div>
+        <select id="sort-selector" class="col-md-4 border-light order-md-first">
+            <option value="reset" {% if current_sort is 'None_None' %}selected{% endif %}>Sort by
+            </option>
+            <option value="price_asc" {% if current_sort == 'price_asc' %}selected{% endif %}>Price
+                (+)</option>
+            <option value="price_desc" {% if current_sort == 'price_desc' %}selected{% endif %}>Price
+                (-)</option>
+            <option value="name_asc" {% if current_sort == 'name_asc' %}selected{% endif %}>Name
+                (A-Z)</option>
+            <option value="name_desc" {% if current_sort == 'name_desc' %}selected{% endif %}>Name
+                (Z-A)</option>
+            <option value="category_asc" {% if current_sort == 'category_asc' %}selected{% endif %}>
+                Category (A-Z)</option>
+            <option value="category_desc" {% if current_sort == 'category_desc' %}selected{% endif %}>Category (Z-A)
+            </option>
+        </select>
     </div>
     <div class="row gx-0 mx-auto w-75">
-    {% for product in products_page %}
+        {% for product in products_page %}
         <div class="col-md-3">
             <a href="{% url 'product_detail' product.id %}" class="link-dark">
                 <div class="card w-100 border-0 product-card mb-5 mb-md-0">
                     {% if product.image %}
                     <div class="p-1">
-                        <img src="{{ product.image.url }}" class="card-img-top img-thumbnail img-fluid" alt="{{ product.name }}" style="height:190px">
+                        <img src="{{ product.image.url }}" class="card-img-top img-thumbnail img-fluid"
+                            alt="{{ product.name }}" style="height:190px">
                     </div>
                     {% else %}
                     <div class="p-1">
-                        <img src="{{ MEDIA_URL }}no-pictures.png" class="card-img-top img-thumbnail img-fluid" alt="{{ product.name }}" style="height:190px">
+                        <img src="{{ MEDIA_URL }}no-pictures.png" class="card-img-top img-thumbnail img-fluid"
+                            alt="{{ product.name }}" style="height:190px">
                     </div>
                     {% endif %}
                     <div class="card-body py-0 h-75">
                         <p class="card-text mb-0">{{ product.name }}</p>
                         <p class="card-text mb-0 fw-bold">${{ product.price }}</p>
+                        {% if product.category %}
                         <p class="card-text mb-0 fst-italic"><small>{{ product.category.get_friendly_name }}</small></p>
+                        {% endif %}
                     </div>
                 </div>
             </a>
         </div>
-    {% if forloop.counter|divisibleby:4 and forloop.counter is not 8 %}
+        {% if forloop.counter|divisibleby:4 and forloop.counter is not 8 %}
     </div>
     <div class="row gx-0 mx-auto w-75">
-    {% endif %}
-    {% empty %}
-    <p class="text-center fs-2">Here is no any product yet.</p>
-    {% endfor %}
+        {% endif %}
+        {% empty %}
+        <p class="text-center fs-2">Here is no any product yet.</p>
+        {% endfor %}
     </div>
 </div>
 {% endblock%}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#sort-selector').change(function () {
+            let selector = $(this);
+            let currentUrl = new URL(window.location);
+
+            let selectedVal = selector.val();
+            if (selectedVal != "reset") {
+                let sort = selectedVal.split("_")[0];
+                let direction = selectedVal.split("_")[1];
+
+                currentUrl.searchParams.set("sort", sort);
+                currentUrl.searchParams.set("direction", direction);
+
+                window.location.replace(currentUrl);
+            } else {
+                currentUrl.searchParams.delete("sort");
+                currentUrl.searchParams.delete("direction");
+
+                window.location.replace(currentUrl);
+            }
+        })
+    });
+</script>
+{% endblock %}
