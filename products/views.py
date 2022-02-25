@@ -18,12 +18,15 @@ class ProductsView(View):
         query = None
         sort = None
         direction = None
+        param = ""
         if 'category' in request.GET:
             category = request.GET['category'].split(',')
+            param += f"&category={request.GET['category']}"
             products = products.filter(category__name__in=category)
             category = Category.objects.filter(name__in=category)
         if 'q' in request.GET:
             query = request.GET['q']
+            param += f'&q={query}'
             if not query:
                 messages.error(request,
                                "Please enter a keyword for search")
@@ -33,6 +36,7 @@ class ProductsView(View):
             products = products.filter(queries)
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
+            param += f'&sort={sortkey}'
             sort = sortkey
             if sortkey == 'name':
                 sortkey = 'lower_name'
@@ -41,6 +45,7 @@ class ProductsView(View):
                 sortkey = 'category__name'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
+                param += f'&direction={direction}'
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
@@ -58,7 +63,8 @@ class ProductsView(View):
                 "products_page": products_page,
                 "search_keyword": query,
                 "category": category,
-                "current_sort": current_sort
+                "current_sort": current_sort,
+                "param": param
             }
         )
 

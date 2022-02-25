@@ -5,7 +5,7 @@
 <div class="bg-main"></div>
 <div class="container-fluid min-vh-100 card-group pt-5">
     <div class="row mx-auto w-75 pt-5">
-        <nav aria-label="page-navbar" class="page-navbar col-md-4 order-md-last my-2 my-md-0">
+        <nav aria-label="page-navbar" class="page-navbar col-md-2 order-md-last my-2 my-md-0 px-0">
             <ul class="pagination pagination-sm justify-content-end my-0">
                 {% for page_num in products_page.paginator.page_range %}
                 {% if products_page.number is page_num %}
@@ -14,26 +14,36 @@
                 </li>
                 {% else %}
                 <li class="page-item">
-                    <a href="?page={{ page_num }}" class="page-link link-dark">{{ page_num }}</a>
+                    <a href="?page={{ page_num }}{{ param }}" class="page-link link-dark">{{ page_num }}</a>
                 </li>
                 {% endif %}
                 {% endfor %}
             </ul>
         </nav>
-        <div class="col-md-4 text-center my-2 my-md-0">
-            <span class="fw-bolder fs-6">
-                {% if category %}
-                {% for item in category %}
-                {{ item.get_friendly_name }}
-                {% endfor %}
-                {% else %}
-                All Products
-                {% endif %}
-                 - {{ products_page.start_index }} to
-                {{ products_page.end_index }}</span>
+        <div class="col-md-6 text-center my-2 my-md-0 px-0">
+            <div class="row">
+                <div class="col-md-10 fw-bolder fs-6 px-0">
+                    {% if category %}
+                    {% for item in category %}
+                    {{ item.get_friendly_name }}
+                    {% endfor %}
+                    {% else %}
+                        {% if search_keyword %}
+                        Search Keyword: "{{ search_keyword }}"
+                        {% else %}
+                        All Products
+                        {% endif %}
+                    {% endif %}
+                    - {{ products_page.start_index }} to
+                    {{ products_page.end_index }}
+                </div>
+                <div class="col-md-2 fw-bolder fs-6 px-0">
+                    Total: {{ products_page.paginator.count }}
+                </div>
+            </div>
         </div>
-        <select id="sort-selector" class="col-md-4 border-light order-md-first my-2 my-md-0">
-            <option value="reset" {% if current_sort is 'None_None' %}selected{% endif %}>Sort by
+        <select id="sort-selector" class="col-md-4 border-light order-md-first my-2 my-md-0" style="max-height: 40px;">
+            <option value="reset" {% if current_sort == 'None_None' %}selected{% endif %}>Sort by
             </option>
             <option value="price_asc" {% if current_sort == 'price_asc' %}selected{% endif %}>Price
                 (+)</option>
@@ -89,27 +99,25 @@
 {% block postloadjs %}
 {{ block.super }}
 <script type="text/javascript">
-    $(document).ready(function () {
-        $('#sort-selector').change(function () {
-            let selector = $(this);
-            let currentUrl = new URL(window.location);
+    $('#sort-selector').change(function () {
+        let selector = $(this);
+        let currentUrl = new URL(window.location);
 
-            let selectedVal = selector.val();
-            if (selectedVal != "reset") {
-                let sort = selectedVal.split("_")[0];
-                let direction = selectedVal.split("_")[1];
+        let selectedVal = selector.val();
+        if (selectedVal != "reset") {
+            let sort = selectedVal.split("_")[0];
+            let direction = selectedVal.split("_")[1];
 
-                currentUrl.searchParams.set("sort", sort);
-                currentUrl.searchParams.set("direction", direction);
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
 
-                window.location.replace(currentUrl);
-            } else {
-                currentUrl.searchParams.delete("sort");
-                currentUrl.searchParams.delete("direction");
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
 
-                window.location.replace(currentUrl);
-            }
-        })
+            window.location.replace(currentUrl);
+        }
     });
 </script>
 {% endblock %}
