@@ -5,7 +5,7 @@
 <div class="bg-main"></div>
 <div class="container-fluid min-vh-100 card-group pt-5">
     <div class="row mx-auto w-75 pt-5">
-        <nav aria-label="page-navbar" class="page-navbar col-md-4 order-md-last">
+        <nav aria-label="page-navbar" class="page-navbar col-md-4 order-md-last my-2 my-md-0">
             <ul class="pagination pagination-sm justify-content-end my-0">
                 {% for page_num in products_page.paginator.page_range %}
                 {% if products_page.number is page_num %}
@@ -20,8 +20,8 @@
                 {% endfor %}
             </ul>
         </nav>
-        <div class="col-md-4 text-center">
-            <span class="fw-bolder">
+        <div class="col-md-4 text-center my-2 my-md-0">
+            <span class="fw-bolder fs-6">
                 {% if category %}
                 {% for item in category %}
                 {{ item.get_friendly_name }}
@@ -29,10 +29,10 @@
                 {% else %}
                 All Products
                 {% endif %}
-                 - {{ products_page.start_index }} of
+                 - {{ products_page.start_index }} to
                 {{ products_page.end_index }}</span>
         </div>
-        <select id="sort-selector" class="col-md-4 border-light order-md-first">
+        <select id="sort-selector" class="col-md-4 border-light order-md-first my-2 my-md-0">
             <option value="reset" {% if current_sort is 'None_None' %}selected{% endif %}>Sort by
             </option>
             <option value="price_asc" {% if current_sort == 'price_asc' %}selected{% endif %}>Price
