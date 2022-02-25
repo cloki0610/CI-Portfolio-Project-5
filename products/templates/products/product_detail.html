@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block sub_title %}{% if product.category %}{{ product.category.get_friendly_name }} - {% endif %}{{ product.name }}{% endblock %}
+
 {% block content%}
 <div class="bg-main"></div>
 <div class="container-fluid min-vh-100 px-md-5 pt-5">

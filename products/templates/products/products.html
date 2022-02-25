@@ -1,6 +1,16 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block sub_title %}
+{% if category %}
+{% with category.all|first as title%}
+{{ title.get_friendly_name }}
+{% endwith %}
+{% else %}
+Category
+{% endif %}
+{% endblock %}
+
 {% block content%}
 <div class="bg-main"></div>
 <div class="container-fluid min-vh-100 card-group pt-5">
@@ -25,7 +35,7 @@
                 <div class="col-md-9 fw-bolder fs-6 px-0">
                     {% if category %}
                     {% for item in category %}
-                    {{ item.get_friendly_name }}
+                    {{ item.get_friendly_name }} 
                     {% endfor %}
                     {% else %}
                         {% if search_keyword %}
