@@ -5,7 +5,7 @@
 
 {% block content %}
 <div class="bg-main"></div>
-<div class="container-fluid min-vh-100 pt-5">
+<div class="container-fluid min-vh-100 pt-5 px-5">
     <div class="row mb-4 pt-5">
         <div class="col text-center">
             <h1 class="no-select pb-3">Shopping Cart</h1>
@@ -15,12 +15,42 @@
     <div class="row">
         <div class="col">
             {% if cart_items %}
-            {{ cart_items }}
+            <table class="table table-sm table-borderless table-hover table-responsive px-auto no-select">
+                <thead>
+                    <tr class="table-success">
+                        <th scope="col" style="width:10%">Product</th>
+                        <th scope="col" style="width:70%"></th>
+                        <th scope="col" style="width:10%">Price(Each)</th>
+                        <th scope="col" style="width:10%">Qty</th>
+                    </tr>
+                </thead>
+                {% for item in cart_items %}
+                <tr>
+                    <th scope="row" class="py-3">{{ item.product.sku|upper }}</th>
+                    <td class="py-3">{{ item.product.name }}</td>
+                    <td class="py-3">{{ item.product.price }}</td>
+                    <td class="py-3">{{ item.quantity }}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="5" class="pt-5 text-end">
+                        <h6><strong>Subtotal: ${{ total|floatformat:2 }}</strong></h6>
+                        <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
+                        <h4 class="mt-4"><strong>Total: ${{ total_cost|floatformat:2 }}</strong></h4>
+                    </td>
+                </tr>
+            </table>
             {% else %}
             <p class="text-center">Your cart is still empty.</p>
             {% endif %}
-            <div class="text-center">
-                <button onclick="history.go(-1)" class="btn btn-sm btn-outline-success"><i class="fas fa-angle-double-left"></i> Back to Shop</button>
+            <div class="text-end">
+                <button onclick="history.go(-1)" class="btn btn-md btn-outline-success"><i class="fas fa-angle-double-left"></i> Back to Shop</button>
+                <a href="" class="btn btn-success btn-md">
+                    <span class="text-uppercase">Checkout</span>
+                    <span class="icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </span>
+                </a>
             </div>
         </div>
     </div>
