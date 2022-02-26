@@ -14,7 +14,7 @@ Category
 {% block content%}
 <div class="bg-main"></div>
 <div class="container-fluid min-vh-100 card-group pt-5">
-    <div class="row mx-auto w-75 pt-5">
+    <div class="row mx-auto w-75 pt-5 align-items-baseline">
         <nav aria-label="page-navbar" class="page-navbar col-md-3 order-md-last my-2 my-md-0 px-0">
             <ul class="pagination pagination-sm justify-content-end my-0">
                 {% for page_num in products_page.paginator.page_range %}
@@ -31,7 +31,7 @@ Category
             </ul>
         </nav>
         <div class="col-md-6 text-center my-2 my-md-0 px-0">
-            <div class="row">
+            <div class="row no-select">
                 <div class="col-md-9 fw-bolder fs-6 px-0">
                     {% if category %}
                     {% for item in category %}

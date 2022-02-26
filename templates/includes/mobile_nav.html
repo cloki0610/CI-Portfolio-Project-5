@@ -28,9 +28,19 @@
                                     class="fas fa-home"></i></span>Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="me-2"><i
-                                    class="fas fa-shopping-cart"></i></span>Shopping Cart<span
-                                class="d-inline float-end">$0.00</span></a>
+                        <a class="nav-link" href="{% url 'view_cart' %}">
+                            <span class="me-2">
+                                <i class="fas fa-shopping-cart"></i>
+                            </span>
+                            Shopping Cart
+                            <span class="d-inline float-end">
+                                {% if total_cost %}
+                                ${{ total_cost|floatformat:2 }}
+                                {% else %}
+                                $0.00
+                                {% endif %}
+                            </span>
+                        </a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="category" role="button"
@@ -39,11 +49,18 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="category">
                             <li><a class="dropdown-item" href="{% url 'products' %}">All Products</a></li>
-                            <li><a class="dropdown-item" href="{% url 'products' %}?category=personal_items">Personal items</a></li>
-                            <li><a class="dropdown-item" href="{% url 'products' %}?category=clothing_accessories">Clothing & Accessories</a></li>
-                            <li><a class="dropdown-item" href="{% url 'products' %}?category=furniture_decoration">Furniture & Decoration</a></li>
-                            <li><a class="dropdown-item" href="{% url 'products' %}?category=necessity">Necessity</a></li>
-                            <li><a class="dropdown-item" href="{% url 'products' %}?category=handmade">Handmade product</a></li>
+                            <li><a class="dropdown-item" href="{% url 'products' %}?category=personal_items">Personal
+                                    items</a></li>
+                            <li><a class="dropdown-item"
+                                    href="{% url 'products' %}?category=clothing_accessories">Clothing & Accessories</a>
+                            </li>
+                            <li><a class="dropdown-item"
+                                    href="{% url 'products' %}?category=furniture_decoration">Furniture & Decoration</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'products' %}?category=necessity">Necessity</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'products' %}?category=handmade">Handmade
+                                    product</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">

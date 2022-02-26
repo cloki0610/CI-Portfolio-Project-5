@@ -4,8 +4,25 @@
 {% block sub_title %}My Shopping Cart{% endblock %}
 
 {% block content %}
-<div class="container-fluid min-vh-100">
+<div class="bg-main"></div>
+<div class="container-fluid min-vh-100 pt-5">
+    <div class="row mb-4 pt-5">
+        <div class="col text-center">
+            <h1 class="no-select pb-3">Shopping Cart</h1>
+            <hr>
+        </div>
+    </div>
     <div class="row">
+        <div class="col">
+            {% if cart_items %}
+            {{ cart_items }}
+            {% else %}
+            <p class="text-center">Your cart is still empty.</p>
+            {% endif %}
+            <div class="text-center">
+                <button onclick="history.go(-1)" class="btn btn-sm btn-outline-success"><i class="fas fa-angle-double-left"></i> Back to Shop</button>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock%}

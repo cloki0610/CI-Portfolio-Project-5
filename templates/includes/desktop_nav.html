@@ -5,14 +5,20 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ms-auto fw-bold align-items-center">
                 <li class="nav-item">
-                    <a class="nav-link font-nav" href="#">
+                    <a class="nav-link font-nav" href="{% url 'view_cart' %}">
                         <div class="row">
                             <span class="col-2 align-self-center">
                                 <i class="fas fa-shopping-cart"></i>
                             </span>
                             <span class="col-10">
                                 <span class="mb-0">Shopping Cart</span><br />
-                                <span style="font-size:8px;">$0.00</span>
+                                <span style="font-size:8px;">
+                                    {% if total_cost %}
+                                    ${{ total_cost|floatformat:2 }}
+                                    {% else %}
+                                    $0.00
+                                    {% endif %}
+                                </span>
                             </span>
                         </div>
                     </a>
@@ -32,11 +38,18 @@
                             </form>
                         </li>
                         <li><a class="dropdown-item font-sub" href="{% url 'products' %}">All Products</a></li>
-                        <li><a class="dropdown-item font-sub" href="{% url 'products' %}?category=personal_items">Personal items</a></li>
-                        <li><a class="dropdown-item font-sub" href="{% url 'products' %}?category=clothing_accessories">Clothing & Accessories</a></li>
-                        <li><a class="dropdown-item font-sub" href="{% url 'products' %}?category=furniture_decoration">Furniture & Decoration</a></li>
-                        <li><a class="dropdown-item font-sub" href="{% url 'products' %}?category=necessity">Necessity</a></li>
-                        <li><a class="dropdown-item font-sub" href="{% url 'products' %}?category=handmade">Handmade product</a></li>
+                        <li><a class="dropdown-item font-sub"
+                                href="{% url 'products' %}?category=personal_items">Personal items</a></li>
+                        <li><a class="dropdown-item font-sub"
+                                href="{% url 'products' %}?category=clothing_accessories">Clothing & Accessories</a>
+                        </li>
+                        <li><a class="dropdown-item font-sub"
+                                href="{% url 'products' %}?category=furniture_decoration">Furniture & Decoration</a>
+                        </li>
+                        <li><a class="dropdown-item font-sub"
+                                href="{% url 'products' %}?category=necessity">Necessity</a></li>
+                        <li><a class="dropdown-item font-sub" href="{% url 'products' %}?category=handmade">Handmade
+                                product</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">

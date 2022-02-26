@@ -6,12 +6,7 @@
 {% block content%}
 <div class="bg-main"></div>
 <div class="container-fluid min-vh-100 px-md-5 pt-5">
-    <div class="row pt-5">
-        <div class="col-12 mx-auto text-end">
-            <a href="{% url 'products' %}" class="btn btn-sm btn-success">BACK >></a>
-        </div>
-    </div>
-    <div class="row ms-2 ms-md-0">
+    <div class="row ms-2 ms-md-0 pt-5 px-3 px-md-0">
         <div class="col-md-6">
             {% if product.image %}
             <div>
@@ -27,7 +22,7 @@
             </div>
             {% endif %}
         </div>
-        <div class="col-md-6 no-select">
+        <div class="col-md-6 no-select px-4 pt-4 p-md-0">
             <div class="row">
                 <h1 class="fw-bold">{{ product.name }}</h1>
                 {% if product.category %}
@@ -39,6 +34,49 @@
             </div>
             <div class="row">
                 <p class="mt-3">{{ product.description }}</p>
+            </div>
+            <div class="row">
+                <!-- Form to add item to shopping cart-->
+                <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="col-12">
+                            <p class="mt-3"><strong>Quantity:</strong></p>
+                            <div class="form-group w-25">
+                                <div class="input-group input-group-{{ product.id }}">
+                                    <div class="input-group-prepend">
+                                        <button
+                                            class="decrement-qty btn btn-success rounded-0 decrement-qty_{{ product.id }}"
+                                            data-item_id="{{ product.id }}">
+                                            <span class="icon">
+                                                <i class="fas fa-minus"></i>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <input class="form-control qty_input id_qty_{{ product.id }}" type="number"
+                                        name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}">
+                                    <div class="input-group-append">
+                                        <button
+                                            class="increment-qty btn btn-success rounded-0 increment-qty_{{ product.id }}"
+                                            data-item_id="{{ product.id }}">
+                                            <span class="icon">
+                                                <i class="fas fa-plus"></i>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <a onclick="history.go(-1)" class="btn btn-outline-success rounded-0 mt-5 text-uppercase">
+                                <i class="fas fa-chevron-left"></i>  Back to shop
+                            </a>
+                            <input type="submit" class="btn btn-success rounded-0 text-uppercase mt-5" value="Add to cart">
+                        </div>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
