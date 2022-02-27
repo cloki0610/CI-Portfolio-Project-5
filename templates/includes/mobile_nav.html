@@ -69,14 +69,14 @@
                             <span class="me-2"><i class="fas fa-user"></i></span>My Account
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="account">
-                            <li><a class="dropdown-item" href="#">Sign Up</a></li>
-                            <li><a class="dropdown-item" href="#">Sign In</a></li>
+                            <li><a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a></li>
+                            <li><a class="dropdown-item" href="{% url 'account_login' %}">Sign In</a></li>
                             <li><a class="dropdown-item" href="#">My Profile</a></li>
                             <li><a class="dropdown-item" href="#">My Orders</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                            <li><a class="dropdown-item" href="{% url 'account_logout' %}">Sign Out</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">

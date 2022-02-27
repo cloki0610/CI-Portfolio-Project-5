@@ -9,7 +9,6 @@
     <div class="row mb-4 pt-5">
         <div class="col text-center">
             <h1 class="no-select pb-3">Shopping Cart</h1>
-            <hr>
         </div>
     </div>
     <div class="row">
@@ -19,17 +18,24 @@
                 <thead>
                     <tr class="table-success">
                         <th scope="col" style="width:10%">Product</th>
-                        <th scope="col" style="width:70%"></th>
+                        <th scope="col" style="width:68%"></th>
                         <th scope="col" style="width:10%">Price(Each)</th>
-                        <th scope="col" style="width:10%">Qty</th>
+                        <th scope="col" style="width:5%">Qty</th>
+                        <th scope="" style="width:7%">Remove</th>
                     </tr>
                 </thead>
                 {% for item in cart_items %}
                 <tr>
-                    <th scope="row" class="py-3">{{ item.product.sku|upper }}</th>
-                    <td class="py-3">{{ item.product.name }}</td>
-                    <td class="py-3">{{ item.product.price }}</td>
-                    <td class="py-3">{{ item.quantity }}</td>
+                    <th scope="row" class="py-2">{{ item.product.sku|upper }}</th>
+                    <td class="py-2">{{ item.product.name }}</td>
+                    <td class="py-2">{{ item.product.price }}</td>
+                    <td class="py-2">{{ item.quantity }}</td>
+                    <td class="py-2">
+                        <form action="{% url 'remove_item' item.product.id %}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-times"></i></button>
+                        </form>
+                    </td>
                 </tr>
                 {% endfor %}
                 <tr>
@@ -41,7 +47,9 @@
                 </tr>
             </table>
             {% else %}
-            <p class="text-center">Your cart is still empty.</p>
+            <table class="table table-sm table-borderless table-hover table-responsive px-auto no-select">
+                <th class="table-success text-center">Your shopping cart is empty.</th>
+            </table>
             {% endif %}
             <div class="text-end">
                 <button onclick="history.go(-1)" class="btn btn-md btn-outline-success"><i class="fas fa-angle-double-left"></i> Back to Shop</button>
