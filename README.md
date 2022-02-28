@@ -201,6 +201,10 @@ Navbar icon color: #D29D2B\
 
 ## **Credits**
 ### **Code**
+ - Code Institute Buotique Ado walk throught project
+ - https://stackoverflow.com/questions/27325505/django-getting-previous-url
+
+ A solution to get the link for return to previous page
 <hr>
 
 ## **Media**
