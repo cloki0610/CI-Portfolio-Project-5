@@ -117,7 +117,7 @@ Background color: #fafafa\
 font color: #3a3a3a\
 Navbar background color: #139487\
 Navbar font color: #FFF1CE\
-Navbar icon color: #D29D2B\
+Navbar icon color: #D29D2B
 
 #### **Typography**
 
@@ -202,9 +202,6 @@ Navbar icon color: #D29D2B\
 ## **Credits**
 ### **Code**
  - Code Institute Buotique Ado walk throught project
- - https://stackoverflow.com/questions/27325505/django-getting-previous-url
-
- A solution to get the link for return to previous page
 <hr>
 
 ## **Media**

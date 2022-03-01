@@ -1,1 +1,14 @@
-{{ message }}
+<div class="toast custom-toast rounded-0 border-top-0" data-bs-autohide="false" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header bg-danger text-light">
+        <strong class="me-auto">Error!</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body bg-white">
+        <div class="row">
+            <div class="col">
+                {{ message }}
+                <hr class="mt-1 mb-3">
+            </div>
+        </div>
+    </div>
+</div>

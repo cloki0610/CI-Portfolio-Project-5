@@ -82,7 +82,11 @@
     <!--Post load Javascript-->
     {% block postloadjs %}
     <script type="text/javascript">
-        $('.toast').toast('show');
+        $(document).ready(function(){
+            let toastEl = document.querySelector('.toast');
+            let toastMsg = new bootstrap.Toast(toastEl);
+            toastMsg.show();
+        })
     </script>
     {% endblock %}
 </body>

@@ -74,3 +74,21 @@ p {
   color: #fafafa!important;
   transition: 1s;
 }
+
+/* bootstrap toasts */
+/* ------------------------------- bootstrap toasts */
+
+.message-container {
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  z-index: 99999999999;
+}
+
+.custom-toast {
+  overflow: visible;
+}
+
+.toast-capper {
+  height: 2px;
+}

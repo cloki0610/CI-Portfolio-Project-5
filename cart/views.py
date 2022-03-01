@@ -23,11 +23,13 @@ class AddToCartView(View):
         if item_id in list(cart.keys()):
             cart[item_id] += quantity
             messages.success(request,
-                             (f'Now you have {cart[item_id]} of '
-                              f'{product.name} in your cart.'))
+                             (f'{cart[item_id]} of {product.name} '
+                              f'currently in your cart.'))
         else:
             cart[item_id] = quantity
-            messages.success(request, f'Added {product.name} to your cart')
+            messages.success(request,
+                             (f'{cart[item_id]} of {product.name} '
+                              f'currently in your cart.'))
 
         request.session['cart'] = cart
         return redirect(redirect_url)
@@ -45,13 +47,13 @@ class UpdateItemView(View):
         if quantity > 0:
             cart[item_id] = quantity
             messages.success(request,
-                             (f'Now you have {cart[item_id]} of '
-                              f'{product.name} in your cart.'))
+                             (f'{cart[item_id]} of {product.name}'
+                              f' currently in your cart.'))
         else:
             cart.pop(item_id)
             messages.success(request,
                              (f'Removed {product.name} '
-                              f'from your bag'))
+                              f'from your cart'))
 
         request.session['cart'] = cart
         return redirect(reverse('view_cart'))
@@ -68,8 +70,8 @@ class RemoveItemView(View):
             cart.pop(item_id)
             request.session['cart'] = cart
             messages.success(request,
-                             f'Removed {product.name} from your bag')
+                             f'Removed {product.name} from your cart')
             return redirect(reverse('view_cart'))
         except Exception as error:
-            messages.error(request, f'Error removing item: {error}')
+            messages.error(request, f'Error action: {error}')
             return redirect(reverse('view_cart'))
