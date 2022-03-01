@@ -33,12 +33,20 @@
                                 <i class="fas fa-shopping-cart"></i>
                             </span>
                             Shopping Cart
+                            {% if product_count %}
+                            <span class="badge bg-danger ms-1">
+                                {{ product_count }}
+                                <span class="visually-hidden">{{ product_count }}</span>
+                            </span>
+                            {% endif %}
                             <span class="d-inline float-end">
-                                {% if total_cost %}
-                                ${{ total_cost|floatformat:2 }}
-                                {% else %}
-                                $0.00
-                                {% endif %}
+                                <strong>
+                                    {% if total_cost %}
+                                    ${{ total_cost|floatformat:2 }}
+                                    {% else %}
+                                    $0.00
+                                    {% endif %}
+                                </strong>
                             </span>
                         </a>
                     </li>

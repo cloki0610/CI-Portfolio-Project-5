@@ -7,11 +7,19 @@
                 <li class="nav-item">
                     <a class="nav-link font-nav" href="{% url 'view_cart' %}">
                         <div class="row">
-                            <span class="col-2 align-self-center">
+                            <span class="col-2 px-2 align-self-center">
                                 <i class="fas fa-shopping-cart"></i>
                             </span>
                             <span class="col-10">
-                                <span class="mb-0">Shopping Cart</span><br />
+                                <span class="mb-0">
+                                    Shopping Cart
+                                    {% if product_count %}
+                                    <span class="badge bg-danger">
+                                        {{ product_count }}
+                                        <span class="visually-hidden">{{ product_count }}</span>
+                                    </span>
+                                    {% endif %}
+                                </span><br />
                                 <span style="font-size:8px;">
                                     {% if total_cost %}
                                     ${{ total_cost|floatformat:2 }}

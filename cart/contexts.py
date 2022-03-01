@@ -15,7 +15,6 @@ def cart_contents(request):
     for item_id, quanitity in cart.items():
         product = get_object_or_404(Product, pk=item_id)
         total += quanitity * product.price
-        product_count += quanitity
         cart_items.append({
             'item_id': item_id,
             'quantity': quanitity,
@@ -25,6 +24,7 @@ def cart_contents(request):
     delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
 
     total_cost = delivery + total
+    product_count = len(cart_items)
 
     context = {
         'cart_items': cart_items,
