@@ -34,10 +34,17 @@
                             </span>
                             Shopping Cart
                             {% if product_count %}
-                            <span class="badge bg-danger ms-1">
+                            {% if product_count < 10 %}
+                            <span class="badge bg-danger">
                                 {{ product_count }}
                                 <span class="visually-hidden">{{ product_count }}</span>
                             </span>
+                            {% else %}
+                            <span class="badge bg-danger">
+                                9+
+                                <span class="visually-hidden">{{ product_count }}</span>
+                            </span>
+                            {% endif %}
                             {% endif %}
                             <span class="d-inline float-end">
                                 <strong>
