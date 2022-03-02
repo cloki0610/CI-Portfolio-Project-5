@@ -13,10 +13,14 @@
         {% if total_cost %}
         <div class="row">
             <div class="col">
+                <p class="my-1 text-dark">
+                    Subtotal:
+                    <span class="float-end">${{ total|floatformat:2 }}</span>
+                </p>
                 <strong>
                     <p class="my-1 text-dark">
-                        Total Price:
-                        <span class="float-end">${{ total|floatformat:2 }}</span>
+                        Total:
+                        <span class="float-end">${{ total_cost|floatformat:2 }}</span>
                     </p>
                 </strong>
                 <a href="{% url 'view_cart' %}" class="btn btn-sm btn-success rounded-0 float-end">

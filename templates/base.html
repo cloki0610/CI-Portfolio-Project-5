@@ -83,12 +83,20 @@
     <!--Post load Javascript-->
     {% block postloadjs %}
     <script type="text/javascript">
-        $(document).ready(function(){
-            let toastEl = document.querySelector('.toast');
-            let toastMsg = new bootstrap.Toast(toastEl);
-            toastMsg.show();
+        $(document).ready(function () {
+            let toastElList = [].slice.call(document.querySelectorAll('.toast'))
+            let toastList = toastElList.map(function (toastEl) {
+                let option = {
+                    animation: true,
+                    autohide: true,
+                    delay: 5000,
+                }
+                let bsToast = new bootstrap.Toast(toastEl, option)
+                bsToast.show();
+            })
         })
     </script>
     {% endblock %}
 </body>
+
 </html>
