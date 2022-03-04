@@ -29,7 +29,7 @@ p {
 }
 
 .bg-main {
-  background-color: #fafafa!important;
+  background-color: #fafafa !important;
   height: 100%;
   width: 100%;
   top: 0;
@@ -43,15 +43,15 @@ p {
   font-family: 'Rubik Mono One', sans-serif;
   font-size: 28px;
   width: fit-content;
-  color: #FFF1CE!important;
+  color: #FFF1CE !important;
 }
 
-.bg-nav{
+.bg-nav {
   background-color: #139487;
 }
 
 .font-nav {
-  color: #FFF1CE!important;
+  color: #FFF1CE !important;
 }
 
 .bg-sub {
@@ -71,7 +71,7 @@ p {
 /* product */
 .product-card:hover {
   background-color: #139487;
-  color: #fafafa!important;
+  color: #fafafa !important;
   transition: 1s;
 }
 
@@ -87,4 +87,11 @@ p {
 
 .custom-toast {
   overflow: visible;
+}
+
+/* checkout */
+#order-summary {
+  height: 250px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }

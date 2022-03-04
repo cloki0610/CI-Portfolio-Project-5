@@ -91,7 +91,7 @@
             {% endif %}
             <div class="text-end">
                 <a href="{{ request.META.HTTP_REFERER }}" class="btn btn-md btn-outline-success"><i class="fas fa-angle-double-left"></i> Back to Shop</a>
-                <a href="" class="btn btn-success btn-md">
+                <a href="{% url 'checkout' %}" class="btn btn-success btn-md">
                     <span class="text-uppercase">Checkout</span>
                     <span class="icon">
                         <i class="fas fa-money-bill-wave"></i>

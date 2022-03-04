@@ -2,6 +2,8 @@
 import uuid
 from django.db import models
 from django.db.models import Sum
+from django.db.models.signals import post_save, post_delete
+from django.dispatch import receiver
 from django.conf import settings
 from django_countries.fields import CountryField
 from products.models import Product
@@ -81,3 +83,19 @@ class OrderLineItem(models.Model):
 
     def __str__(self):
         return f'SKU {self.product.sku} on order {self.order.order_number}'
+
+
+@receiver(post_save, sender=OrderLineItem)
+def update_on_save(sender, instance, created, **kwargs):
+    """
+    Update order total on lineitem update/create
+    """
+    instance.order.update_total()
+
+
+@receiver(post_delete, sender=OrderLineItem)
+def update_on_delete(sender, instance, **kwargs):
+    """
+    Update order total on lineitem delete
+    """
+    instance.order.update_total()
