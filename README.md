@@ -201,14 +201,16 @@ Navbar icon color: #D29D2B
 
 ## **Credits**
 ### **Code**
- - Code Institute Buotique Ado walk throught project
+ - Code Institute Buotique Ado walk-through project
 <hr>
 
 ## **Media**
  - Pexels
- All images come from and copyrighted by Pexels, the images will be remove or replaced if their policy have changed.
+
+    All images come from and copyrighted by Pexels, the images will be remove or replaced if their policy have changed.
  - Flaticon
- The no image icon come from this website.
+
+    The no image icon come from this website.
 
 ### **Acknowledgment**
 <hr>
