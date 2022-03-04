@@ -35,8 +35,8 @@
                             checked>
                         {% else %}
                         <label class="form-check-label" for="id-save-info">
-                            <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or
-                            <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
+                            You can <a class="text-info" href="{% url 'account_signup' %}">create an account</a> or
+                            <a class="text-info" href="{% url 'account_login' %}">login</a> to save your information.
                         </label>
                         {% endif %}
                     </div>
@@ -46,10 +46,10 @@
                 <p class="text-dark small">Order Summary ({{ product_count }})</p>
                 <div class="row" id="order-summary">
                     <div class="row">
-                        <div class="col-7">
+                        <div class="col-9">
                             <p class="mb-1 mt-0 small text-muted">Item</p>
                         </div>
-                        <div class="col-5 text-right">
+                        <div class="col-3">
                             <p class="mb-1 mt-0 small text-muted">Price</p>
                         </div>
                     </div>
@@ -61,13 +61,13 @@
                             </a>
                             <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                         </div>
-                        <div class="col-3 text-right">
+                        <div class="col-3">
                             <p class="my-0 small text-muted">${{ item.product.price | calc_price:item.quantity }}</p>
                         </div>
                     </div>
                     {% endfor %}
                     <hr class="my-0">
-                    <div class="row text-dark text-right">
+                    <div class="row text-dark">
                         <div class="col-7">
                             <p class="my-0">Subtotal:</p>
                             <p class="my-0">Delivery:</p>
