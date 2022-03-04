@@ -95,3 +95,8 @@ p {
   overflow-x: hidden;
   overflow-y: auto;
 }
+
+.section-header {
+  background-color: #139487;
+  color: #FFF1CE!important;
+}

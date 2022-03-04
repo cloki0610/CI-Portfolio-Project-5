@@ -12,14 +12,14 @@
         <div class="row pt-5">
             <!--Checkout form-->
             <div class="col-12 col-md-6">
-                <p class="fw-bolder">Please provide necessary information before completing the transaction.</p>
-                <fieldset class="rounded pe-3 mb-2">
-                    <legend class="fieldset-label small text-dark pe-2 w-auto">Personal Details</legend>
+                <p class="fw-bolder mb-0">Please provide necessary information before completing the transaction.</p>
+                <fieldset class="rounded pe-3">
+                    <legend class="fieldset-label small ps-2 py-1 w-100 section-header">Personal Details</legend>
                     {{ order_form.full_name | as_crispy_field }}
                     {{ order_form.email | as_crispy_field }}
                 </fieldset>
                 <fieldset class="rounded pe-3">
-                    <legend class="fieldset-label small text-dark pe-2 w-auto">Delivery Information</legend>
+                    <legend class="fieldset-label small ps-2 py-1 w-100 section-header">Delivery Information</legend>
                     {{ order_form.phone_number | as_crispy_field }}
                     {{ order_form.street_address1 | as_crispy_field }}
                     {{ order_form.street_address2 | as_crispy_field }}
@@ -34,7 +34,7 @@
                         <input class="form-check-input ms-2 me-0" type="checkbox" id="id-save-info" name="save-info"
                             checked>
                         {% else %}
-                        <label class="form-check-label" for="id-save-info">
+                        <label class="form-check-label">
                             You can <a class="text-info" href="{% url 'account_signup' %}">create an account</a> or
                             <a class="text-info" href="{% url 'account_login' %}">login</a> to save your information.
                         </label>
@@ -43,45 +43,47 @@
                 </fieldset>
             </div>
             <div class="col-12 col-md-6 mb-3 mt-5 mt-md-0">
-                <p class="text-dark small">Order Summary ({{ product_count }})</p>
-                <div class="row" id="order-summary">
-                    <div class="row">
-                        <div class="col-9">
-                            <p class="mb-1 mt-0 small text-muted">Item</p>
+                <fieldset class="rounded">
+                    <legend class="fieldset-label small ps-2 py-1 w-100 section-header">Order Summary ({{ product_count }})</legend>
+                    <div class="row gx-0">
+                        <div class="row">
+                            <div class="col-9">
+                                <p class="mb-1 mt-0 small text-muted">Item</p>
+                            </div>
+                            <div class="col-3">
+                                <p class="mb-1 mt-0 small text-muted text-end">Price</p>
+                            </div>
                         </div>
-                        <div class="col-3">
-                            <p class="mb-1 mt-0 small text-muted">Price</p>
+                        {% for item in cart_items %}
+                        <div class="row my-1">
+                            <div class="col-9">
+                                <a href="{% url 'product_detail' item.product.id %}" class="link-dark">
+                                    <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                                </a>
+                                <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                            </div>
+                            <div class="col-3">
+                                <p class="my-0 small text-muted text-end">${{ item.product.price | calc_price:item.quantity }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <hr class="my-0">
+                        <div class="row text-dark">
+                            <div class="col-9">
+                                <p class="my-0 text-end">Subtotal:</p>
+                                <p class="my-0 text-end">Delivery:</p>
+                                <p class="my-0 text-end">Total:</p>
+                            </div>
+                            <div class="col-3">
+                                <p class="my-0 text-end">${{ total | floatformat:2 }}</p>
+                                <p class="my-0 text-end">${{ delivery | floatformat:2 }}</p>
+                                <p class="my-0 text-end"><strong>${{ total_cost | floatformat:2 }}</strong></p>
+                            </div>
                         </div>
                     </div>
-                    {% for item in cart_items %}
-                    <div class="row my-1">
-                        <div class="col-9">
-                            <a href="{% url 'product_detail' item.product.id %}" class="link-dark">
-                                <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                            </a>
-                            <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
-                        </div>
-                        <div class="col-3">
-                            <p class="my-0 small text-muted">${{ item.product.price | calc_price:item.quantity }}</p>
-                        </div>
-                    </div>
-                    {% endfor %}
-                    <hr class="my-0">
-                    <div class="row text-dark">
-                        <div class="col-7">
-                            <p class="my-0">Subtotal:</p>
-                            <p class="my-0">Delivery:</p>
-                            <p class="my-0">Total:</p>
-                        </div>
-                        <div class="col-3 offset-2">
-                            <p class="my-0">${{ total | floatformat:2 }}</p>
-                            <p class="my-0">${{ delivery | floatformat:2 }}</p>
-                            <p class="my-0"><strong>${{ total_cost | floatformat:2 }}</strong></p>
-                        </div>
-                    </div>
-                </div>
-                <fieldset class="mt-5">
-                    <legend class="fieldset-label small text-dark w-auto">Payment Method</legend>
+                </fieldset>
+                <fieldset class="mt-5 rounded">
+                    <legend class="fieldset-label small ps-2 py-1 w-100 section-header">Payment Method</legend>
                     <!-- A Stripe card element will go here -->
                     <div class="mb-3" id="card-element"></div>
                     <!-- Used to display form errors -->
