@@ -64,6 +64,10 @@ p {
   color: #139487;
 }
 
+input[name='q']::placeholder {
+  color: #aab7c4;
+}
+
 /* index */
 .bg-index {
   background: url('/media/index-background.jpg') no-repeat center center fixed;
@@ -88,4 +92,22 @@ p {
 
 .custom-toast {
   overflow: visible;
+}
+
+/* allauth form */
+.allauth-form-inner-content p {
+  color: #6c757d;
+}
+
+.allauth-form-inner-content input:not([name='remember']) {
+  border-radius: 0;
+  margin: 1rem 0 1rem 0;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+  display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+  color: #aab7c4;
 }

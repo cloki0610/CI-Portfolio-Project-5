@@ -2,15 +2,13 @@
 {% load static %}
 
 {% block content %}
-    <div class="container header-container">
-        <div class="overlay"></div>
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <div class="allauth-form-inner-content">
-                    {% block inner_content %}
-                    {% endblock %}
-                </div>
-            </div>
+<div class="bg-main"></div>
+<div class="container-fluid min-vh-100 pt-5 px-5">
+    <div class="row pt-5 justify-content-center">
+        <div class="col-12 col-lg-6 allauth-form-inner-content">
+            {% block inner_content %}
+            {% endblock %}
         </div>
     </div>
+</div>
 {% endblock %}

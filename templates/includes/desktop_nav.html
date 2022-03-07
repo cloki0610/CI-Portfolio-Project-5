@@ -73,14 +73,23 @@
                         <span class="me-2"><i class="fas fa-user"></i></span>My Account
                     </a>
                     <ul class="dropdown-menu bg-sub" aria-labelledby="account-lg">
-                        <li><a class="dropdown-item font-sub" href="{% url 'account_signup' %}">Sign Up</a></li>
-                        <li><a class="dropdown-item font-sub" href="{% url 'account_login' %}">Sign In</a></li>
+                        {% if request.user.is_authenticated %}
                         <li><a class="dropdown-item font-sub" href="#">My Profile</a></li>
                         <li><a class="dropdown-item font-sub" href="#">My Orders</a></li>
+                        {% if request.user.is_superuser %}
+                        <li><a class="dropdown-item font-sub" href="#">Customer's report</a></li>
+                        <li><a class="dropdown-item font-sub" href="#">Order review</a></li>
+                        {% endif %}
+                        {% else %}
+                        <li><a class="dropdown-item font-sub" href="{% url 'account_signup' %}">Sign Up</a></li>
+                        <li><a class="dropdown-item font-sub" href="{% url 'account_login' %}">Sign In</a></li>
+                        {% endif %}
+                        {% if request.user.is_authenticated %}
                         <li>
                             <hr class="dropdown-divider">
                         </li>
                         <li><a class="dropdown-item font-sub" href="{% url 'account_logout' %}">Sign Out</a></li>
+                        {% endif %}
                     </ul>
                 </li>
                 <li class="nav-item dropdown me-5">
