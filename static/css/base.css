@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&family=Rubik+Mono+One&display=swap');
 
+/* base style */
 html {
   height: 100%;
 }
@@ -28,6 +29,7 @@ p {
   white-space: normal;
 }
 
+/* background layer */
 .bg-main {
   background-color: #fafafa !important;
   height: 100%;
@@ -76,7 +78,6 @@ p {
 }
 
 /* bootstrap toasts */
-/* ------------------------------- bootstrap toasts */
 
 .message-container {
   position: fixed;
@@ -87,16 +88,4 @@ p {
 
 .custom-toast {
   overflow: visible;
-}
-
-/* checkout */
-#order-summary {
-  height: 250px;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-.section-header {
-  background-color: #139487;
-  color: #FFF1CE!important;
 }

@@ -1,3 +1,4 @@
+""" View of home """
 from django.shortcuts import render
 
 
