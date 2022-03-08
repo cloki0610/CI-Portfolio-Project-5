@@ -7,13 +7,14 @@ class UserProfileForm(forms.ModelForm):
     """ Form model using UserProfile data model """
     first_name = forms.CharField(max_length=30)
     last_name = forms.CharField(max_length=30)
+    email = forms.CharField(max_length=40)
 
     class Meta:
         """ Meta data """
         model = UserProfile
         exclude = ('user',)
         fields = [
-                    'first_name', 'last_name', 'default_phone_number',
+                    'first_name', 'last_name','email', 'default_phone_number',
                     'default_postcode', 'default_town_or_city',
                     'default_street_address1', 'default_street_address2',
                     'default_county', 'default_country'
@@ -23,6 +24,7 @@ class UserProfileForm(forms.ModelForm):
         super(UserProfileForm, self).save(*args, **kw)
         self.instance.user.first_name = self.cleaned_data.get('first_name')
         self.instance.user.last_name = self.cleaned_data.get('last_name')
+        self.instance.user.email = self.cleaned_data.get('email')
         self.instance.user.save()
 
     def __init__(self, *args, **kwargs):
@@ -33,9 +35,11 @@ class UserProfileForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['first_name'].initial = self.instance.user.first_name
         self.fields['last_name'].initial = self.instance.user.last_name
+        self.fields['email'].initial = self.instance.user.email
         placeholders = {
             'first_name': 'First Name',
             'last_name': 'Last Name',
+            'email': 'E-mail address',
             'default_phone_number': 'Phone Number',
             'default_postcode': 'Postal Code',
             'default_town_or_city': 'Town or City',
