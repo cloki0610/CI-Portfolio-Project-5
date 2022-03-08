@@ -89,9 +89,9 @@ Planned Features the website should have:
 22. As an Admin, I want to be able to add a product, so that I can add new items to my store.
 23. As an Admin, I want to be able to update my products, so that I can change product prices, descriptions, images, and other product criteria.
 24. As an Admin, I want to be able to delete a product, so that I can remove items that are no longer for sale.
+25. As an Admin, I want to view list of the customer's contact detail and report, so that I can easily know customer's response.
 25. As a User, I want to be able to report a problem product, so that the shop owner can know if there is some problem with their products.
 26. As a User, I want to be able to leave my contact information and comment to the store owner, so that I can leave my feeling of the shop and try to connect with the shop owner personally.
-27. As a User, I want to be able to view some descriptions about the store and their partner, so that I can get to know more about store owner and their partners.
 
 ### **Skeleton Plane**
 <hr>
@@ -201,7 +201,15 @@ Navbar icon color: #D29D2B
 
 ## **Credits**
 ### **Code**
- - Code Institute Buotique Ado walk-through project
+ - [Code Institute Buotique Ado walk-through project](https://github.com/cloki0610/boutique_ado_Walkthrough)
+
+   I use quite a lot of code in my clone of the code institute project with some change to complete the purchase and payment flow.
+ - [How to create a UserProfile form in Django with first_name, last_name modifications?](https://stackoverflow.com/questions/1727564/how-to-create-a-userprofile-form-in-django-with-first-name-last-name-modificati)
+
+   To add the first name, last name and email to the profile form and edit them in user interface, I find this solution with some improvement to fulfill the requirement.
+ - [My Project 4](https://github.com/cloki0610/CI-Portfolio-Project-4)
+
+   I reuse some code from my previous project to create the view as class-based view.
 <hr>
 
 ## **Media**

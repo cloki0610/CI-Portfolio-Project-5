@@ -14,7 +14,7 @@ class UserProfileForm(forms.ModelForm):
         model = UserProfile
         exclude = ('user',)
         fields = [
-                    'first_name', 'last_name','email', 'default_phone_number',
+                    'first_name', 'last_name', 'email', 'default_phone_number',
                     'default_postcode', 'default_town_or_city',
                     'default_street_address1', 'default_street_address2',
                     'default_county', 'default_country'
