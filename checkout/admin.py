@@ -13,7 +13,7 @@ class OrderLineItemAdminInline(admin.TabularInline):
 class OrderAdmin(admin.ModelAdmin):
     """ Show Order model in admin site with follow rules """
     inlines = (OrderLineItemAdminInline, )
-    readonly_fields = ('order_number', 'date',
+    readonly_fields = ('order_number', 'user_profile', 'date',
                        'delivery_cost', 'order_total',
                        'grand_total', 'original_cart',
                        'stripe_pid')

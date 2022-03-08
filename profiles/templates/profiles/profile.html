@@ -8,8 +8,7 @@
 <div class="container-fluid min-vh-100 pt-5 px-5">
     <div class="row pt-5">
         <div class="col text-center">
-            <h1 class="no-select"> Profile</h1>
-            <p class="no-select pb-3">Current User: {{ user.username }}</p>
+            <h1 class="no-select">Personal Profile</h1>
         </div>
     </div>
     <div class="row">
@@ -18,12 +17,66 @@
             <form class="mt-3" action="{% url 'profile' %}" method="POST">
                 {% csrf_token %}
                 {{ profile_form|crispy }}
-                <button class="btn btn-success rounded-0 text-uppercase mt-3">Update Information</button>
+                <button class="btn btn-success rounded-0 text-uppercase mt-3">Update</button>
             </form>
         </div>
-        <div class="col-12 col-lg-6 mt-5 mt-lg-0">
+        <div class="col-12 col-lg-6 my-5 my-lg-0">
             <p class="text-muted small no-select">Order History</p>
+            <div class="order-history">
+                <table class="table-sm table-borderless no-select">
+                    <thead>
+                        <tr>
+                            <th>Order No.</th>
+                            <th>Date</th>
+                            <th>Items</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in orders %}
+                        <td>
+                            {{ order.order_number|truncatechars:6 }}
+                        </td>
+                        <td>{{ order.date }}</td>
+                        <td>
+                            <ul class="list-unstyled">
+                                {% for item in order.lineitems.all %}
+                                <li class="small">
+                                    {{ item.product.name }} x{{ item.quantity }}
+                                </li>
+                                {% empty %}
+                                <li class="small">This is a blank order, please contact us for more infromation.</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                        <td>${{ order.grand_total }}</td>
+                        <td><a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}"
+                            class="btn-sm btn-success">Review</a></td>
+                        {% empty %}
+                        <p class="text-center">No order record yet.</p>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
 {% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script>
+    let countrySelected = $('#id_default_country').val();
+    if (!countrySelected) {
+        $('#id_default_country').css('color', '#6c757d');
+    };
+    $('#id_default_country').change(function () {
+        countrySelected = $(this).val();
+        if (!countrySelected) {
+            $(this).css('color', '#6c757d');
+        } else {
+            $(this).css('color', '#000');
+        }
+    });
+</script>
+{% endblock%}

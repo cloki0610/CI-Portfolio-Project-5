@@ -18,13 +18,13 @@ class ProfileView(LoginRequiredMixin, View):
                       "profiles/profile.html",
                       {
                           'profile_form': profile_form,
-                          'orders': orders
+                          'orders': orders,
+                          'on_profile_page': True
                       })
 
     def post(self, request):
         """ POST method """
         profile_form = UserProfileForm(request.POST,
-                                       request.FILES,
                                        instance=request.user.userprofile)
         # form validation and show the result as message
         if profile_form.is_valid():

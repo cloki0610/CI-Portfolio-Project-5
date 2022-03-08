@@ -96,7 +96,7 @@ input[name='q']::placeholder {
 
 /* allauth form */
 .allauth-form-inner-content p {
-  color: #6c757d;
+  color: #3a3a3a;
 }
 
 .allauth-form-inner-content input:not([name='remember']) {
@@ -109,5 +109,20 @@ input[name='q']::placeholder {
 }
 
 .allauth-form-inner-content input::placeholder {
-  color: #aab7c4;
+  color: #6c757d;
+}
+
+/* Profile */
+#id_default_country,
+#id_default_country option:not(:first-child) {
+    color: #000;
+}
+
+#id_default_country option:first-child {
+    color: #6c757d;
+}
+
+.order-history {
+  max-height: 416px;
+  overflow-y: auto;
 }
