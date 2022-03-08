@@ -74,11 +74,12 @@
                     </a>
                     <ul class="dropdown-menu bg-sub" aria-labelledby="account-lg">
                         {% if request.user.is_authenticated %}
-                        <li><a class="dropdown-item font-sub" href="#">My Profile</a></li>
+                        <li><a class="dropdown-item font-sub" href="{% url 'profile' %}">My Profile</a></li>
                         <li><a class="dropdown-item font-sub" href="#">My Orders</a></li>
                         {% if request.user.is_superuser %}
-                        <li><a class="dropdown-item font-sub" href="#">Customer's report</a></li>
-                        <li><a class="dropdown-item font-sub" href="#">Order review</a></li>
+                        <li><a class="dropdown-item font-sub" href="#">Customer Report</a></li>
+                        <li><a class="dropdown-item font-sub" href="#">Customer Contact</a></li>
+                        <li><a class="dropdown-item font-sub" href="#">Order Review</a></li>
                         {% endif %}
                         {% else %}
                         <li><a class="dropdown-item font-sub" href="{% url 'account_signup' %}">Sign Up</a></li>
@@ -98,8 +99,8 @@
                         <span class="me-2"><i class="fas fa-address-card"></i></span>About
                     </a>
                     <ul class="dropdown-menu bg-sub" aria-labelledby="about-lg">
-                        <li><a class="dropdown-item font-sub" href="#">Our Team</a></li>
-                        <li><a class="dropdown-item font-sub" href="#">Our Partners</a></li>
+                        <li><a class="dropdown-item font-sub" href="#">About Us</a></li>
+                        <li><a class="dropdown-item font-sub" href="#">Contact Us</a></li>
                     </ul>
                 </li>
             </ul>

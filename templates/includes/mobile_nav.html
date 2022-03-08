@@ -85,11 +85,12 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="account">
                             {% if request.user.is_authenticated %}
-                            <li><a class="dropdown-item" href="#">My Profile</a></li>
+                            <li><a class="dropdown-item" href="{% url 'profile' %}">My Profile</a></li>
                             <li><a class="dropdown-item" href="#">My Orders</a></li>
                             {% if request.user.is_superuser %}
-                            <li><a class="dropdown-item" href="#">Customer's report</a></li>
-                            <li><a class="dropdown-item" href="#">Order review</a></li>
+                            <li><a class="dropdown-item" href="#">Customer Report</a></li>
+                            <li><a class="dropdown-item" href="#">Customer Contact</a></li>
+                            <li><a class="dropdown-item" href="#">Order Review</a></li>
                             {% endif %}
                             {% else %}
                             <li><a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a></li>
@@ -109,8 +110,8 @@
                             <span class="me-2"><i class="fas fa-address-card"></i></span>About
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="about">
-                            <li><a class="dropdown-item" href="#">Our Team</a></li>
-                            <li><a class="dropdown-item" href="#">Our Partners</a></li>
+                            <li><a class="dropdown-item" href="#">About Us</a></li>
+                            <li><a class="dropdown-item" href="#">Contact Us</a></li>
                         </ul>
                     </li>
                 </ul>

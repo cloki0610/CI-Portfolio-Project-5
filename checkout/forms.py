@@ -39,5 +39,5 @@ class OrderForm(forms.ModelForm):
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = ('mb-2 rounded-0 ' +
-                                                        'border border-light')
+                                                        'border-success')
             self.fields[field].label = False
