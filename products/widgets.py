@@ -1,4 +1,4 @@
-""" Widget """
+""" Widget for Image field of the Product form """
 from django.forms.widgets import ClearableFileInput
 from django.utils.translation import gettext_lazy as _
 
