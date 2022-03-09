@@ -16,7 +16,8 @@ class ProfileView(LoginRequiredMixin, View):
         orders = profile.orders.all()
         profile_form = UserProfileForm(instance=request.user.userprofile)
         messages.info(request, 'When editing your profile, ' +
-                      'please know that your Full name and email are required.')
+                      'please know that your Full name and email ' +
+                      'are required.')
         return render(request,
                       "profiles/profile.html",
                       {
