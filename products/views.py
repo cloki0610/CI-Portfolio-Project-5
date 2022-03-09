@@ -155,3 +155,29 @@ class EditProductView(LoginRequiredMixin, View):
                 request, 'Update Failed. ' +
                 'Check your form input and try again.')
             return redirect(reverse('edit_product', args=[product.id]))
+
+
+class DeleteProductView(LoginRequiredMixin, View):
+    """ A post method to remove product from database """
+
+    def post(self, request, product_pk):
+        """ POST method """
+        if not request.user.is_superuser:
+            messages.error(request, 'Request denied, only admin can access.')
+            return redirect(reverse('home'))
+        product = get_object_or_404(Product, pk=product_pk)
+        product.delete()
+        messages.success(request, 'Selected product successfully removed.')
+        return redirect(reverse('products'))
+
+
+def delete_confirm(request, product_pk):
+    """ A confirm page before remove a product """
+    if not request.user.is_superuser:
+        messages.error(request, 'Request denied, only admin can access.')
+        return redirect(reverse('home'))
+    product = get_object_or_404(Product, pk=product_pk)
+    return render(request,
+                  "products/delete_product_confirm.html", {
+                      'product': product
+                  })

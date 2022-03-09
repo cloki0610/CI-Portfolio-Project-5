@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="bg-main"></div>
+<div class="container-fluid min-vh-100 pt-5 px-5">
+    <div class="row pt-5 justify-content-center">
+        <div class="col">
+            <h1 class="text-center no-select">Delete {{ product.name }}</h1>
+
+            <p class="text-center my-5">Are you sure remove {{ product.name }} from database?</p>
+            <p class="text-center my-5">This action is irreversible.</p>
+            <div class="row justify-content-center text-center">
+                <!--Return button-->
+                <div class="col-4 mb-2">
+                    <a href="{% url 'products' %}" class="btn btn-outline-success btn-lg mx-auto rounded-0">RETURN</a>
+                </div>
+                <div class="col-4 mb-2">
+                    <!-- Delete Product -->
+                    <form method="POST" action="{% url 'delete_product' product.id %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-lg btn-danger rounded-0 mx-auto rounded-0">
+                            DELETE
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
