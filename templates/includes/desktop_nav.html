@@ -70,7 +70,12 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle font-nav" href="#" id="account-lg" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class="me-2"><i class="fas fa-user"></i></span>My Account
+                        <span class="me-2"><i class="fas fa-user"></i></span>
+                        {% if request.user.is_authenticated %}
+                        {{ user.username | title }}
+                        {% else %}
+                        My Account
+                        {% endif %}
                     </a>
                     <ul class="dropdown-menu bg-sub" aria-labelledby="account-lg">
                         {% if request.user.is_authenticated %}

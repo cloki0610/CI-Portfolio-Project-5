@@ -171,13 +171,16 @@ class DeleteProductView(LoginRequiredMixin, View):
         return redirect(reverse('products'))
 
 
-def delete_confirm(request, product_pk):
+class DeleteConfirmationView(LoginRequiredMixin, View):
     """ A confirm page before remove a product """
-    if not request.user.is_superuser:
-        messages.error(request, 'Request denied, only admin can access.')
-        return redirect(reverse('home'))
-    product = get_object_or_404(Product, pk=product_pk)
-    return render(request,
-                  "products/delete_product_confirm.html", {
-                      'product': product
-                  })
+
+    def get(self, request, product_pk):
+        """ GET method """
+        if not request.user.is_superuser:
+            messages.error(request, 'Request denied, only admin can access.')
+            return redirect(reverse('home'))
+        product = get_object_or_404(Product, pk=product_pk)
+        return render(request,
+                      "products/delete_product_confirm.html", {
+                          'product': product
+                      })
