@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block sub_title %}Edit Product{% endblock %}
+
+{% block content %}
+<div class="bg-main"></div>
+<div class="container-fluid min-vh-100 pt-5 px-5">
+    <div class="row mb-4 pt-5">
+        <div class="col text-center">
+            <h1 class="no-select">Product Management - Edit Product</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 offset-0 col-lg-8 offset-lg-2">
+            <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in product_form %}
+                    {% if field.name != 'image' %}
+                        {{ field | as_crispy_field }}
+                    {% else %}
+                        {{ field }}
+                    {% endif %}
+                {% endfor %}
+                <div class="text-center">
+                    <a class="btn btn-lg btn-outline-success rounded-0 text-uppercase me-3"
+                        href="{% url 'products' %}">Return</a>
+                    <button class="btn btn-lg btn-success rounded-0 text-uppercase" type="submit">Edit Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

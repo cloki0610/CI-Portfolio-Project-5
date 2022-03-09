@@ -77,6 +77,7 @@
                         <li><a class="dropdown-item font-sub" href="{% url 'profile' %}">My Profile</a></li>
                         <li><a class="dropdown-item font-sub" href="#">My Orders</a></li>
                         {% if request.user.is_superuser %}
+                        <li><a class="dropdown-item font-sub" href="{% url 'add_product' %}">New Product</a></li>
                         <li><a class="dropdown-item font-sub" href="#">Customer Report</a></li>
                         <li><a class="dropdown-item font-sub" href="#">Customer Contact</a></li>
                         <li><a class="dropdown-item font-sub" href="#">Order Review</a></li>

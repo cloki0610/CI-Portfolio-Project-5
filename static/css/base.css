@@ -81,6 +81,10 @@ input[name='q']::placeholder {
   transition: 1s;
 }
 
+textarea[name="description"] {
+  max-height: 100px;
+}
+
 /* bootstrap toasts */
 
 .message-container {

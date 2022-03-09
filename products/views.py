@@ -3,8 +3,10 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import View
 from django.core.paginator import Paginator
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
 from django.db.models.functions import Lower
+from .forms import ProductForm
 from .models import Product, Category
 
 
@@ -82,3 +84,74 @@ class ProductDetailView(View):
                 "product": product
             }
         )
+
+
+class AddProductView(LoginRequiredMixin, View):
+    """ A Form to add new product to database """
+
+    def get(self, request):
+        """ GET method """
+        if not request.user.is_superuser:
+            messages.error(request, 'Request denied, only admin can access.')
+            return redirect(reverse('home'))
+        product_form = ProductForm()
+        return render(
+            request,
+            "products/add_product.html",
+            {
+                "product_form": product_form
+            }
+        )
+
+    def post(self, request):
+        """ POST method """
+        if not request.user.is_superuser:
+            messages.error(request, 'Request denied, only admin can access.')
+            return redirect(reverse('home'))
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            product = form.save()
+            messages.success(request, 'New product added successfully.')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(
+                request, 'Action Failed. ' +
+                'Check your form input and try again.')
+            return redirect(reverse('add_product'))
+
+
+class EditProductView(LoginRequiredMixin, View):
+    """ A Form to edit new product to database """
+
+    def get(self, request, product_pk):
+        """ GET method """
+        if not request.user.is_superuser:
+            messages.error(request, 'Request denied, only admin can access.')
+            return redirect(reverse('home'))
+        product = get_object_or_404(Product, pk=product_pk)
+        form = ProductForm(instance=product)
+        messages.info(request, f'Now editing {product.name}.')
+
+        return render(
+            request,
+            'products/edit_product.html', {
+                'product_form': form,
+                'product': product,
+            })
+
+    def post(self, request, product_pk):
+        """ POST method """
+        if not request.user.is_superuser:
+            messages.error(request, 'Request denied, only admin can access.')
+            return redirect(reverse('home'))
+        product = get_object_or_404(Product, pk=product_pk)
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Update { product.name } successfully.')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(
+                request, 'Update Failed. ' +
+                'Check your form input and try again.')
+            return redirect(reverse('edit_product', args=[product.id]))
