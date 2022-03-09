@@ -7,17 +7,15 @@
 <div class="bg-main"></div>
 <div class="container-fluid min-vh-100 pt-5 px-5">
     <div class="row pt-5">
-        <div class="col text-center">
-            <h1 class="no-select">Personal Profile</h1>
-        </div>
-    </div>
-    <div class="row">
         <div class="col-12 col-lg-6">
             <p class="text-muted small no-select">Your Delivery Information</p>
             <form class="mt-3" action="{% url 'profile' %}" method="POST">
                 {% csrf_token %}
                 {{ profile_form|crispy }}
-                <button class="btn btn-success rounded-0 text-uppercase mt-3">Update</button>
+                <button class="btn btn-success rounded-0 text-uppercase mt-1">Update</button>
+                {% if not request.user.is_superuser %}
+                <a href="{% url 'delete_account' %}" class="btn btn-danger rounded-0 text-uppercase mt-1">Delete Account</a>
+                {% endif %}
             </form>
         </div>
         <div class="col-12 col-lg-6 my-5 my-lg-0">
@@ -51,7 +49,7 @@
                         </td>
                         <td>${{ order.grand_total }}</td>
                         <td><a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}"
-                            class="btn-sm btn-success">Review</a></td>
+                            class="btn-sm btn-success rounded-0">Review</a></td>
                         {% empty %}
                         <p class="text-center">No order record yet.</p>
                         {% endfor %}
