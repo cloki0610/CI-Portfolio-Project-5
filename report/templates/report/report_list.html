@@ -5,12 +5,66 @@
 
 {% block content %}
 <div class="bg-main"></div>
-<div class="container-fluid min-vh-100 pt-5 px-5">
+<div class="container-fluid min-vh-100 pt-5 px-0 px-sm-5">
     <div class="row pt-5">
-        <div class="col text-center">
-            <h1 class="no-select fs-2">Customer Report</h1>
+        <div class="col d-flex justify-content-center">
+            <nav aria-label="page-navbar" class="page-navbar mx-auto">
+                <ul class="pagination pagination justify-content-end my-0">
+                    {% for page_num in report_page.paginator.page_range %}
+                    {% if report_page.number is page_num %}
+                    <li class="page-item active" aria-current="page">
+                        <span class="page-link bg-success">{{ page_num }}</span>
+                    </li>
+                    {% else %}
+                    <li class="page-item">
+                        <a href="?page={{ page_num }}{{ param }}" class="page-link link-dark">{{ page_num }}</a>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </nav>
         </div>
     </div>
-    <div class="row"></div>
+    <div class="row mx-auto mt-2" style="max-width: 800px">
+        <div class="accordion accordion-flush" id="ReportList">
+            {% for report in report_page %}
+            <div class="accordion-item border border-success">
+                <h2 class="accordion-header" id="flush-heading{{ report.id }}">
+                    <button class="accordion-button collapsed bg-nav text-light" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapse{{ report.id }}" aria-expanded="false" aria-controls="flush-collapse{{ report.id }}">
+                        {{ report }} on {{ report.report_on }}{% if report.checked %}  (Checked){% endif %}
+                    </button>
+                </h2>
+                <div id="flush-collapse{{ report.id }}" class="accordion-collapse collapse" aria-labelledby="flush-heading{{ report.id }}"
+                    data-bs-parent="#ReportList">
+                    <div class="accordion-body">
+                        <span class="mb-2 d-flex justify-content-between">
+                            <span>Customer name: {{ report.name }}</span>
+                            <span class="float-end">
+                                <form action="{% url 'report_checked' report.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-sm btn-success rounded-0">
+                                        {% if report.checked %}
+                                        Checked
+                                        {% else %}
+                                        Check
+                                        {% endif%}
+                                    </button>
+                                </form>
+                            </span>
+                        </span>
+                        <p>Problem Type: {{ report.get_problem_type_display }}</p>
+                        <p>Contact E-mail: {{ report.contact_email }}</p>
+                        <p>{{ report.problem_description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="row border border-success rounded">
+                <p class="no-select text-center fs-6 p-5">Here is no any report yet.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 {% endblock %}

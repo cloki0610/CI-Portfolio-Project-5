@@ -59,7 +59,6 @@ class ReportListView(LoginRequiredMixin, View):
         page_number = request.GET.get('page')
         report_page = report_paginator.get_page(page_number)
 
-        # return data with template
         return render(
             request,
             "report/report_list.html",
@@ -67,3 +66,21 @@ class ReportListView(LoginRequiredMixin, View):
                 "report_page": report_page
             }
         )
+
+
+class ReportChecked(LoginRequiredMixin, View):
+    """ Toggle button to set report.checked to true of false """
+
+    def post(self, request, report_id):
+        """ POST method """
+        if not request.user.is_superuser:
+            messages.error(request, 'Request denied, only admin can access.')
+            return redirect(reverse('home'))
+        report = get_object_or_404(Report, pk=report_id)
+        if report.checked:
+            report.checked = False
+            report.save()
+        else:
+            report.checked = True
+            report.save()
+        return redirect(reverse('report_list'))

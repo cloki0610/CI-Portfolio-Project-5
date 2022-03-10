@@ -97,7 +97,7 @@ Category
                             <span class="fw-bold">${{ product.price }}</span>
                             {% if request.user.is_superuser %}
                             <span class="float-end">
-                                <a href="{% url 'edit_product' product.id %}" class="btn btn-sm btn-secondary"><i class="fas fa-edit"></i></a>
+                                <a href="{% url 'edit_product' product.id %}" class="btn btn-sm btn-secondary rounded-0"><i class="fas fa-edit"></i></a>
                                 <a href="{% url 'delete_confirm' product.id %}" class="btn btn-sm btn-danger rounded-0"><i class="fas fa-trash-alt"></i></i></a>
                             </span>
                             {% endif %}
