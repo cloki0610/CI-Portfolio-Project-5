@@ -32,7 +32,7 @@
                 <h2 class="accordion-header" id="flush-heading{{ report.id }}">
                     <button class="accordion-button collapsed bg-nav text-light" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapse{{ report.id }}" aria-expanded="false" aria-controls="flush-collapse{{ report.id }}">
-                        {{ report }} on {{ report.report_on }}{% if report.checked %}  (Checked){% endif %}
+                        {{ report }} on {{ report.report_on | date:"j M Y f A" }}{% if report.checked %}  (Checked){% endif %}
                     </button>
                 </h2>
                 <div id="flush-collapse{{ report.id }}" class="accordion-collapse collapse" aria-labelledby="flush-heading{{ report.id }}"
