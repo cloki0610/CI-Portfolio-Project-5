@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block sub_title %}Report{% endblock %}
+
+{% block content %}
+<div class="bg-main"></div>
+<div class="container-fluid min-vh-100 pt-5 px-5">
+    <div class="row pt-5">
+        <div class="col text-center">
+            <h1 class="no-select fs-2">Report Product</h1>
+            <p class="no-select">Product name: {{ product.name }}</p>
+        </div>
+    </div>
+    <div class="row mx-auto mt-2" style="max-width: 800px">
+        <div class="col-12 offset-0 col-lg-8 offset-lg-2">
+            <form method="POST" action="{% url 'report' product.id %}" class="form mb-2">
+                {% csrf_token %}
+                {{ report_form | crispy }}
+                <div class="text-center pt-3">
+                    <a class="btn btn-lg btn-outline-success rounded-0 text-uppercase me-3"
+                        href="{% url 'product_detail' product.id %}">Return</a>
+                    <button class="btn btn-lg btn-success rounded-0 text-uppercase" type="submit">Report</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -11,7 +11,7 @@
             <h1 class="no-select fs-4">Product Management - New Product</h1>
         </div>
     </div>
-    <div class="row">
+    <div class="row mx-auto" style="max-width: 900px">
         <div class="col-12 offset-0 col-lg-8 offset-lg-2">
             <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
