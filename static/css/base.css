@@ -162,3 +162,16 @@ textarea[name="description"] {
 .about-title {
   color: #FFF1CE;
 }
+
+.btn-send {
+  background-color: inherit;
+  border: 1px solid #FFF1CE;
+  color: #FFF1CE;
+}
+
+.btn-send:hover {
+  background-color: #FFF1CE;
+  border: 1px solid #139487;
+  color: #139487;
+  transition: 1.5s;
+}

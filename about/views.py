@@ -14,11 +14,13 @@ class About(generic.TemplateView):
 
 class ContactUs(generic.FormView):
     """ Return a form"""
+    model = Contact
     template_name = 'about/contact.html'
     form_class = ContactForm
     success_url = reverse_lazy('products')
 
     def form_valid(self, form):
+        form.save()
         messages.success(self.request, 'Thank you for your support. ' +
                          'Our admin will contact you soon!')
         return super().form_valid(form)
