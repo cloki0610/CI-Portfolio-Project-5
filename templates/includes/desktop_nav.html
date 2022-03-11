@@ -83,7 +83,7 @@
                         {% if request.user.is_superuser %}
                         <li><a class="dropdown-item font-sub" href="{% url 'add_product' %}">New Product</a></li>
                         <li><a class="dropdown-item font-sub" href="{% url 'report_list' %}">Customer Report</a></li>
-                        <li><a class="dropdown-item font-sub" href="#">Customer Contact</a></li>
+                        <li><a class="dropdown-item font-sub" href="{% url 'contact_list' %}">Customer Contact</a></li>
                         <li><a class="dropdown-item font-sub" href="#">Order Review</a></li>
                         {% endif %}
                         {% else %}
@@ -104,8 +104,8 @@
                         <span class="me-2"><i class="fas fa-address-card"></i></span>About
                     </a>
                     <ul class="dropdown-menu bg-sub" aria-labelledby="about-lg">
-                        <li><a class="dropdown-item font-sub" href="#">About Us</a></li>
-                        <li><a class="dropdown-item font-sub" href="#">Contact Us</a></li>
+                        <li><a class="dropdown-item font-sub" href="{% url 'about' %}">About Us</a></li>
+                        <li><a class="dropdown-item font-sub" href="{% url 'contact_us' %}">Contact Us</a></li>
                     </ul>
                 </li>
             </ul>

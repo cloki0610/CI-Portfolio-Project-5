@@ -134,11 +134,11 @@ textarea[name="description"] {
 /* Profile */
 #id_default_country,
 #id_default_country option:not(:first-child) {
-    color: #000;
+  color: #000;
 }
 
 #id_default_country option:first-child {
-    color: #6c757d;
+  color: #6c757d;
 }
 
 .order-history {
@@ -148,7 +148,17 @@ textarea[name="description"] {
 
 /* Report List */
 .accordion-button:not(.collapsed) {
-  color: #139487!important;
-  background-color: #fafafa!important;
+  color: #139487 !important;
+  background-color: #fafafa !important;
   box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+}
+
+/* About */
+.about-card {
+  max-width: 600px;
+  background-color: #139487;
+}
+
+.about-title {
+  color: #FFF1CE;
 }
