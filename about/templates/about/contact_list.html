@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_cust %}
+<link rel="stylesheet" href="{% static 'about/css/about.css' %}">
+{% endblock %}
+
+{% block sub_title %}Customer Contact{% endblock %}
+
+{% block content %}
+<div class="container-fluid bg-index min-vh-100 pt-5 px-2 px-sm-5">
+    <div class="row gx-0 pt-5 mx-auto mt-5 text-center" style="max-width: 600px">
+        <div class="col d-flex justify-content-center">
+        <!--A select box to show all customer's name-->
+        <select class="form-select form-select-lg form-select-contact rounded-0" aria-label="Default select example" id="findByName">
+            {% for contact in contact_list %}
+                {% if forloop.first %}
+                <option value="contact-{{ contact.id }}" selected>{{ contact.name }}</option>
+                {% else %}
+                <option value="contact-{{ contact.id }}">{{ contact.name }}</option>
+                {% endif %}
+                {% empty %}
+                <option selected>No customer contact yet.</option>
+            {% endfor %}
+          </select>
+        </div>
+    </div>
+    <div class="row mx-auto text-center" style="max-width: 600px">
+        {% for contact in contact_list %}
+        <div class="card text-start contacts px-0 rounded-0" id="contact-{{ contact.id }}">
+            <div class="card-body pt-3 pb-5 px-5">
+              <p class="card-text"><strong>My E-mail:</strong> {{ contact.email }}</p>
+              <p class="card-text"><strong>Other contact method:</strong>{{ contact.other_contact }}</p>
+              <p class="card-text"><strong>My Message:</strong></p>
+              <p class="card-text">{{ contact.message }}</p>
+            </div>
+            <div class="card-footer text-muted text-end">
+                {{ contact.date | date:"j M Y f A" }}
+            </div>
+        </div>
+        {% empty%}
+        <div class="row border border-success rounded-0">
+            <p class="no-select text-center fs-6 p-5">Here is no any contact yet.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script src="{% static 'about/js/contact_list.js' %}"></script>
+{% endblock %}

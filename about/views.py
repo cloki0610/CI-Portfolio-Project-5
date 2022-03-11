@@ -29,4 +29,3 @@ class ContactUs(generic.FormView):
 class ContactList(LoginRequiredMixin, generic.ListView):
     """ Show a list of contact details """
     model = Contact
-    paginate_by = 1

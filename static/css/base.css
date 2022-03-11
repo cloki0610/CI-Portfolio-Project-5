@@ -152,26 +152,3 @@ textarea[name="description"] {
   background-color: #fafafa !important;
   box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
 }
-
-/* About */
-.about-card {
-  max-width: 600px;
-  background-color: #139487;
-}
-
-.about-title {
-  color: #FFF1CE;
-}
-
-.btn-send {
-  background-color: inherit;
-  border: 1px solid #FFF1CE;
-  color: #FFF1CE;
-}
-
-.btn-send:hover {
-  background-color: #FFF1CE;
-  border: 1px solid #139487;
-  color: #139487;
-  transition: 1.5s;
-}

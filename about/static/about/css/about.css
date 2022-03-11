@@ -1,0 +1,40 @@
+/* About */
+.about-card {
+    max-width: 600px;
+    background-color: #139487;
+}
+
+.about-title {
+    color: #FFF1CE;
+}
+
+
+/* Contact Form */
+.btn-send {
+    background-color: inherit;
+    border: 1px solid #FFF1CE;
+    color: #FFF1CE;
+}
+
+.btn-send:hover {
+    background-color: #FFF1CE;
+    border: 1px solid #139487;
+    color: #139487;
+    transition: .15s ease-in-out;
+}
+
+/* Contact List */
+.form-select-contact {
+    background-color: #139487;
+    color: #FFF1CE;
+}
+
+.dropdown-menu {
+    width: 300px !important;
+    height: 400px !important;
+}
+
+.contacts {
+    display: none;
+    height: 50%;
+}
