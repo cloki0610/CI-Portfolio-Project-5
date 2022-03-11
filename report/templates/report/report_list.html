@@ -28,9 +28,9 @@
     <div class="row mx-auto mt-2" style="max-width: 800px">
         <div class="accordion accordion-flush" id="ReportList">
             {% for report in report_page %}
-            <div class="accordion-item border border-success">
+            <div class="accordion-item border {% if report.checked %}border-secondary{% else %}border-success{% endif %}">
                 <h2 class="accordion-header" id="flush-heading{{ report.id }}">
-                    <button class="accordion-button collapsed bg-nav text-light" type="button" data-bs-toggle="collapse"
+                    <button class="accordion-button collapsed {% if report.checked %}bg-secondary{% else %}bg-nav{% endif %} text-light" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapse{{ report.id }}" aria-expanded="false" aria-controls="flush-collapse{{ report.id }}">
                         {{ report }} on {{ report.report_on | date:"j M Y f A" }}{% if report.checked %}  (Checked){% endif %}
                     </button>
@@ -43,7 +43,7 @@
                             <span class="float-end">
                                 <form action="{% url 'report_checked' report.id %}" method="POST">
                                     {% csrf_token %}
-                                    <button type="submit" class="btn btn-sm btn-success rounded-0">
+                                    <button type="submit" class="btn btn-sm {% if report.checked %}btn-secondary{% else %}btn-success{% endif %} rounded-0">
                                         {% if report.checked %}
                                         Checked
                                         {% else %}
