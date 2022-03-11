@@ -35,7 +35,7 @@ class ProductForm(forms.ModelForm):
             if (field == 'sku' or field == 'name' or field == 'description' or
                     field == 'price' or field == 'image_url'):
                 if self.fields[field].required:
-                    placeholder = f'{placeholders[field]} *'
+                    placeholder = f'{placeholders[field]} (Required)'
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder

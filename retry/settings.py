@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'profiles',
     'order_history',
     'report',
+    'about',
 ]
 
 SITE_ID = 1

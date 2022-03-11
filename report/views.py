@@ -77,10 +77,6 @@ class ReportChecked(LoginRequiredMixin, View):
             messages.error(request, 'Request denied, only admin can access.')
             return redirect(reverse('home'))
         report = get_object_or_404(Report, pk=report_id)
-        if report.checked:
-            report.checked = False
-            report.save()
-        else:
-            report.checked = True
-            report.save()
+        report.checked = not report.checked
+        report.save()
         return redirect(reverse('report_list'))
