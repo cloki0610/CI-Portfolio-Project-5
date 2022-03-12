@@ -4,6 +4,7 @@ from django.views import generic
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.utils.safestring import mark_safe
 from .forms import ContactForm
 from .models import Contact
 
@@ -22,8 +23,9 @@ class ContactUs(generic.FormView):
 
     def form_valid(self, form):
         form.save()
-        messages.success(self.request, 'Thank you for your support. ' +
-                         'Our admin will contact you soon!')
+        messages.success(self.request,
+                         mark_safe('Thank you for your support.' +
+                                   '<br/>Our admin will contact you soon!'))
         return super().form_valid(form)
 
 
@@ -34,6 +36,8 @@ class ContactList(LoginRequiredMixin, generic.ListView):
     def get(self, request, *args, **kwargs):
         """ GET method """
         if not request.user.is_superuser:
-            messages.error(request, 'Request denied, only admin can access.')
+            messages.error(request,
+                           mark_safe('Request denied.<br/>'
+                                     'Only admin can access.'))
             return redirect(reverse('home'))
         return super(ContactList, self).get(request, *args, **kwargs)

@@ -23,13 +23,13 @@ class AddToCartView(View):
         if item_id in list(cart.keys()):
             cart[item_id] += quantity
             messages.success(request,
-                             (f'{cart[item_id]} of {product.name} '
-                              f'currently in your cart.'))
+                             (f'Added {cart[item_id]} of {product.name} '
+                              f'to your cart.'))
         else:
             cart[item_id] = quantity
             messages.success(request,
-                             (f'{cart[item_id]} of {product.name} '
-                              f'currently in your cart.'))
+                             (f'Added {cart[item_id]} of {product.name} '
+                              f'to your cart.'))
 
         request.session['cart'] = cart
         return redirect(redirect_url)
@@ -47,8 +47,8 @@ class UpdateItemView(View):
         if quantity > 0:
             cart[item_id] = quantity
             messages.success(request,
-                             (f'{cart[item_id]} of {product.name}'
-                              f' currently in your cart.'))
+                             (f'Added {cart[item_id]} of {product.name} '
+                              f'to your cart.'))
         else:
             cart.pop(item_id)
             messages.success(request,

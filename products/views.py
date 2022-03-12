@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.utils.safestring import mark_safe
 from .forms import ProductForm
 from .models import Product, Category
 
@@ -31,7 +32,7 @@ class ProductsView(View):
             param += f'&q={query}'
             if not query:
                 messages.error(request,
-                               "Please enter a keyword for search")
+                               "Please enter a keyword for search.")
                 return redirect(reverse('products'))
             queries = Q(name__icontains=query
                         ) | Q(description__icontains=query)
@@ -92,7 +93,9 @@ class AddProductView(LoginRequiredMixin, View):
     def get(self, request):
         """ GET method """
         if not request.user.is_superuser:
-            messages.error(request, 'Request denied, only admin can access.')
+            messages.error(request,
+                           mark_safe('Request denied.<br/>'
+                                     'Only admin can access.'))
             return redirect(reverse('home'))
         product_form = ProductForm()
         return render(
@@ -106,7 +109,9 @@ class AddProductView(LoginRequiredMixin, View):
     def post(self, request):
         """ POST method """
         if not request.user.is_superuser:
-            messages.error(request, 'Request denied, only admin can access.')
+            messages.error(request,
+                           mark_safe('Request denied.<br/>'
+                                     'Only admin can access.'))
             return redirect(reverse('home'))
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -114,9 +119,9 @@ class AddProductView(LoginRequiredMixin, View):
             messages.success(request, 'New product added successfully.')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(
-                request, 'Action Failed. ' +
-                'Check your form input and try again.')
+            messages.error(request,
+                           mark_safe('Action Failed.<br/>'
+                                     'Check your form input and try again.'))
             return redirect(reverse('add_product'))
 
 
@@ -126,7 +131,9 @@ class EditProductView(LoginRequiredMixin, View):
     def get(self, request, product_pk):
         """ GET method """
         if not request.user.is_superuser:
-            messages.error(request, 'Request denied, only admin can access.')
+            messages.error(request,
+                           mark_safe('Request denied.<br/>'
+                                     'Only admin can access.'))
             return redirect(reverse('home'))
         product = get_object_or_404(Product, pk=product_pk)
         form = ProductForm(instance=product)
@@ -142,7 +149,9 @@ class EditProductView(LoginRequiredMixin, View):
     def post(self, request, product_pk):
         """ POST method """
         if not request.user.is_superuser:
-            messages.error(request, 'Request denied, only admin can access.')
+            messages.error(request,
+                           mark_safe('Request denied.<br/>'
+                                     'Only admin can access.'))
             return redirect(reverse('home'))
         product = get_object_or_404(Product, pk=product_pk)
         form = ProductForm(request.POST, request.FILES, instance=product)
@@ -151,9 +160,9 @@ class EditProductView(LoginRequiredMixin, View):
             messages.success(request, f'Update { product.name } successfully.')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(
-                request, 'Update Failed. ' +
-                'Check your form input and try again.')
+            messages.error(request,
+                           mark_safe('Update Failed.<br/>'
+                                     'Check your form input and try again.'))
             return redirect(reverse('edit_product', args=[product.id]))
 
 
@@ -163,7 +172,9 @@ class DeleteProductView(LoginRequiredMixin, View):
     def post(self, request, product_pk):
         """ POST method """
         if not request.user.is_superuser:
-            messages.error(request, 'Request denied, only admin can access.')
+            messages.error(request,
+                           mark_safe('Request denied.<br/>'
+                                     'Only admin can access.'))
             return redirect(reverse('home'))
         product = get_object_or_404(Product, pk=product_pk)
         product.delete()
@@ -177,7 +188,9 @@ class DeleteConfirmationView(LoginRequiredMixin, View):
     def get(self, request, product_pk):
         """ GET method """
         if not request.user.is_superuser:
-            messages.error(request, 'Request denied, only admin can access.')
+            messages.error(request,
+                           mark_safe('Request denied.<br/>'
+                                     'Only admin can access.'))
             return redirect(reverse('home'))
         product = get_object_or_404(Product, pk=product_pk)
         return render(request,

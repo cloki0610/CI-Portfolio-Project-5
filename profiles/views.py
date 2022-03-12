@@ -4,6 +4,7 @@ from django.views import View
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import ObjectDoesNotExist
+from django.utils.safestring import mark_safe
 from .forms import UserProfileForm
 
 
@@ -15,9 +16,10 @@ class ProfileView(LoginRequiredMixin, View):
         profile = request.user.userprofile
         orders = profile.orders.all()
         profile_form = UserProfileForm(instance=request.user.userprofile)
-        messages.info(request, 'When editing your profile, ' +
-                      'please know that your Full name and email ' +
-                      'are required.')
+        messages.info(request,
+                      mark_safe('If you need to edit your profile.<br/>'
+                                'Please know that your Full name and E-mail '
+                                'are required.'))
         return render(request,
                       "profiles/profile.html",
                       {
@@ -37,7 +39,8 @@ class ProfileView(LoginRequiredMixin, View):
         else:
             print(profile_form.errors)
             messages.error(request,
-                           'Updated Invalid, Edit and Try Again!')
+                           mark_safe('Updated Invalid.<br/>'
+                                     'Edit and Try Again!'))
         # redirect to profile page
         return redirect(reverse('profile'))
 
@@ -49,12 +52,14 @@ class DeleteAccount(LoginRequiredMixin, View):
         # return template for confirmation before delete
         """ get method """
         if request.user.is_superuser:
-            messages.error(request, 'Request denied, superuser ' +
-                           'should contact our team before remove account.')
+            messages.error(request,
+                           mark_safe('Request denied.<br/>Superuser '
+                                     'must contact our team for this action.'))
             return redirect(reverse('home'))
         messages.warning(request,
-                         'You\'re now tring to remove your account. ' +
-                         'Please read our warning message before you leaving.')
+                         mark_safe("You're now tring to remove your account."
+                                   "<br/>Please read our warning message "
+                                   "before your leaving."))
         return render(
             request,
             "profiles/delete_account.html",
@@ -67,13 +72,15 @@ class DeleteAction(LoginRequiredMixin, View):
     def post(self, request):
         """ POST method """
         if request.user.is_superuser:
-            messages.error(request, 'Request denied, superuser ' +
-                           'should contact our team before remove account.')
+            messages.error(request,
+                           mark_safe('Request denied.<br/>Superuser '
+                                     'must contact our team for this action.'))
             return redirect(reverse('home'))
         try:
             request.user.delete()
             messages.success(request,
-                             'Thanks for join us and hope to see you again!')
+                             mark_safe('Thanks for join us.'
+                                       'Hope to meet you again someday!'))
         # if user record not exist then raise the exception
         except ObjectDoesNotExist:
             messages.error(request, "User does not exist.")

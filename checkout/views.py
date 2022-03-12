@@ -7,6 +7,7 @@ from django.views.decorators.http import require_POST
 from django.views import View
 from django.contrib import messages
 from django.conf import settings
+from django.utils.safestring import mark_safe
 from cart.contexts import cart_contents
 from products.models import Product
 from profiles.models import UserProfile
@@ -25,12 +26,14 @@ class CheckoutView(View):
         cart = request.session.get('cart', {})
         if not cart:
             messages.error(
-                request, ("You cart still empty, "
-                          "please add some item before checkout."))
+                request, mark_safe("Your cart still empty.<br/>"
+                                   "Please add some item before checkout."))
             return redirect(reverse('products'))
         if not stripe_public_key:
-            messages.warning(request, 'Stripe public key is missing. \
-                Please check your environment setting and try again.')
+            messages.warning(request,
+                             mark_safe('Stripe public key is missing.<br/>'
+                                       'Please check your environment '
+                                       'setting and try again.'))
 
         current_cart = cart_contents(request)
         total = current_cart['total_cost']
@@ -99,11 +102,10 @@ class CheckoutView(View):
                     )
                     order_line_item.save()
                 except Product.DoesNotExist:
-                    messages.error(request, (
-                        "One of the products in your cart"
-                        " wasn't found in our database. "
-                        "Please contact us for assistance!")
-                    )
+                    messages.error(request,
+                                   mark_safe("One or more products not found."
+                                             "<br/>Please contact us for "
+                                             "assistance!"))
                     order.delete()
                     return redirect(reverse('view_cart'))
 
@@ -111,8 +113,10 @@ class CheckoutView(View):
             return redirect(reverse('checkout_success',
                                     args=[order.order_number]))
         else:
-            messages.error(request, 'Form input error. \
-                Please check your information and try again.')
+            messages.error(request,
+                           mark_safe('Form input error.<br/>'
+                                     'Please check your '
+                                     'information and try again.'))
             return redirect(reverse('view_cart'))
 
 
@@ -145,8 +149,11 @@ class CheckoutSuccessView(View):
                 if user_profile_form.is_valid():
                     user_profile_form.save()
 
-        messages.success(request, f'Order(Ref:{order_number}) successfully processed! \
-            A confirmation email will be sent to {order.email}.')
+        messages.success(request,
+                         mark_safe(f'Order(Ref:{order_number}) '
+                                   'successfully processed!'
+                                   'A confirmation email will be '
+                                   f'sent to {order.email}.'))
 
         if 'cart' in request.session:
             del request.session['cart']
@@ -171,6 +178,8 @@ def cache_checkout_data(request):
         })
         return HttpResponse(status=200)
     except Exception as error_msg:
-        messages.error(request, 'Sorry, your payment cannot be \
-            processed right now. Please try again later.')
+        messages.error(request,
+                       mark_safe('Sorry, your payment cannot be'
+                                 'processed right now.<br/>'
+                                 'Please try again later.'))
         return HttpResponse(content=error_msg, status=400)

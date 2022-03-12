@@ -4,6 +4,7 @@ from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.core.paginator import Paginator
+from django.utils.safestring import mark_safe
 from products.models import Product
 from .forms import ReportForm
 from .models import Report
@@ -36,12 +37,13 @@ class ReportView(View):
             report.product = product
             report.save()
             messages.success(request,
-                             'Sorry for your bad experience.' +
-                             'We will do as much as we can ' +
-                             'to solve the problem.')
+                             mark_safe('Sorry for your bad experience.<br/>'
+                                       'We will do as much as we can '
+                                       'to solve the problem.'))
         else:
             messages.error(request,
-                           'Submit failed, Please check and Try Again!')
+                           mark_safe('Submit failed.<br/>'
+                                     'Please check and Try Again!'))
             return redirect(reverse('report', args=[product_pk]))
         return redirect(reverse('product_detail', args=[product_pk]))
 
@@ -52,7 +54,9 @@ class ReportListView(LoginRequiredMixin, View):
     def get(self, request):
         """ GET method """
         if not request.user.is_superuser:
-            messages.error(request, 'Request denied, only admin can access.')
+            messages.error(request,
+                           mark_safe('Request denied.<br/>'
+                                     'Only admin can access.'))
             return redirect(reverse('home'))
         reports = Report.objects.all().order_by('-report_on')
         report_paginator = Paginator(reports, 5)
@@ -74,7 +78,9 @@ class ReportChecked(LoginRequiredMixin, View):
     def post(self, request, report_id):
         """ POST method """
         if not request.user.is_superuser:
-            messages.error(request, 'Request denied, only admin can access.')
+            messages.error(request,
+                           mark_safe('Request denied.<br/>'
+                                     'Only admin can access.'))
             return redirect(reverse('home'))
         report = get_object_or_404(Report, pk=report_id)
         report.checked = not report.checked
