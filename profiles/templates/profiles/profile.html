@@ -14,7 +14,8 @@
                 {{ profile_form|crispy }}
                 <button class="btn btn-success rounded-0 text-uppercase mt-1">Update</button>
                 {% if not request.user.is_superuser %}
-                <a href="{% url 'delete_account' %}" class="btn btn-danger rounded-0 text-uppercase mt-1">Delete Account</a>
+                <a href="{% url 'delete_account' %}" class="btn btn-danger rounded-0 text-uppercase mt-1">Delete
+                    Account</a>
                 {% endif %}
             </form>
         </div>
@@ -32,24 +33,29 @@
                     </thead>
                     <tbody>
                         {% for order in orders %}
-                        <td>
-                            {{ order.order_number|truncatechars:6 }}
-                        </td>
-                        <td>{{ order.date }}</td>
-                        <td>
-                            <ul class="list-unstyled">
-                                {% for item in order.lineitems.all %}
-                                <li class="small">
-                                    {{ item.product.name }} x{{ item.quantity }}
-                                </li>
-                                {% empty %}
-                                <li class="small">This is a blank order, please contact us for more infromation.</li>
-                                {% endfor %}
-                            </ul>
-                        </td>
-                        <td>${{ order.grand_total }}</td>
-                        <td><a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}"
-                            class="btn-sm btn-success rounded-0">Review</a></td>
+                        <tr>
+                            <td>
+                                <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}" class="link-dark">
+                                    {{ order.order_number|truncatechars:6 }}
+                                </a>
+                            </td>
+                            <td>{{ order.date }}</td>
+                            <td>
+                                <ul class="list-unstyled">
+                                    {% for item in order.lineitems.all %}
+                                    <li class="small">
+                                        {{ item.product.name }} x{{ item.quantity }}
+                                    </li>
+                                    {% empty %}
+                                    <li class="small">This is a blank order, please contact us for more infromation.
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                            <td>${{ order.grand_total }}</td>
+                            <td><a href="#" title="{{ order.order_number }}-review"
+                                    class="btn-sm btn-success rounded-0">Review</a></td>
+                        </tr>
                         {% empty %}
                         <p class="text-center">No order record yet.</p>
                         {% endfor %}

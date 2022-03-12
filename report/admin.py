@@ -8,5 +8,6 @@ class ReportAdmin(admin.ModelAdmin):
     """ Show Report model in admin site with follow rules """
     list_filter = ('problem_type', 'checked')
     list_display = ('name', 'problem_type', 'report_on',)
+    readonly_fields = ('name', 'product', 'report_on',)
     search_fields = ['name', 'product', 'problem_description']
     ordering = ('-report_on',)

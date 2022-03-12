@@ -7,5 +7,6 @@ from .models import Contact
 class ContactAdmin(admin.ModelAdmin):
     """ Show Contact model in admin site with follow rules """
     list_display = ('name', 'email', 'date',)
+    readonly_fields = ('name', 'date')
     search_fields = ['name', 'message']
     ordering = ('-date',)
