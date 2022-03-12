@@ -1,8 +1,9 @@
 """ Views of about """
+from django.shortcuts import redirect, reverse
 from django.views import generic
 from django.urls import reverse_lazy
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import ContactForm
 from .models import Contact
 
@@ -29,3 +30,10 @@ class ContactUs(generic.FormView):
 class ContactList(LoginRequiredMixin, generic.ListView):
     """ Show a list of contact details """
     model = Contact
+
+    def get(self, request, *args, **kwargs):
+        """ GET method """
+        if not request.user.is_superuser:
+            messages.error(request, 'Request denied, only admin can access.')
+            return redirect(reverse('home'))
+        return super(ContactList, self).get(request, *args, **kwargs)

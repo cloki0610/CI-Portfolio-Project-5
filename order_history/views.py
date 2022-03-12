@@ -39,8 +39,3 @@ class OrderReView(LoginRequiredMixin, View):
                       'order_history/order_review.html')
 
 # Todo:EditOrderReView(get, post), DeleteOrderReview(post), Comment(post)
-class EditOrderReView(LoginRequiredMixin, View):
-    """ Send User a form to edit their existed review """
-
-    def get(self, request, slug):
-        return render()
