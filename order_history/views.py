@@ -25,3 +25,22 @@ class OrderHistoryView(LoginRequiredMixin, View):
                       {
                           'order': order,
                       })
+
+
+class OrderReView(LoginRequiredMixin, View):
+    """
+    If user do not have its review record, redirect to create page
+    Else display the review record with comments
+    """
+
+    def get(self, request, slug):
+        """ GET method """
+        return render(request,
+                      'order_history/order_review.html')
+
+# Todo:EditOrderReView(get, post), DeleteOrderReview(post), Comment(post)
+class EditOrderReView(LoginRequiredMixin, View):
+    """ Send User a form to edit their existed review """
+
+    def get(self, request, slug):
+        return render()
