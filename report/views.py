@@ -42,7 +42,7 @@ class ReportView(View):
                                        'to solve the problem.'))
         else:
             messages.error(request,
-                           mark_safe('Submit failed.<br/>'
+                           mark_safe('Invalid Input.<br/>'
                                      'Please check and Try Again!'))
             return redirect(reverse('report', args=[product_pk]))
         return redirect(reverse('product_detail', args=[product_pk]))

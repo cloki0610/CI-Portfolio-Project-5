@@ -114,7 +114,7 @@ class CheckoutView(View):
                                     args=[order.order_number]))
         else:
             messages.error(request,
-                           mark_safe('Form input error.<br/>'
+                           mark_safe('Invalid Input.<br/>'
                                      'Please check your '
                                      'information and try again.'))
             return redirect(reverse('view_cart'))

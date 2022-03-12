@@ -23,9 +23,7 @@ class ContactUs(generic.FormView):
 
     def form_valid(self, form):
         form.save()
-        messages.success(self.request,
-                         mark_safe('Thank you for your support.' +
-                                   '<br/>Our admin will contact you soon!'))
+        messages.success(self.request, 'Thank you for your support!')
         return super().form_valid(form)
 
 

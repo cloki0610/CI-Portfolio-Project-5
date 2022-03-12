@@ -40,7 +40,7 @@ class ProfileView(LoginRequiredMixin, View):
             print(profile_form.errors)
             messages.error(request,
                            mark_safe('Updated Invalid.<br/>'
-                                     'Edit and Try Again!'))
+                                     'Please check and try again!'))
         # redirect to profile page
         return redirect(reverse('profile'))
 
