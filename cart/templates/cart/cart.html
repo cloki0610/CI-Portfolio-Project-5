@@ -89,14 +89,18 @@
                 <th class="table-success text-center">Your shopping cart is empty.</th>
             </table>
             {% endif %}
-            <div class="text-end">
-                <a href="{{ request.META.HTTP_REFERER }}" class="btn btn-md btn-outline-success"><i class="fas fa-angle-double-left"></i> Back to Shop</a>
-                <a href="{% url 'checkout' %}" class="btn btn-success btn-md">
-                    <span class="text-uppercase">Checkout</span>
-                    <span class="icon">
-                        <i class="fas fa-money-bill-wave"></i>
-                    </span>
-                </a>
+            <div class="row justify-content-md-end text-md-end">
+                <div class="col-12 col-md-3 col-lg-2">
+                    <a href="{{ request.META.HTTP_REFERER }}" class="btn btn-md btn-outline-success w-100"><i class="fas fa-angle-double-left"></i> To Shop</a>
+                </div>
+                <div class="col-12 col-md-3 col-lg-2 mt-2 mt-md-0">
+                    <a href="{% url 'checkout' %}" class="btn btn-success btn-md w-100">
+                        <span class="text-uppercase">Checkout</span>
+                        <span class="icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

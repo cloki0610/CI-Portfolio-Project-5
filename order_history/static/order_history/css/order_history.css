@@ -25,12 +25,12 @@
 
 #comment-text {
     height: calc(100vh - 510px);;
-    min-height: 191px;
+    min-height: 221px;
     overflow-y: auto;
 }
 
 #comment-form {
     height: calc(100vh - 540px);;
-    min-height: 191px;
+    min-height: 161px;
     overflow-y: auto;
 }
