@@ -68,7 +68,7 @@ input[name='q']::placeholder {
   color: #aab7c4;
 }
 
-/* index */
+/* Home */
 .bg-index {
   background: url('/media/index-background.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -83,7 +83,7 @@ input[name='q']::placeholder {
   filter: brightness(110%);
 }
 
-/* product */
+/* Product */
 .product-card:hover {
   background-color: #139487;
   color: #fafafa !important;
@@ -115,6 +115,19 @@ textarea[name="description"] {
 
 #detail-img {
   height: 28rem;
+}
+
+/* Cart */
+.btt-button {
+  height: 42px;
+  width: 42px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+.btt-link{
+  cursor: pointer;
 }
 
 /* bootstrap toasts */
