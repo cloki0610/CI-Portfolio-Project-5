@@ -3,21 +3,34 @@
 }
 
 #review {
-    height: 60%;
+    height: calc(100vh - 200px);
     min-height: 400px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+#review-body {
+    height: calc(100vh - 300px);
+    min-height: 300px;
     box-sizing: border-box;
     overflow-y: auto;
 }
 
 #comments {
-    height: 60%;
+    height: calc(100vh - 300px);
     min-height: 400px;
     box-sizing: border-box;
     overflow-y: auto;
 }
 
-#comment-text, #comment-form {
-    height: 30%;
+#comment-text {
+    height: calc(100vh - 510px);;
+    min-height: 191px;
+    overflow-y: auto;
+}
+
+#comment-form {
+    height: calc(100vh - 540px);;
     min-height: 191px;
     overflow-y: auto;
 }

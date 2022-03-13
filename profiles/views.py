@@ -1,10 +1,11 @@
 """ View of profiles """
 from django.shortcuts import render, redirect, reverse
-from django.views import View
+from django.views import generic, View
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import ObjectDoesNotExist
 from django.utils.safestring import mark_safe
+from checkout.models import Order
 from .forms import UserProfileForm
 
 
@@ -87,3 +88,18 @@ class DeleteAction(LoginRequiredMixin, View):
             return redirect(reverse('home'))
         # whatever the result redirect to home page
         return redirect(reverse('home'))
+
+
+class OrderList(LoginRequiredMixin, generic.ListView):
+    """ Show a table with list of Order review details """
+    model = Order
+    template_name = "profiles/order_list.html"
+
+    def get(self, request, *args, **kwargs):
+        """ GET method """
+        if not request.user.is_superuser:
+            messages.error(request,
+                           mark_safe('Request denied.<br/>'
+                                     'Only admin can access.'))
+            return redirect(reverse('home'))
+        return super(OrderList, self).get(request, *args, **kwargs)

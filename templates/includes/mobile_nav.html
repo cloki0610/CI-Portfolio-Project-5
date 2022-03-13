@@ -95,7 +95,7 @@
                             <li><a class="dropdown-item" href="{% url 'add_product' %}">New Product</a></li>
                             <li><a class="dropdown-item" href="{% url 'report_list' %}">Customer Report</a></li>
                             <li><a class="dropdown-item" href="{% url 'contact_list' %}">Customer Contact</a></li>
-                            <li><a class="dropdown-item" href="#">Order Review</a></li>
+                            <li><a class="dropdown-item" href="{% url 'order_list' %}">Customer Orders</a></li>
                             {% endif %}
                             {% else %}
                             <li><a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a></li>

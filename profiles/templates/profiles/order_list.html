@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block sub_title %}Customer Orders{% endblock %}
+
+{% block content %}
+<div class="bg-main"></div>
+<div class="container-fluid min-vh-100 pt-5 px-0 px-sm-5">
+    <div class="row mx-auto mt-2 pt-5" style="max-width: 700px">
+        <div class="accordion accordion-flush" id="OrderList">
+            <table class="table-sm table-borderless no-select">
+                <thead>
+                    <tr>
+                        <th>Order No.</th>
+                        <th>Date</th>
+                        <th>Items</th>
+                        <th>Total</th>
+                        <th>Review</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in order_list %}
+                    <tr>
+                        <td>
+                            <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}" class="link-dark">
+                                {{ order.order_number|truncatechars:6 }}
+                            </a>
+                        </td>
+                        <td>{{ order.date }}</td>
+                        <td>
+                            <ul class="list-unstyled">
+                                {% for item in order.lineitems.all %}
+                                <li class="small">
+                                    {{ item.product.name }} x{{ item.quantity }}
+                                </li>
+                                {% empty %}
+                                <li class="small">This is a blank order, please contact us for more infromation.
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                        <td>${{ order.grand_total }}</td>
+                        <td>
+                            {% if order.orderreview %}
+                            <a href="{% url 'order_review' order.order_number order.orderreview.slug %}" title="{{ order.order_number }}-review"
+                                class="btn-sm btn-success rounded-0">Review</a>
+                            {% else %}
+                            <span>None</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td class="text-center">No order record yet.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <a href="{% url 'profile' %}" class="btn btn-success rounded-0 my-2">
+                <span class="ms-2">
+                    <i class="fas fa-home"></i>
+                </span>
+                <span class="text-uppercase">To Profile</span>
+            </a>
+            <a href="{% url 'products' %}" class="btn btn-success rounded-0 my-2">
+                <span class="ms-2">
+                    <i class="fas fa-shopping-cart"></i>
+                </span>
+                <span class="text-uppercase">To Shop</span>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
