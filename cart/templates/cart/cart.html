@@ -6,7 +6,7 @@
 
 {% block content %}
 <div class="bg-main"></div>
-<div class="container-fluid min-vh-100 pt-5 px-2 ps-sm-5">
+<div class="container-fluid min-vh-100 pt-5 px-2 px-sm-5">
     <div class="row mb-4 pt-5">
         <div class="col text-center">
             <h1 class="no-select pb-3">Shopping Cart</h1>
@@ -91,10 +91,10 @@
             {% endif %}
             <div class="row justify-content-md-end text-md-end">
                 <div class="col-12 col-md-3 col-lg-2">
-                    <a href="{{ request.META.HTTP_REFERER }}" class="btn btn-md btn-outline-success w-100"><i class="fas fa-angle-double-left"></i> To Shop</a>
+                    <a href="{% url 'products' %}" class="btn btn-md btn-outline-success w-100 cart-btn"><i class="fas fa-angle-double-left"></i> To Shop</a>
                 </div>
                 <div class="col-12 col-md-3 col-lg-2 mt-2 mt-md-0">
-                    <a href="{% url 'checkout' %}" class="btn btn-success btn-md w-100">
+                    <a href="{% url 'checkout' %}" class="btn btn-success btn-md w-100 cart-btn">
                         <span class="text-uppercase">Checkout</span>
                         <span class="icon">
                             <i class="fas fa-money-bill-wave"></i>

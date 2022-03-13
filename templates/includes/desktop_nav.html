@@ -80,21 +80,24 @@
                     <ul class="dropdown-menu bg-sub" aria-labelledby="account-lg">
                         {% if request.user.is_authenticated %}
                         <li><a class="dropdown-item font-sub" href="{% url 'profile' %}">My Profile</a></li>
+                        <li><a class="dropdown-item font-sub" href="{% url 'account_change_password' %}">Change Password</a></li>
+                        <li><a class="dropdown-item font-sub" href="{% url 'account_email' %}">E-mail Management</a></li>
                         {% if request.user.is_superuser %}
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
                         <li><a class="dropdown-item font-sub" href="{% url 'add_product' %}">New Product</a></li>
                         <li><a class="dropdown-item font-sub" href="{% url 'report_list' %}">Customer Report</a></li>
                         <li><a class="dropdown-item font-sub" href="{% url 'contact_list' %}">Customer Contact</a></li>
                         <li><a class="dropdown-item font-sub" href="{% url 'order_list' %}">Customer Orders</a></li>
                         {% endif %}
-                        {% else %}
-                        <li><a class="dropdown-item font-sub" href="{% url 'account_signup' %}">Sign Up</a></li>
-                        <li><a class="dropdown-item font-sub" href="{% url 'account_login' %}">Sign In</a></li>
-                        {% endif %}
-                        {% if request.user.is_authenticated %}
                         <li>
                             <hr class="dropdown-divider">
                         </li>
                         <li><a class="dropdown-item font-sub" href="{% url 'account_logout' %}">Sign Out</a></li>
+                        {% else %}
+                        <li><a class="dropdown-item font-sub" href="{% url 'account_signup' %}">Sign Up</a></li>
+                        <li><a class="dropdown-item font-sub" href="{% url 'account_login' %}">Sign In</a></li>
                         {% endif %}
                     </ul>
                 </li>

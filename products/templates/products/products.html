@@ -76,15 +76,15 @@ Category
                     {% if product.image %}
                     <div>
                         <a href="{% url 'product_detail' product.id %}" class="link-dark">
-                        <img src="{{ product.image.url }}" class="card-img-top img-fluid p-1"
-                            alt="{{ product.name }}" style="height:190px">
+                        <img src="{{ product.image.url }}" class="card-img-top img-fluid p-1 product-img"
+                            alt="{{ product.name }}">
                         </a>
                     </div>
                     {% else %}
                     <div>
                         <a href="{% url 'product_detail' product.id %}" class="link-dark">
-                        <img src="{{ MEDIA_URL }}no-pictures.png" class="card-img-top img-fluid p-1"
-                            alt="{{ product.name }}" style="height:190px">
+                        <img src="{{ MEDIA_URL }}no-pictures.png" class="card-img-top img-fluid p-1 product-img"
+                            alt="{{ product.name }}">
                         </a>
                     </div>
                     {% endif %}
@@ -97,8 +97,8 @@ Category
                             <span class="fw-bold">${{ product.price }}</span>
                             {% if request.user.is_superuser %}
                             <span class="float-end">
-                                <a href="{% url 'edit_product' product.id %}" class="btn btn-sm btn-secondary rounded-0"><i class="fas fa-edit"></i></a>
-                                <a href="{% url 'delete_confirm' product.id %}" class="btn btn-sm btn-danger rounded-0"><i class="fas fa-trash-alt"></i></i></a>
+                                <a href="{% url 'edit_product' product.id %}" class="btn btn-sm btn-secondary rounded-0 admin-btn"><i class="fas fa-edit"></i></a>
+                                <a href="{% url 'delete_confirm' product.id %}" class="btn btn-sm btn-danger rounded-0 admin-btn"><i class="fas fa-trash-alt"></i></i></a>
                             </span>
                             {% endif %}
                         </div>

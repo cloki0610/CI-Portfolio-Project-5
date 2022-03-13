@@ -109,6 +109,14 @@ textarea[name="description"] {
   cursor: pointer;
 }
 
+.product-img {
+  height: 11rem;
+}
+
+#detail-img {
+  height: 28rem;
+}
+
 /* bootstrap toasts */
 
 .message-container {
@@ -164,8 +172,38 @@ textarea[name="description"] {
 
 /* Order List */
 #OrderList {
-    height: calc(100vh - 300px);
-    min-height: 400px;
-    box-sizing: border-box;
-    overflow-y: auto;
+  height: calc(100vh - 300px);
+  min-height: 400px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* Media Tool */
+@media (max-width: 576px) {
+  #product_img {
+    height: 16rem;
+  }
+}
+
+@media (max-width: 991px) {
+
+  .increment-qty,
+  .decrement-qty {
+    padding: .4rem .5rem !important;
+  }
+
+  .btn.btn-lg.btn-success.rounded-0,
+  .btn.btn-lg.btn-outline-success.rounded-0,
+  .btn.btn-lg.btn-outline-success.rounded-0.me-2,
+  .btn.btn-lg.btn-success.rounded-0.mx-2,
+  .cart-btn,
+  .detail-btn {
+    padding: .5rem .6rem !important;
+    font-size: .8rem !important;
+  }
+
+  .admin-btn {
+    padding: 0.25rem 0.3rem;
+  }
+
 }

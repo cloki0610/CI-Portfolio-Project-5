@@ -1,24 +1,25 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block sub_title %}{% if product.category %}{{ product.category.get_friendly_name }} - {% endif %}{{ product.name }}{% endblock %}
+{% block sub_title %}{% if product.category %}{{ product.category.get_friendly_name }} -
+{% endif %}{{ product.name }}{% endblock %}
 
 {% block content%}
 <div class="bg-main"></div>
-<div class="container-fluid min-vh-100 px-5 px-sm-5 pt-5">
+<div class="container-fluid min-vh-100 px-2 px-sm-5 pt-5">
     <div class="row ms-2 ms-md-0 pt-5 px-3 px-md-0">
         <div class="col-md-6">
             {% if product.image %}
             <div>
                 <a href="{{ product.image.url }}" target="_blank">
-                    <img src="{{ product.image.url }}" class="card-img-top img-thumbnail img-fluid" alt="{{ product.name }}"
-                        style="height:500px">
+                    <img src="{{ product.image.url }}" id="detail-img" class="card-img-top img-thumbnail img-fluid"
+                        alt="{{ product.name }}">
                 </a>
             </div>
             {% else %}
             <div>
-                <img src="{{ MEDIA_URL }}no-pictures.png" class="card-img-top img-thumbnail img-fluid" alt="{{ product.name }}"
-                    style="height:500px">
+                <img src="{{ MEDIA_URL }}no-pictures.png" class="card-img-top img-thumbnail img-fluid"
+                    alt="{{ product.name }}" style="height:500px">
             </div>
             {% endif %}
         </div>
@@ -68,11 +69,14 @@
                             </div>
                         </div>
                         <div class="col">
-                            <a href="{% url 'products' %}" class="btn btn-outline-success rounded-0 mt-5 text-uppercase">
-                                <i class="fas fa-chevron-left"></i>  Return
+                            <a href="{% url 'products' %}" id="return-link"
+                                class="btn btn-outline-success rounded-0 text-uppercase mt-5 detail-btn">
+                                <i class="fas fa-chevron-left"></i> Return
                             </a>
-                            <input type="submit" class="btn btn-success rounded-0 text-uppercase mt-5" value="Add to cart">
-                            <a href="{% url 'report' product.id %}" class="btn btn-danger rounded-0 mt-5"><i class="fas fa-exclamation"></i></a>
+                            <input type="submit" class="btn btn-success rounded-0 text-uppercase mt-5 detail-btn"
+                                value="Add to cart">
+                            <a href="{% url 'report' product.id %}" class="btn btn-danger rounded-0 mt-5 detail-btn"><i
+                                    class="fas fa-exclamation"></i></a>
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>
@@ -81,8 +85,10 @@
             <div class="row mt-3">
                 <div class="col">
                     Admin Option:
-                    <a href="{% url 'edit_product' product.id %}" class="btn btn-lg btn-secondary rounded-0"><i class="fas fa-edit"></i></a>
-                    <a href="{% url 'delete_confirm' product.id %}" class="btn btn-lg btn-danger rounded-0"><i class="fas fa-trash-alt"></i></i></a>
+                    <a href="{% url 'edit_product' product.id %}" class="btn btn-lg btn-secondary rounded-0 detail-btn"><i
+                            class="fas fa-edit"></i></a>
+                    <a href="{% url 'delete_confirm' product.id %}" class="btn btn-lg btn-danger rounded-0 detail-btn"><i
+                            class="fas fa-trash-alt"></i></i></a>
                 </div>
             </div>
         </div>
