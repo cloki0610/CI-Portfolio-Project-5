@@ -10,7 +10,7 @@
 
 {% block content %}
 <div class="bg-main"></div>
-<div class="container-fluid min-vh-100 pt-5 px-5">
+<div class="container-fluid min-vh-100 pt-5 px-2 px-sm-5">
     <form action="{% url 'checkout' %}" method="POST" id="payment-form">
         {% csrf_token%}
         <div class="row pt-5">
