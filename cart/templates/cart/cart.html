@@ -9,76 +9,101 @@
 <div class="container-fluid min-vh-100 pt-5 px-2 px-sm-5">
     <div class="row mb-4 pt-5">
         <div class="col text-center">
-            <h1 class="no-select pb-3">Shopping Cart</h1>
+            <h1 class="no-select pb-0 mb-0">Shopping Cart</h1>
+            <p class="text-muted pb-0 mb-1">Summary of your shopping carts items as below</p>
         </div>
     </div>
     <div class="row">
         <div class="col">
             {% if cart_items %}
-            <table class="table table-sm table-borderless table-hover table-responsive px-auto no-select">
-                <thead>
-                    <tr class="table-success">
-                        <th scope="col" style="width:10%">Product</th>
-                        <th scope="col" style="width:55%"></th>
-                        <th scope="col" style="width:22%">Qty</th>
-                        <th scope="" style="width:5%"></th>
-                        <th scope="col" style="width:8%">Price(total)</th>
-                    </tr>
-                </thead>
+            <div class="d-block d-md-none">
                 {% for item in cart_items %}
-                <tr>
-                    <th scope="row" class="py-2">{{ item.product.sku|upper }}</th>
-                    <td class="py-2">{{ item.product.name }}</td>
-                    <td class="py-2">
-                        <div class="row gx-1">
-                            <div class="col-8">
-                                <form action="{% url 'update_item' item.item_id %}" class="form update-form" method="POST">
-                                    {% csrf_token %}
-                                    <div class="form-group">
-                                        <div class="input-group input-group-{{ item.item_id }}">
-                                            <div class="input-group-prepend">
-                                                <button
-                                                    class="decrement-qty btn btn-sm btn-success rounded-0 decrement-qty_{{ item.item_id }}"
-                                                    data-item_id="{{ item.item_id }}">
-                                                    <span>
-                                                        <i class="fas fa-minus fa-sm"></i>
-                                                    </span>
-                                                </button>
-                                            </div>
-                                            <input class="form-control form-control-sm qty_input qty_{{ item.item_id }}" type="number"
-                                                name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}">
-                                            <div class="input-group-append">
-                                                <button
-                                                    class="increment-qty btn btn-sm btn-success rounded-0 increment-qty_{{ item.item_id }}"
-                                                    data-item_id="{{ item.item_id }}">
-                                                    <span>
-                                                        <i class="fas fa-plus fa-sm"></i>
-                                                    </span>
-                                                </button>
+                <div class="row">
+                    <div class="col-12 col-sm-6 mb-2">
+                        {% include "cart/includes/product-info.html" %}
+                    </div>
+                    <div class="col-12 col-sm-6 order-sm-last">
+                        <p class="small">Price(total): ${{ item.product.price | calc_price:item.quantity }}</p>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        {% include "cart/includes/quantity-form.html" %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <hr>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="table-responsive rounded d-none d-md-block">
+                <table class="table table-sm table-borderless table-hover table-responsive px-auto no-select">
+                    <thead>
+                        <tr class="table-success">
+                            <th scope="col" style="width:10%">Product</th>
+                            <th scope="col" style="width:55%"></th>
+                            <th scope="col" style="width:27%">Qty</th>
+                            <th scope="col" style="width:8%">Price(total)</th>
+                        </tr>
+                    </thead>
+                    {% for item in cart_items %}
+                    <tr>
+                        <th scope="row" class="py-2">{{ item.product.sku|upper }}</th>
+                        <td class="py-2">{{ item.product.name }}</td>
+                        <td class="py-2">
+                            <div class="row gx-1">
+                                <div class="col-8">
+                                    <form action="{% url 'update_item' item.item_id %}" class="form update-form"
+                                        method="POST">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <div class="input-group input-group-{{ item.item_id }}">
+                                                <div class="input-group-prepend">
+                                                    <button
+                                                        class="decrement-qty btn btn-sm btn-success rounded-0 decrement-qty_{{ item.item_id }}"
+                                                        data-item_id="{{ item.item_id }}">
+                                                        <span>
+                                                            <i class="fas fa-minus fa-sm"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                <input
+                                                    class="form-control form-control-sm qty_input qty_{{ item.item_id }}"
+                                                    type="number" name="quantity" value="{{ item.quantity }}" min="1"
+                                                    max="99" data-item_id="{{ item.item_id }}">
+                                                <div class="input-group-append">
+                                                    <button
+                                                        class="increment-qty btn btn-sm btn-success rounded-0 increment-qty_{{ item.item_id }}"
+                                                        data-item_id="{{ item.item_id }}">
+                                                        <span>
+                                                            <i class="fas fa-plus fa-sm"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </form>
+                                    </form>
+                                </div>
+                                <div class="col-2">
+                                    <button class="update-btn btn btn-sm btn-success"><i
+                                            class="fas fa-pen"></i></button>
+                                </div>
+                                <div class="col-2">
+                                    <form action="{% url 'remove_item' item.item_id %}" method="POST">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-sm btn-danger"><i
+                                                class="fas fa-times"></i></button>
+                                    </form>
+                                </div>
                             </div>
-                            <div class="col-4">
-                                <button class="update-btn btn btn-sm btn-success text-uppercase">Update</button>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="py-2 mx-0">
-                        <div class="col">
-                            <form action="{% url 'remove_item' item.item_id %}" method="POST">
-                                {% csrf_token %}
-                                <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-times"></i></button>
-                            </form>
-                        </div>
-                    </td>
-                    <td class="py-2">${{ item.product.price|calc_price:item.quantity }}</td>
-                </tr>
-                {% endfor %}
-            </table>
+                        </td>
+                        <td class="py-2">${{ item.product.price|calc_price:item.quantity }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
             <div class="row">
-                <div class="col pt-5 pb-3 text-end no-select">
+                <div class="col pt-5 pb-3 text-md-end no-select">
                     <h6><strong>Subtotal: ${{ total|floatformat:2 }}</strong></h6>
                     <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
                     <h4 class="mt-4"><strong>Total: ${{ total_cost|floatformat:2 }}</strong></h4>
@@ -91,7 +116,8 @@
             {% endif %}
             <div class="row justify-content-md-end text-md-end">
                 <div class="col-12 col-md-3 col-lg-2">
-                    <a href="{% url 'products' %}" class="btn btn-md btn-outline-success w-100 cart-btn"><i class="fas fa-angle-double-left"></i> To Shop</a>
+                    <a href="{% url 'products' %}" class="btn btn-md btn-outline-success w-100 cart-btn"><i
+                            class="fas fa-angle-double-left"></i> To Shop</a>
                 </div>
                 <div class="col-12 col-md-3 col-lg-2 mt-2 mt-md-0">
                     <a href="{% url 'checkout' %}" class="btn btn-success btn-md w-100 cart-btn">
@@ -99,6 +125,11 @@
                         <span class="icon">
                             <i class="fas fa-money-bill-wave"></i>
                         </span>
+                    </a>
+                </div>
+                <div class="col-12 d-md-none mt-2 mt-md-0">
+                    <a class="btn btn-outline-success d-flex h-100 btt-link">
+                        <i class="fas fa-arrow-up mx-auto my-auto"></i>
                     </a>
                 </div>
             </div>
@@ -115,6 +146,10 @@
         let form = $(this).closest('div').prev().children('form');
         form.submit();
     });
+    // Back to top button
+    $('.btt-link').click(function(e) {
+        window.scrollTo(0,0)
+    })
 </script>
 <script src="{% static 'products/js/quantity_btn.js' %}"></script>
 {% endblock %}
