@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_cust %}
+<link rel="stylesheet" href="{% static 'order_history/css/order_history.css' %}">
+{% endblock %}
+
+{% block sub_title %}Order Review{% endblock %}
+
+{% block content %}
+<div class="bg-main"></div>
+<div class="container-fluid min-vh-100 pt-5 px-3 px-md-5">
+    <div class="row pt-5">
+        <div class="col-12 col-lg-6 mx-auto">
+            <p class="text-muted small no-select">Your Order Review</p>
+            <div class="p-2 border" id="review">
+                <div class="row gx-0 my-3 ps-md-0">
+                    <div class="col-12 col-md-4 text-md-end">
+                        <p class="mb-0 text-dark fw-bold">Order Number: </p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-start">
+                        <p class="ps-0 ps-md-3 mb-0">{{ order_review.order.order_number }}</p>
+                    </div>
+                </div>
+                <div class="row gx-0 mb-3 ps-md-0">
+                    <div class="col-12 col-md-4 text-md-end">
+                        <p class="mb-0 text-dark fw-bold">Full Name: </p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-start">
+                        <p class="ps-0 ps-md-3 mb-0">{{ order_review.order.full_name }}</p>
+                    </div>
+                </div>
+                <div class="row gx-0 mb-3 ps-md-0">
+                    <div class="col-12 col-md-4 text-md-end">
+                        <p class="mb-0 text-dark fw-bold">E-mail: </p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-start">
+                        <p class="ps-0 ps-md-3 mb-0">
+                            {% if order_review.order.e_mail %}
+                            {{ order_review.order.e_mail }}
+                            {% else %}
+                            None
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+                <div class="row gx-0 mb-3 ps-md-0">
+                    <div class="col-12 col-md-4 text-md-end">
+                        <p class="mb-0 text-dark fw-bold">Order Status: </p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-start">
+                        <p class="ps-0 ps-md-3 mb-0">{{ order_review.order_status }}</p>
+                    </div>
+                </div>
+                <div class="row gx-0 mb-3 ps-md-0">
+                    <div class="col-12 col-md-4 text-md-end">
+                        <p class="mb-0 text-dark fw-bold">Your Review: </p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-start">
+                        <p class="ps-0 ps-md-3 mb-0">{{ order_review.review }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <button type="button" class="btn btn-danger rounded-0 text-uppercase" data-bs-toggle="modal"
+                        data-bs-target="#delete_review">
+                        Delete
+                    </button>
+                    <a href="{% url 'update_review' order_review.order.order_number order_review.slug %}"
+                        class="btn btn-success rounded-0 text-uppercase">Update</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-6 mx-auto mt-5 mt-md-0">
+            <p class="text-muted small no-select">Comment & Reply</p>
+            <div class="p-2 border" id="comments">
+                <div class="row gx-0" id="comment-text">
+                    {% for comment in comments %}
+                    <div class="mb-3">
+                        <p class="mb-1 no-select"><strong>{{ comment.user.user.username }}</strong>
+                            <span class="text-muted fst-italic small">on {{ comment.date | date:"j M f A"}}</span>:</p>
+                        <p class="mb-0 no-select">{{ comment.comment }}</p>
+                    </div>
+                    {% empty %}
+                    <div class="row gx-0">
+                        <p class="mb-0 fst-italic">No Comment yet.</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="row gx-0" id="comment-form">
+                    <form id="comment-form-item" method="POST"
+                        action="{% url 'order_review'  order_review.order.order_number order_review.slug %}">
+                        {% csrf_token %}
+                        {{ comment_form | crispy }}
+                        <div class="text-end mt-3">
+                            <button class="btn btn-success rounded-0 text-uppercase" type="submit">Comment</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-md-end">
+            <p class="text-muted fs-list fst-italic mb-0">
+                <span class="me-4">Create: {{ order_review.date | date:"j M Y f A"}} </span>
+                <span>Last edit: {{ order_review.last_edit | date:"j M Y f A" }}</span>
+            </p>
+            <p class="text-dark mb-0">
+                <span class="me-4"><strong>Office Hour</strong> 9am to 4pm</span>
+                <span><strong>Weekday</strong> Mon to Fri</span>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <a href="{% url 'profile' %}" class="btn btn-success rounded-0 my-2">
+                <span class="ms-2">
+                    <i class="fas fa-home"></i>
+                </span>
+                <span class="text-uppercase">Back to Profile</span>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="delete_review" tabindex="-1" aria-labelledby="delete_review" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-danger">
+                <h5 class="modal-title text-light" id="ModalTitle">Remove Oreder Review?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Do you really want to remove the order review of {{ order_review.order.order_number }}?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <form action="{% url 'delete_review' order_review.order.order_number order_review.slug %}"
+                    method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_css %}
+{% block css_cust %}
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
@@ -34,7 +34,7 @@
                         <p class="mb-0 text-dark fw-bold">Order Date</p>
                     </div>
                     <div class="col-12 col-md-8 text-md-start">
-                        <p class="mb-0">{{ order.date }}</p>
+                        <p class="mb-0">{{ order.date | date:"j M Y f A" }}</p>
                     </div>
                 </div>
 

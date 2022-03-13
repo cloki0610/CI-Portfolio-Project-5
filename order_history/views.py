@@ -62,14 +62,15 @@ class OrderReView(LoginRequiredMixin, View):
                           mark_safe("You do not write any review yet.<br/>"
                                     "But we're welcome to know something "
                                     "about your previous order"))
-            return redirect(reverse('create_view'))
+            return redirect(reverse('create_review',
+                                    args=[order.order_number]))
         # else return the review detail with comments
-        comments = order_review.comments
+        comments = order_review.comments.order_by('date')
         comment_form = CommentForm()
         messages.info(request,
                       mark_safe('This is a review of '
                                 f'your previous order(Ref. {order_number}).'
-                                '<br/>Feel free to edit or reply your review'
+                                '<br/>Feel free to update or reply your review'
                                 'on the order date.'))
         return render(request,
                       'order_history/order_review.html',
@@ -101,8 +102,8 @@ class OrderReView(LoginRequiredMixin, View):
         else:
             messages.error(request, mark_safe('Invalid Input.<br/>'
                                               'Please check and try again.'))
-        return redirect(reverse('order_review'),
-                        args=[order.order_number, order_review.slug])
+        return redirect(reverse('order_review',
+                                args=[order.order_number, order_review.slug]))
 
 
 class CreateOrderReView(LoginRequiredMixin, View):
@@ -122,7 +123,8 @@ class CreateOrderReView(LoginRequiredMixin, View):
         return render(request,
                       "order_history/create_review.html",
                       {
-                          'form': form
+                          'form': form,
+                          'order': order
                       })
 
     def post(self, request, order_number):
@@ -150,13 +152,13 @@ class CreateOrderReView(LoginRequiredMixin, View):
             messages.error(request,
                            mark_safe('Invalid Input.<br/>'
                                      'Please check your input and try again!'))
-            return redirect(reverse('order_review'))
-        return redirect(reverse('order_review'),
-                        args=[order.order_number, form.slug])
+            return redirect(reverse('profile'))
+        return redirect(reverse('order_review',
+                                args=[order.order_number, form.slug]))
 
 
-class EditOrderReView(LoginRequiredMixin, View):
-    """ Send User a form to edit their existed review """
+class UpdateOrderReView(LoginRequiredMixin, View):
+    """ Send User a form to update their existed review """
 
     def get(self, request, order_number, slug):
         """ GET method """
@@ -171,10 +173,11 @@ class EditOrderReView(LoginRequiredMixin, View):
             return redirect(reverse('products'))
         form = OrderReviewForm(instance=order_review)
         return render(request,
-                      "order_history/edit_review.html",
+                      "order_history/update_review.html",
                       {
                           'form': form,
-                          'order_review': order_review
+                          'order_review': order_review,
+                          'order': order
                       })
 
     def post(self, request, order_number, slug):
@@ -188,16 +191,19 @@ class EditOrderReView(LoginRequiredMixin, View):
                                        "Only order owner and admin "
                                        "can do this action."))
             return redirect(reverse('products'))
-        form = OrderReviewForm(request.POST)
+        form = OrderReviewForm(request.POST, instance=order_review)
         if form.is_valid():
+            form = form.save(commit=False)
+            form.order = order
+            form.customer = order.user_profile
             form.save()
             messages.success(request, 'Review successfully updated.')
         else:
             messages.error(request,
                            mark_safe('Invalid Input.<br/>'
                                      'Please check your input and try again!'))
-        return redirect(reverse('order_review'),
-                        args=[order_review.slug])
+        return redirect(reverse('order_review',
+                                args=[order.order_number, order_review.slug]))
 
 
 class DeleteOrderReView(LoginRequiredMixin, View):

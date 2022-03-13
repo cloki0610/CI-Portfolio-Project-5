@@ -74,6 +74,15 @@ input[name='q']::placeholder {
   background-size: cover;
 }
 
+.btn-index {
+  background-color: #139487;
+}
+
+.btn-index:hover {
+  transition: .5s;
+  filter: brightness(110%);
+}
+
 /* product */
 .product-card:hover {
   background-color: #139487;

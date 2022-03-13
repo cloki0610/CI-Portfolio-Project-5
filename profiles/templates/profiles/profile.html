@@ -55,8 +55,8 @@
                             </td>
                             <td>${{ order.grand_total }}</td>
                             <td>
-                                {% if order.order_review %}
-                                <a href="{% url 'order_review' order.order_number order.order_review.slug %}" title="{{ order.order_number }}-review"
+                                {% if order.orderreview %}
+                                <a href="{% url 'order_review' order.order_number order.orderreview.slug %}" title="{{ order.order_number }}-review"
                                     class="btn-sm btn-success rounded-0">Review</a>
                                 {% else %}
                                 <a href="{% url 'create_review' order.order_number %}" title="{{ order.order_number }}-review"

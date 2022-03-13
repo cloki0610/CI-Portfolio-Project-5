@@ -18,11 +18,11 @@ class OrderReviewForm(forms.ModelForm):
 
         for field in self.fields:
             if field == 'review':
-                placeholder = 'Write down something about your order'
+                placeholder = 'Your Review'
                 self.fields[field].widget.attrs['placeholder'] = placeholder
+                self.fields[field].label = False
             self.fields[field].widget.attrs['class'] = 'border-success ' + \
                                                        'rounded-0 mb-2'
-            self.fields[field].label = False
 
 
 class CommentForm(forms.ModelForm):
@@ -39,6 +39,7 @@ class CommentForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         for field in self.fields:
+            self.fields[field].widget.attrs['rows'] = 4
             self.fields[field].widget.attrs['placeholder'] = 'Comment Here'
             self.fields[field].widget.attrs['class'] = 'border-success ' + \
                                                        'rounded-0'

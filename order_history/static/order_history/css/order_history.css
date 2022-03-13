@@ -1,0 +1,23 @@
+.asteriskField {
+    display: none;
+}
+
+#review {
+    height: 60%;
+    min-height: 400px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+#comments {
+    height: 60%;
+    min-height: 400px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+#comment-text, #comment-form {
+    height: 30%;
+    min-height: 191px;
+    overflow-y: auto;
+}
