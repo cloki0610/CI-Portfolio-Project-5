@@ -151,7 +151,7 @@ class CheckoutSuccessView(View):
 
         messages.success(request,
                          mark_safe(f'Order(Ref:{order_number}) '
-                                   'successfully processed!'
+                                   'successfully processed!<br/>'
                                    'A confirmation email will be '
                                    f'sent to {order.email}.'))
 

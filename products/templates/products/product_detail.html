@@ -82,6 +82,7 @@
                     </div>
                 </form>
             </div>
+            {% if request.user.is_superuser %}
             <div class="row mt-3">
                 <div class="col">
                     Admin Option:
@@ -91,6 +92,7 @@
                             class="fas fa-trash-alt"></i></i></a>
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
 </div>
