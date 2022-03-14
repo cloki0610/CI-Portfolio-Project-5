@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/cart/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/?category=personal_items</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/?category=clothing_accessories</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/?category=furniture_decoration</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/?category=necessity</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/?category=handmade</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/accounts/login/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/about/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/about/contact/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/?page=2</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/?page=3</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/?page=4</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/?page=5</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/6/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/34/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/38/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/8/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/14/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/28/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/22/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/23/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/?page=2&amp;category=personal_items</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/4/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/33/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/18/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/17/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/40/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/32/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/?page=2&amp;category=clothing_accessories</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/3/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/2/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/25/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/31/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/21/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/29/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/?page=2&amp;category=furniture_decoration</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/11/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/13/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/15/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/7/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/12/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/9/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/26/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/19/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/20/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/27/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/1/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/42/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/?page=1</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/35/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/16/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/36/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/24/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/39/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/5/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/10/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/30/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/6/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/34/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/38/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/8/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/14/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/28/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/22/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/23/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/?page=1&amp;category=personal_items</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/4/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/33/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/18/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/17/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/40/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/32/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/?page=1&amp;category=clothing_accessories</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/3/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/2/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/25/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/31/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/21/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/29/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/products/?page=1&amp;category=furniture_decoration</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/11/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/13/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/15/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/7/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/12/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/9/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/26/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/19/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/20/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/27/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/1/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/42/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/35/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/16/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/36/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/24/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/39/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/5/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/10/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://ci-portfolio-project-5.herokuapp.com/report/30/</loc>
+  <lastmod>2022-03-14T23:38:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+
+
+</urlset>
