@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Website infomation-->
     <meta name="description" content="Retry - A online, partner based second-hand online store" />
-    <meta name="keywords"
-        content="retry, reseller, second hand, online store, second hand store online, second hand e store">
+    <meta name="keywords" content="retry, reseller, second hand, online store, online second hand stores, online reseller,
+        second hand e store,  reselling website, reselling business, 2nd hand market">
     <meta name="author" content="Loki.C">
     <link type="image/x-icon" rel="shortcut icon" href="{% static 'favicon.ico' %}">
     {% block css_lib %}
@@ -62,13 +62,13 @@
         {% for message in messages %}
         {% with message.level as level %}
         {% if level == 40 %}
-            {% include 'includes/toasts/toast_error.html' %}
+        {% include 'includes/toasts/toast_error.html' %}
         {% elif level == 30 %}
-            {% include 'includes/toasts/toast_warning.html' %}
+        {% include 'includes/toasts/toast_warning.html' %}
         {% elif level == 25 %}
-            {% include 'includes/toasts/toast_success.html' %}
+        {% include 'includes/toasts/toast_success.html' %}
         {% else %}
-            {% include 'includes/toasts/toast_info.html' %}
+        {% include 'includes/toasts/toast_info.html' %}
         {% endif %}
         {% endwith %}
         {% endfor %}
