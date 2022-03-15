@@ -18,7 +18,7 @@ class OrderHistoryView(LoginRequiredMixin, View):
     def get(self, request, order_number):
         """ GET method """
         order = get_object_or_404(Order, order_number=order_number)
-        if (not request.user.userprofile == order.user_profile or not
+        if (not request.user.userprofile == order.user_profile and not
                 request.user.is_superuser):
             messages.warning(request,
                              mark_safe("Access Denied.<br/>"
@@ -47,7 +47,7 @@ class OrderReView(LoginRequiredMixin, View):
     def get(self, request, order_number, slug):
         """ GET method """
         order = get_object_or_404(Order, order_number=order_number)
-        if (not request.user.userprofile == order.user_profile or not
+        if (not request.user.userprofile == order.user_profile and not
                 request.user.is_superuser):
             messages.warning(request,
                              mark_safe("Access Denied.<br/>"
@@ -85,7 +85,7 @@ class OrderReView(LoginRequiredMixin, View):
         order = get_object_or_404(Order, order_number=order_number)
         order_review = get_object_or_404(OrderReview, slug=slug)
         form = CommentForm(data=request.POST)
-        if (not request.user.userprofile == order.user_profile or not
+        if (not request.user.userprofile == order.user_profile and not
                 request.user.is_superuser):
             messages.warning(request,
                              mark_safe("Access Denied.<br/>"
@@ -112,7 +112,7 @@ class CreateOrderReView(LoginRequiredMixin, View):
     def get(self, request, order_number):
         """ GET method """
         order = get_object_or_404(Order, order_number=order_number)
-        if (not request.user.userprofile == order.user_profile or not
+        if (not request.user.userprofile == order.user_profile and not
                 request.user.is_superuser):
             messages.warning(request,
                              mark_safe("Access Denied.<br/>"
@@ -130,7 +130,7 @@ class CreateOrderReView(LoginRequiredMixin, View):
     def post(self, request, order_number):
         """ POST method """
         order = get_object_or_404(Order, order_number=order_number)
-        if (not request.user.userprofile == order.user_profile or not
+        if (not request.user.userprofile == order.user_profile and not
                 request.user.is_superuser):
             messages.warning(request,
                              mark_safe("Access Denied.<br/>"
@@ -164,7 +164,7 @@ class UpdateOrderReView(LoginRequiredMixin, View):
         """ GET method """
         order = get_object_or_404(Order, order_number=order_number)
         order_review = get_object_or_404(OrderReview, slug=slug)
-        if (not request.user.userprofile == order.user_profile or not
+        if (not request.user.userprofile == order.user_profile and not
                 request.user.is_superuser):
             messages.warning(request,
                              mark_safe("Access Denied.<br/>"
@@ -184,7 +184,7 @@ class UpdateOrderReView(LoginRequiredMixin, View):
         """ POST method """
         order = get_object_or_404(Order, order_number=order_number)
         order_review = get_object_or_404(OrderReview, slug=slug)
-        if (not request.user.userprofile == order.user_profile or not
+        if (not request.user.userprofile == order.user_profile and not
                 request.user.is_superuser):
             messages.warning(request,
                              mark_safe("Access Denied.<br/>"
@@ -213,7 +213,7 @@ class DeleteOrderReView(LoginRequiredMixin, View):
         """ POST method """
         order = get_object_or_404(Order, order_number=order_number)
         order_review = get_object_or_404(OrderReview, slug=slug)
-        if (not request.user.userprofile == order.user_profile or not
+        if (not request.user.userprofile == order.user_profile and not
                 request.user.is_superuser):
             messages.warning(request,
                              mark_safe("Access Denied.<br/>"

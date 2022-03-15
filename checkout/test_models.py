@@ -1,13 +1,13 @@
 """ Test models in checkout application """
+from decimal import Decimal
 from django.test import TestCase
 from django.contrib.auth.models import User
-from django.shortcuts import get_object_or_404
-from home.models import Category
-from .models import Theme, Comment
+from products.models import Category, Product
+from .models import Order, OrderLineItem
 
 
-class TestThemeModels(TestCase):
-    """ Test Theme app's models """
+class TestCheckoutModels(TestCase):
+    """ Test Order and OrderLineItem models """
 
     def setUp(self):
         """Set up required instance """
@@ -17,43 +17,66 @@ class TestThemeModels(TestCase):
                     email='test@example.com')
         self.user.save()
         self.category = Category.objects.create(
-            name='Fiction',
-            introduction='testonly'
+            name='personal_items',
+            friendly_name='Personal items'
         )
         self.category.save()
-        self.theme = Theme.objects.create(
-            title='Test2',
-            author=self.user,
-            category=self.category)
-        self.theme.save()
+        self.product = Product.objects.create(
+            sku="rs6625273",
+            name="Hand made chocolate eggs(12pcs)",
+            description=("12 pieces of handmade chocolate "
+                         "eggs with a special gift card."),
+            price=1.5,
+            category=self.category,
+            image_url="https://i.imgur.com/Ucno1to.jpg",
+            image="rs6625273.jpg"
+        )
+        self.product.save()
+        self.order = Order.objects.create(
+            user_profile=self.user.userprofile,
+        )
+        self.order.save()
+        self.lineitem = OrderLineItem.objects.create(
+            order=self.order,
+            product=self.product,
+            quantity=3
+        )
+        self.lineitem.save()
 
-    def test_theme_string_method(self):
-        """ Test string method in Theme model """
-        category = get_object_or_404(Category, slug='fiction')
-        user = User.objects.get(username="test")
-        theme_obj = Theme.objects.create(
-            title='Test1',
-            author=user,
-            category=category)
-        self.assertEqual(str(theme_obj), 'Test1')
+    def test_order_string_method(self):
+        """ Test string method and _generate_order_number """
+        order = self.order
+        self.assertNotEqual(str(order), '')
 
-    def test_comment_string_method(self):
-        """ Test string method in Comment model """
-        user = User.objects.get(username="test")
-        theme = get_object_or_404(Theme, slug='test2')
-        comment_obj = Comment.objects.create(
-            theme=theme,
-            user=user,
-            comment_body='Test Comment')
-        self.assertEqual(str(comment_obj), 'Comment on Test2')
+    def test_orderlineitem_string_method(self):
+        """ Test string method """
+        order = self.order
+        lineitem = self.lineitem
+        self.assertEqual(str(lineitem),
+                         (f'SKU {lineitem.product.sku} on order'
+                          f' {order.order_number}'))
 
-    def test_theme_presave_slug(self):
-        """ Test pre-save function in theme model """
-        category = get_object_or_404(Category, slug='fiction')
-        user = User.objects.get(username="test")
-        theme_obj = Theme.objects.create(
-            title='Test Theme Title',
-            author=user,
-            category=category
-            )
-        self.assertEqual(theme_obj.slug, 'test-theme-title')
+    def test_post_save_signal(self):
+        """
+        Test post_save signal to update new totals when lineitem update
+        """
+        order = self.order
+        self.assertEqual(order.order_total, 4.5)
+        self.assertEqual(order.grand_total, Decimal('4.95'))
+        lineitem = self.lineitem
+        lineitem.quantity = 6
+        lineitem.save()
+        self.assertEqual(order.order_total, 9)
+        self.assertEqual(order.grand_total, Decimal('9.9'))
+
+    def test_post_delete_signal(self):
+        """
+        Test post_save signal to update new totals when lineitem delete
+        """
+        order = self.order
+        self.assertEqual(order.order_total, 4.5)
+        self.assertEqual(order.grand_total, Decimal('4.95'))
+        lineitem = self.lineitem
+        lineitem.delete()
+        self.assertEqual(order.order_total, 0)
+        self.assertEqual(order.grand_total, 0)
