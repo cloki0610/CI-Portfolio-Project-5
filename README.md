@@ -1,10 +1,14 @@
 # Retry - A second-hand online store
 # Portfolio Project 5
-Retry is a online store provide second-hand product with online payment.\
+**Retry** is a online store provide second-hand product with online payment.\
 User can purchase items from our collaborator and use stripe to complete online payment.\
-They can also sign up to track their previous order payment and product status.\
-You can click [here]() to the living website.\
-Active website: 
+They can also sign up to track their previous order payment and product status.
+
+
+
+**Active website**: https://ci-portfolio-project-5.herokuapp.com/ \
+**Git Repository**: https://github.com/cloki0610/CI-Portfolio-Project-5
+![screen-capture](readme-img/screenshot_sc.png)
 
 
 ## **Table of Contents**
@@ -175,6 +179,7 @@ Navbar icon color: #D29D2B
  - JQuery
  - Google Fonts
  - Font Awsome
+ - Stripe
 
   and those python libraries install with [requirements.txt](requirements.txt):
  - PostgreSQL
@@ -182,8 +187,12 @@ Navbar icon color: #D29D2B
  - dj-database-url
  - django-allauth
  - django-crispyforms
+ - boto3 and django-storages
  - gunicorn
  - psycopg2
+ - django-countries
+ - Pillow
+ - stripe
 
 ### **Project manage and deployment**
  - GitHub
@@ -209,7 +218,7 @@ Navbar icon color: #D29D2B
    To add the first name, last name and email to the profile form and edit them in user interface, I find this solution with some improvement to fulfill the requirement.
  - [My Project 4](https://github.com/cloki0610/CI-Portfolio-Project-4)
 
-   I reuse some code from my previous project to create the view as class-based view.
+   I reuse some code from my previous project to create the view as class-based view, and complete my test cases of my web application.
 <hr>
 
 ## **Media**
