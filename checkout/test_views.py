@@ -2,6 +2,7 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
 from django.utils.safestring import mark_safe
+from django.contrib.messages import get_messages
 from products.models import Category, Product
 from .models import Order, OrderLineItem
 
@@ -62,3 +63,14 @@ class TestCheckoutViews(TestCase):
         self.assertEqual(str(messages[0]),
                          mark_safe("Your cart still empty.<br/>"
                                    "Please add some item before checkout."))
+
+    def test_get_checkoutview_with_login(self):
+        """ Test CheckOutView GET method with login """
+        self.client.login(username='test', password='password')
+        session = self.client.session
+        cart = {'1': 3}
+        session['cart'] = cart
+        session.save()
+        response = self.client.get('/checkout/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'checkout/checkout.html')
