@@ -109,12 +109,18 @@ textarea[name="description"] {
   cursor: pointer;
 }
 
+.products {
+  max-width: 950px;
+}
+
 .product-img {
-  height: 11rem;
+  height: 13rem;
+  width: 13rem;
 }
 
 #detail-img {
-  height: 28rem;
+  height: 40rem;
+  width: 40rem;
 }
 
 /* Cart */
@@ -193,8 +199,13 @@ textarea[name="description"] {
 
 /* Media Tool */
 @media (max-width: 576px) {
-  #product_img {
-    height: 16rem;
+  .product-img {
+    height: 28rem;
+    width: 28rem;
+  }
+  .detail-img {
+    height: 30rem;
+    width: 30rem;
   }
 }
 

@@ -69,7 +69,7 @@ Category
             </option>
         </select>
     </div>
-    <div class="row gx-0 mx-auto w-75">
+    <div class="row gx-0 mx-auto w-75 products">
         {% for product in products_page %}
         <div class="col-md-3">
                 <div class="card w-100 border-0 product-card mb-5 mb-md-0">
@@ -108,7 +108,7 @@ Category
         </div>
         {% if forloop.counter|divisibleby:4 and forloop.counter is not 8 %}
     </div>
-    <div class="row gx-0 mx-auto w-75">
+    <div class="row gx-0 mx-auto w-75 products">
         {% endif %}
         {% empty %}
         <p class="text-center fs-2">Here is no any product yet.</p>
