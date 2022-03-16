@@ -1,7 +1,7 @@
 /* About */
 .about-card {
     max-width: 600px;
-    background-color: #139487;
+    background-color: #075E31;
 }
 
 .about-title {
@@ -18,14 +18,14 @@
 
 .btn-send:hover {
     background-color: #FFF1CE;
-    border: 1px solid #139487;
-    color: #139487;
+    border: 1px solid #075E31;
+    color: #075E31;
     transition: .15s ease-in-out;
 }
 
 /* Contact List */
 .form-select-contact {
-    background-color: #139487;
+    background-color: #075E31;
     color: #FFF1CE;
 }
 

@@ -49,7 +49,7 @@ p {
 }
 
 .bg-nav {
-  background-color: #139487;
+  background-color: #075E31;
 }
 
 .font-nav {
@@ -61,7 +61,7 @@ p {
 }
 
 .font-sub {
-  color: #139487;
+  color: #075E31;
 }
 
 input[name='q']::placeholder {
@@ -75,7 +75,7 @@ input[name='q']::placeholder {
 }
 
 .btn-index {
-  background-color: #139487;
+  background-color: #075E31;
 }
 
 .btn-index:hover {
@@ -85,7 +85,7 @@ input[name='q']::placeholder {
 
 /* Product */
 .product-card:hover {
-  background-color: #139487;
+  background-color: #075E31;
   color: #fafafa !important;
   transition: 1s;
 }
@@ -184,7 +184,7 @@ textarea[name="description"] {
 
 /* Report List */
 .accordion-button:not(.collapsed) {
-  color: #139487 !important;
+  color: #075E31 !important;
   background-color: #fafafa !important;
   box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
 }

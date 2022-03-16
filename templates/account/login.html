@@ -7,7 +7,7 @@
 
 {% block inner_content %}
 <div class="row mx-auto bg-light mt-5 pt-5 pb-5 px-2 px-sm-5" style="max-width: 600px">
-  <h1 class="text-center no-select">{% trans "Sign In"|upper %}</h1>
+  <h1 class="text-center no-select text-uppercase">{% trans "Sign In"|upper %}</h1>
 
   {% get_providers as socialaccount_providers %}
 
@@ -30,7 +30,7 @@
 
   {% else %}
   <p class="text-center">{% blocktrans %}If you have not created an account yet, then please
-    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+    <a href="{{ signup_url }}" class="link-dark"><u>sign up</u></a> first.{% endblocktrans %}</p>
   {% endif %}
 
   <form class="login" method="POST" action="{% url 'account_login' %}">

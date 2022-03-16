@@ -119,7 +119,7 @@ All image file uploads from the user should store and be protected in AWS S3 sto
 #### **Color Sheme**
 Background color: #fafafa\
 font color: #3a3a3a\
-Navbar background color: #139487\
+Navbar background color: #075E31\
 Navbar font color: #FFF1CE\
 Navbar icon color: #D29D2B
 

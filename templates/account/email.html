@@ -6,7 +6,7 @@
 
 {% block inner_content %}
 <div class="row mx-auto bg-light mt-5 pt-5 pb-5 px-2 px-sm-5" style="max-width: 600px">
-  <h1>{% trans "E-mail Addresses" %}</h1>
+  <h1 class="text-uppercase">{% trans "E-mail Addresses" %}</h1>
   {% if user.emailaddress_set.all %}
   <p>{% trans 'The following e-mail addresses are associated with your account:' %}</p>
 
