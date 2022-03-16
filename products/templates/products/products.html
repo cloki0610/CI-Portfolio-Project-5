@@ -69,10 +69,10 @@ Category
             </option>
         </select>
     </div>
-    <div class="row gx-0 mx-auto w-75 products">
+    <div class="row gx-0 mx-auto">
         {% for product in products_page %}
         <div class="col-md-3">
-                <div class="card border-0 product-card mb-5 mb-md-0">
+                <div class="card border-0 product-card mx-auto mb-5 mb-md-0">
                     {% if product.image %}
                     <div>
                         <a href="{% url 'product_detail' product.id %}" class="link-dark">
@@ -108,7 +108,7 @@ Category
         </div>
         {% if forloop.counter|divisibleby:4 and forloop.counter is not 8 %}
     </div>
-    <div class="row gx-0 mx-auto w-75 products">
+    <div class="row gx-0 mx-auto">
         {% endif %}
         {% empty %}
         <p class="text-center fs-2">Here is no any product yet.</p>

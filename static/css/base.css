@@ -85,7 +85,7 @@ input[name='q']::placeholder {
 
 /* Product */
 .product-card {
-  width: 13rem;
+  width: 28rem;
 }
 
 .product-card:hover {
@@ -118,13 +118,13 @@ textarea[name="description"] {
 }
 
 .product-img {
-  height: 13rem;
-  width: 13rem;
+  height: 28rem;
+  width: 28rem;
 }
 
 #detail-img {
-  height: 40rem;
-  width: 40rem;
+  height: 16rem;
+  width: 16rem;
 }
 
 /* Cart */
@@ -202,23 +202,36 @@ textarea[name="description"] {
 }
 
 /* Media Tool */
-@media (max-width: 576px) {
+@media (min-width: 768px) {
   .product-img {
-    height: 28rem;
-    width: 28rem;
+    height: 14rem;
+    width: 14rem;
   }
 
   .product-card {
-    width: 28rem;
+    width: 14rem;
   }
 
-  .detail-img {
-    height: 30rem;
-    width: 30rem;
+  #detail-img {
+    height: 24rem;
+    width: 24rem;
   }
 }
 
-@media (max-width: 991px) {
+@media (min-width: 991px) {
+  .product-img {
+    height: 16rem;
+    width: 16rem;
+  }
+
+  .product-card {
+    width: 16rem;
+  }
+
+  #detail-img {
+    height: 30rem;
+    width: 30rem;
+  }
 
   .increment-qty,
   .decrement-qty {
