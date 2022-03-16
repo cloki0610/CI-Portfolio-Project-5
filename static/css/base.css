@@ -84,6 +84,10 @@ input[name='q']::placeholder {
 }
 
 /* Product */
+.product-card {
+  width: 13rem;
+}
+
 .product-card:hover {
   background-color: #075E31;
   color: #fafafa !important;
@@ -132,7 +136,7 @@ textarea[name="description"] {
   right: 10px;
 }
 
-.btt-link{
+.btt-link {
   cursor: pointer;
 }
 
@@ -203,6 +207,11 @@ textarea[name="description"] {
     height: 28rem;
     width: 28rem;
   }
+
+  .product-card {
+    width: 28rem;
+  }
+
   .detail-img {
     height: 30rem;
     width: 30rem;
