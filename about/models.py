@@ -16,3 +16,11 @@ class Contact(models.Model):
 
     def __str__(self):
         return f"Message from {str(self.name)}"
+
+
+class NewsLetter(models.Model):
+    """ Store email for send news letter without login """
+    email = models.EmailField(max_length=50)
+
+    def __str__(self):
+        return str(self.email)

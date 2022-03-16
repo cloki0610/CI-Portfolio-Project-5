@@ -5,8 +5,8 @@ from django.urls import reverse_lazy
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.safestring import mark_safe
-from .forms import ContactForm
-from .models import Contact
+from .forms import ContactForm, NewsletterForm
+from .models import Contact, NewsLetter
 
 
 class About(generic.TemplateView):
@@ -39,3 +39,16 @@ class ContactList(LoginRequiredMixin, generic.ListView):
                                      'Only admin can access.'))
             return redirect(reverse('home'))
         return super(ContactList, self).get(request, *args, **kwargs)
+
+
+class NewsletterSubscribe(generic.FormView):
+    """ Return a form to submit email """
+    model = NewsLetter
+    template_name = 'about/newsletter.html'
+    form_class = NewsletterForm
+    success_url = reverse_lazy('products')
+
+    def form_valid(self, form):
+        form.save()
+        messages.success(self.request, 'Thank you for your subscribion!')
+        return super().form_valid(form)

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_cust %}
+<link rel="stylesheet" href="{% static 'about/css/about.css' %}">
+{% endblock %}
+
+{% block sub_title %}Subscribe Newsletter{% endblock %}
+
+{% block content %}
+<div class="container-fluid min-vh-100 pt-5 px-2 px-sm-5 bg-index">
+    <div class="row pt-5 justify-content-center">
+        <div class="col-12 col-lg-6 text-center">
+            <div class="row mx-auto mx-lg-0 mt-3 pb-5 px-5 about-card" style="max-width:800px">
+                <h1 class="no-select fw-bold text-uppercase text-center pt-3 mb-3 about-title">Subscribe Newsletter</h1>
+                <div class="row text-center text-light fs-5">
+                    <i class="fas fa-cog fa-spin me-3" style="color:#D29D2B;"></i>
+                    <p class="mt-3">Subscribe and receive our latest news!</p>
+                    <form method="POST" action="{% url 'newsletter' %}" class="form mb-2">
+                        {% csrf_token %}
+                        {{ form | crispy }}
+                        <div class="text-center pt-3">
+                            <button class="btn btn-lg btn-send rounded text-uppercase w-100" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

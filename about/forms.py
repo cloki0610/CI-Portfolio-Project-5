@@ -1,6 +1,6 @@
 """ Contact form model """
 from django import forms
-from .models import Contact
+from .models import Contact, NewsLetter
 
 
 class ContactForm(forms.ModelForm):
@@ -31,4 +31,28 @@ class ContactForm(forms.ModelForm):
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'border-success ' + \
                                                        'rounded-0 mb-2'
+            self.fields[field].label = False
+
+
+class NewsletterForm(forms.ModelForm):
+    """ Form model using Contact data model """
+    class Meta:
+        """ Meta data """
+        model = NewsLetter
+        fields = '__all__'
+
+    def __init__(self, *args, **kwargs):
+        """
+        Add style to each input item
+        """
+        super().__init__(*args, **kwargs)
+        placeholders = {
+            'email': 'Enter your e-mail',
+        }
+
+        for field in self.fields:
+            placeholder = placeholders[field]
+            self.fields[field].widget.attrs['placeholder'] = placeholder
+            self.fields[field].widget.attrs['class'] = 'border-success ' + \
+                                                       'rounded-0'
             self.fields[field].label = False
