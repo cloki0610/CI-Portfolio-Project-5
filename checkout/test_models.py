@@ -44,12 +44,13 @@ class TestCheckoutModels(TestCase):
         self.lineitem.save()
 
     def test_order_string_method(self):
-        """ Test string method and _generate_order_number """
+        """ Test string method output and _generate_order_number """
         order = self.order
         self.assertNotEqual(str(order), '')
+        self.assertEqual(str(order), order.order_number)
 
     def test_orderlineitem_string_method(self):
-        """ Test string method """
+        """ Test string method output """
         order = self.order
         lineitem = self.lineitem
         self.assertEqual(str(lineitem),

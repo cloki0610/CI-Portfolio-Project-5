@@ -22,7 +22,7 @@ class TestOrderForms(TestCase):
         self.assertTrue(form.is_valid())
 
     def test_fullname_is_required(self):
-        """ Test if full_name is blank input """
+        """ Test with blank full_name input """
         form = OrderForm({
             'full_name': '',
             'email': 'test@test.com',
@@ -37,7 +37,7 @@ class TestOrderForms(TestCase):
         self.assertFalse(form.is_valid())
 
     def test_email_is_required(self):
-        """ Test if email is blank input """
+        """ Test with blank email input """
         form = OrderForm({
             'full_name': 'Test',
             'email': '',
@@ -52,7 +52,7 @@ class TestOrderForms(TestCase):
         self.assertFalse(form.is_valid())
 
     def test_phone_number_is_required(self):
-        """ Test if phone_number is blank input """
+        """ Test with blank phone_number input """
         form = OrderForm({
             'full_name': 'Test',
             'email': 'test@test.com',
@@ -67,7 +67,7 @@ class TestOrderForms(TestCase):
         self.assertFalse(form.is_valid())
 
     def test_postcode_is_optional(self):
-        """ Test if postcode is blank input """
+        """ Test with blank postcode input """
         form = OrderForm({
             'full_name': 'Test',
             'email': 'test@test.com',
@@ -82,7 +82,7 @@ class TestOrderForms(TestCase):
         self.assertTrue(form.is_valid())
 
     def test_town_or_city_is_required(self):
-        """ Test if town_or_city is blank input """
+        """ Test with blank town_or_city input """
         form = OrderForm({
             'full_name': 'Test',
             'email': 'test@test.com',
@@ -97,7 +97,7 @@ class TestOrderForms(TestCase):
         self.assertFalse(form.is_valid())
 
     def test_street_address1_is_required(self):
-        """ Test if street_address1 is blank input """
+        """ Test with blank street_address1 input """
         form = OrderForm({
             'full_name': 'Test',
             'email': 'test@test.com',
@@ -112,7 +112,7 @@ class TestOrderForms(TestCase):
         self.assertFalse(form.is_valid())
 
     def test_street_address2_is_optional(self):
-        """ Test if street_address2 is blank input """
+        """ Test with blank street_address2 input """
         form = OrderForm({
             'full_name': 'Test',
             'email': 'test@test.com',
@@ -127,7 +127,7 @@ class TestOrderForms(TestCase):
         self.assertTrue(form.is_valid())
 
     def test_county_is_optional(self):
-        """ Test if county is blank input """
+        """ Test with blank county input """
         form = OrderForm({
             'full_name': 'Test',
             'email': 'test@test.com',
@@ -142,7 +142,7 @@ class TestOrderForms(TestCase):
         self.assertTrue(form.is_valid())
 
     def test_country_is_required(self):
-        """ Test if country is blank input """
+        """ Test with blank country input """
         form = OrderForm({
             'full_name': 'Test',
             'email': 'test@test.com',

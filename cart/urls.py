@@ -10,6 +10,6 @@ urlpatterns = [
           name="add_to_cart"),
      path('delete/<str:item_id>/', views.RemoveItemView.as_view(),
           name="remove_item"),
-     path('update/<str:item_id>', views.UpdateItemView.as_view(),
+     path('update/<str:item_id>/', views.UpdateItemView.as_view(),
           name="update_item"),
 ]

@@ -14,7 +14,8 @@ class Report(models.Model):
     problem_type = models.IntegerField(choices=TYPE, default=0)
     problem_description = models.TextField(default='')
     report_on = models.DateTimeField(auto_now_add=True)
-    contact_email = models.EmailField(max_length=50, blank=True, default='')
+    contact_email = models.EmailField(max_length=50, null=True,
+                                      blank=True, default='')
     checked = models.BooleanField(default=False)
 
     class Meta:
