@@ -9,8 +9,6 @@ from checkout.models import Order
 from .forms import OrderReviewForm, CommentForm
 from .models import OrderReview
 
-# Create your views here.
-
 
 class OrderHistoryView(LoginRequiredMixin, View):
     """ Display information of previous order record with comment form """
@@ -58,12 +56,17 @@ class OrderReView(LoginRequiredMixin, View):
         try:
             order_review = OrderReview.objects.get(slug=slug)
         except OrderReview.DoesNotExist:
-            messages.info(request,
-                          mark_safe("You do not write any review yet.<br/>"
-                                    "But we're welcome to know something "
-                                    "about your previous order"))
-            return redirect(reverse('create_review',
-                                    args=[order.order_number]))
+            if request.user.is_superuser:
+                messages.info(request,
+                              "Error: User do not write any review yet.")
+                return redirect(reverse('order_list'))
+            else:
+                messages.info(request,
+                              mark_safe("You do not write any review yet.<br/>"
+                                        "But we're welcome to know something "
+                                        "about your previous order"))
+                return redirect(reverse('create_review',
+                                        args=[order.order_number]))
         # else return the review detail with comments
         comments = order_review.comments.order_by('date')
         comment_form = CommentForm()
@@ -71,7 +74,7 @@ class OrderReView(LoginRequiredMixin, View):
                       mark_safe('This is a review of '
                                 f'your previous order(Ref. {order_number}).'
                                 '<br/>Feel free to update or reply your review'
-                                'on the order date.'))
+                                ' on the order date.'))
         return render(request,
                       'order_history/order_review.html',
                       {
@@ -118,7 +121,7 @@ class CreateOrderReView(LoginRequiredMixin, View):
                              mark_safe("Access Denied.<br/>"
                                        "Only order owner and admin "
                                        "can do this action."))
-            return redirect(reverse('products'))
+            return redirect(reverse('home'))
         form = OrderReviewForm()
         return render(request,
                       "order_history/create_review.html",
@@ -136,7 +139,7 @@ class CreateOrderReView(LoginRequiredMixin, View):
                              mark_safe("Access Denied.<br/>"
                                        "Only order owner and admin "
                                        "can do this action."))
-            return redirect(reverse('products'))
+            return redirect(reverse('home'))
         form = OrderReviewForm(request.POST)
         if form.is_valid():
             form = form.save(commit=False)
@@ -170,7 +173,7 @@ class UpdateOrderReView(LoginRequiredMixin, View):
                              mark_safe("Access Denied.<br/>"
                                        "Only order owner and admin "
                                        "can do this action."))
-            return redirect(reverse('products'))
+            return redirect(reverse('home'))
         form = OrderReviewForm(instance=order_review)
         return render(request,
                       "order_history/update_review.html",
@@ -190,7 +193,7 @@ class UpdateOrderReView(LoginRequiredMixin, View):
                              mark_safe("Access Denied.<br/>"
                                        "Only order owner and admin "
                                        "can do this action."))
-            return redirect(reverse('products'))
+            return redirect(reverse('home'))
         form = OrderReviewForm(request.POST, instance=order_review)
         if form.is_valid():
             form = form.save(commit=False)
@@ -219,7 +222,7 @@ class DeleteOrderReView(LoginRequiredMixin, View):
                              mark_safe("Access Denied.<br/>"
                                        "Only order owner and admin "
                                        "can do this action."))
-            return redirect(reverse('products'))
+            return redirect(reverse('home'))
         try:
             order_review.delete()
             messages.success(request,

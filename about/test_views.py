@@ -47,7 +47,7 @@ class TestAboutViews(TestCase):
         self.assertEqual(len(messages), 1)
         self.assertEqual(str(messages[0]), 'Thank you for your support!')
 
-    def test_get_contact_list_no_login(self):
+    def test_get_contact_list_without_login(self):
         """
         Test GET method to render contact_list.html template without login
         """
@@ -77,6 +77,7 @@ class TestAboutViews(TestCase):
         self.client.login(username='test_superuser', password='password')
         response = self.client.get('/about/contact_list/')
         self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'about/contact_list.html')
 
     def test_get_newsletter_view(self):
         """ Test GET method to render newsletter.html template """
