@@ -7,7 +7,7 @@ class TestProductsModels(TestCase):
     """ Test Category and Product models """
 
     def setUp(self):
-        """Set up required instance """
+        """ Set up required instance """
         self.category = Category.objects.create(
             name='personal_items',
             friendly_name='Personal items'

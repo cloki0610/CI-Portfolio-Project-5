@@ -38,7 +38,6 @@ class ProfileView(LoginRequiredMixin, View):
             profile_form.save()
             messages.success(request, 'Your Profile Has Updated.')
         else:
-            print(profile_form.errors)
             messages.error(request,
                            mark_safe('Updated Invalid.<br/>'
                                      'Please check and try again!'))
