@@ -28,7 +28,7 @@
     <div class="row mx-auto text-center" style="max-width: 600px">
         {% for contact in contact_list %}
         <div class="card text-start contacts px-0 rounded-0" id="contact-{{ contact.id }}">
-            <div class="card-body pt-3 pb-5 px-5">
+            <div class="card-body pt-3 pb-5 px-2 px-md-5">
               <p class="card-text"><strong>My E-mail:</strong> {{ contact.email }}</p>
               <p class="card-text"><strong>Other contact method:</strong>{{ contact.other_contact }}</p>
               <p class="card-text"><strong>My Message:</strong></p>

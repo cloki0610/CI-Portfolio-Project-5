@@ -32,7 +32,7 @@
     <div class="col-12 col-sm-3 mt-2">
         <form action="{% url 'remove_item' item.item_id %}" method="POST">
             {% csrf_token %}
-            <button type="submit" class="btn btn-sm btn-danger w-100"><i class="fas fa-times"></i></button></button>
+            <button type="submit" class="btn btn-sm btn-danger w-100"><i class="fas fa-times"></i></button>
         </form>
     </div>
 </div>

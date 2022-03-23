@@ -98,13 +98,12 @@ Category
                             {% if request.user.is_superuser %}
                             <span class="float-end">
                                 <a href="{% url 'edit_product' product.id %}" class="btn btn-sm btn-secondary rounded-0 admin-btn"><i class="fas fa-edit"></i></a>
-                                <a href="{% url 'delete_confirm' product.id %}" class="btn btn-sm btn-danger rounded-0 admin-btn"><i class="fas fa-trash-alt"></i></i></a>
+                                <a href="{% url 'delete_confirm' product.id %}" class="btn btn-sm btn-danger rounded-0 admin-btn"><i class="fas fa-trash-alt"></i></a>
                             </span>
                             {% endif %}
                         </div>
                     </div>
                 </div>
-            </a>
         </div>
         {% if forloop.counter|divisibleby:4 and forloop.counter is not 8 %}
     </div>
@@ -119,7 +118,7 @@ Category
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
+<script>
     $('#sort-selector').change(function () {
         let selector = $(this);
         let currentUrl = new URL(window.location);

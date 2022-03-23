@@ -2,13 +2,6 @@
     display: none;
 }
 
-#review {
-    height: calc(100vh - 200px);
-    min-height: 400px;
-    box-sizing: border-box;
-    overflow-y: auto;
-}
-
 #review-body {
     height: calc(100vh - 300px);
     min-height: 300px;

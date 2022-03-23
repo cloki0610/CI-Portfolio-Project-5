@@ -15,13 +15,13 @@
             <div class="row justify-content-center text-center">
                 <!--Return button-->
                 <div class="col-4 mb-2">
-                    <a href="{% url 'products' %}" class="btn btn-outline-success btn-lg mx-auto rounded-0">RETURN</a>
+                    <a href="{% url 'products' %}" class="btn btn-outline-success mx-auto rounded-0">RETURN</a>
                 </div>
                 <div class="col-4 mb-2">
                     <!-- Delete Product -->
                     <form method="POST" action="{% url 'delete_product' product.id %}">
                         {% csrf_token %}
-                        <button type="submit" class="btn btn-lg btn-danger rounded-0 mx-auto rounded-0">
+                        <button type="submit" class="btn btn-danger rounded-0 mx-auto rounded-0">
                             DELETE
                         </button>
                     </form>

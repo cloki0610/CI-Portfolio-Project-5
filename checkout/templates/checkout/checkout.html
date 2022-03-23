@@ -88,7 +88,7 @@
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
                 <div class="submit-button text-end mt-5 mb-2">
-                    <a href="{% url 'view_cart' %}" class="btn btn-outline-success rounded-0 me-1">
+                    <a href="{% url 'view_cart' %}" class="btn btn-outline-success rounded-0">
                         <span>
                             <i class="fas fa-chevron-left"></i>
                         </span>
@@ -112,11 +112,11 @@
     </form>
 </div>
 <div id="loading-overlay">
-    <h1 class="loading-spinner">
+    <div class="loading-spinner fs-1">
         <div class="spinner-border text-success"  style="width: 6rem; height: 6rem;" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
-    </h1>
+    </div>
 </div>
 {% endblock %}
 

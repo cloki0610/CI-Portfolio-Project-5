@@ -2,7 +2,7 @@
     <div class="col-12 col-md-3 pe-0">
         {% if widget.is_initial %}
         <a href="{{ widget.value.url }}">
-            <img width="96" height="96" class="rounded shadow-sm p-1" src="{{ widget.value.url }}">
+            <img width="96" height="96" class="rounded shadow-sm p-1" src="{{ widget.value.url }}" alt="new product image">
         </a>
         {% if not widget.required %}
         <div class="custom-control mt-2 ms-2">
@@ -17,11 +17,9 @@
     </div>
     <div class="col-12 col-md-9 pb-2">
         <span class="btn btn-success rounded-0 btn-file ms-2 mt-1">
-            Select Image<input id="new-image" type="{{ widget.type }}" name="{{ widget.name }}"
+            Select Image<input type="{{ widget.type }}" name="{{ widget.name }}"
                 {% include "django/forms/widgets/attrs.html" %}>
         </span>
-        <strong>
-            <p class="text-danger ms-2 my-2" id="filename"></p>
-        </strong>
+        <p class="text-danger ms-2 my-2 fw-bold" id="filename"></p>
     </div>
 </div>

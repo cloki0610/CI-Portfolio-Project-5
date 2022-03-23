@@ -38,9 +38,9 @@
                 <div id="flush-collapse{{ report.id }}" class="accordion-collapse collapse" aria-labelledby="flush-heading{{ report.id }}"
                     data-bs-parent="#ReportList">
                     <div class="accordion-body">
-                        <span class="mb-2 d-flex justify-content-between">
+                        <div class="mb-2 d-flex justify-content-between">
                             <span>Customer name: {{ report.name }}</span>
-                            <span class="float-end">
+                            <div class="float-end">
                                 <form action="{% url 'report_checked' report.id %}" method="POST">
                                     {% csrf_token %}
                                     <button type="submit" class="btn btn-sm {% if report.checked %}btn-secondary{% else %}btn-success{% endif %} rounded-0">
@@ -51,8 +51,8 @@
                                         {% endif%}
                                     </button>
                                 </form>
-                            </span>
-                        </span>
+                            </div>
+                        </div>
                         <p>Problem Type: {{ report.get_problem_type_display }}</p>
                         <p>Contact E-mail: {{ report.contact_email }}</p>
                         <p>{{ report.problem_description }}</p>

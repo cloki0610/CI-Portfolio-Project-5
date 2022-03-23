@@ -536,6 +536,117 @@ Implementation:
 <hr>
 
 #### **Wireframes**
+ - index
+
+ <img src="readme-img/index.html.png" alt="index" style="width:600px;"/>
+
+ - products
+
+ <img src="readme-img/products.html.png" alt="products" style="width:600px;"/>
+
+ - product_detail
+
+ <img src="readme-img/product_detail.html.png" alt="product_detail" style="width:600px;"/>
+
+ - add_product
+
+ <img src="readme-img/add_product.html.png" alt="add_product" style="width:600px;"/>
+
+ - edit_product
+
+ <img src="readme-img/edit_product.html.png" alt="edit_product" style="width:600px;"/>
+ 
+ - delete_product_confirm
+
+ <img src="readme-img/delete_product_confirm.html.png" alt="delete_product_confirm" style="width:600px;"/>
+ 
+ - checkout
+
+ <img src="readme-img/checkout.html.png" alt="checkout" style="width:600px;"/>
+
+ - checkout_success
+ 
+ <img src="readme-img/checkout_success.html.png" alt="checkout_success" style="width:600px;"/>
+
+ - cart
+ 
+ <img src="readme-img/cart.html.png" alt="cart" style="width:600px;"/>
+
+ - profile
+ 
+ <img src="readme-img/profile.html.png" alt="v" style="width:600px;"/>
+
+ - delete_account
+ 
+ <img src="readme-img/delete_account.html.png" alt="delete_account" style="width:600px;"/>
+
+ - order_list
+ 
+ <img src="readme-img/order_list.html.png" alt="order_list" style="width:600px;"/>
+
+ - order_history
+ 
+ <img src="readme-img/order_history.html.png" alt="order_history" style="width:600px;"/>
+
+ - order_review
+ 
+ <img src="readme-img/order_review.html.png" alt="order_review" style="width:600px;"/>
+
+ - create_review
+ 
+ <img src="readme-img/create_review.html.png" alt="create_review" style="width:600px;"/>
+
+ - update_review
+ 
+ <img src="readme-img/update_review.html.png" alt="update_review" style="width:600px;"/>
+
+ - report
+ 
+ <img src="readme-img/report.html.png" alt="report" style="width:600px;"/>
+
+ - report_list
+ 
+ <img src="readme-img/report_list.html.png" alt="report_list" style="width:600px;"/>
+
+ - about
+ 
+ <img src="readme-img/about.html.png" alt="about" style="width:600px;"/>
+
+ - contact
+ 
+ <img src="readme-img/contact.html.png" alt="contact" style="width:600px;"/>
+
+ - newsletter
+ 
+ <img src="readme-img/newsletter.html.png" alt="newsletter" style="width:600px;"/>
+
+ - contact_list
+ 
+ <img src="readme-img/contact_list.html.png" alt="contact_list" style="width:600px;"/>
+
+ - email (allauth template)
+ 
+ <img src="readme-img/email.html.png" alt="email" style="width:600px;"/>
+
+ - password_reset (allauth template)
+ 
+ <img src="readme-img/password_reset.html.png" alt="password_reset" style="width:600px;"/>
+
+ - change_password (allauth template)
+ 
+ <img src="readme-img/change_password.html.png" alt="change_password" style="width:600px;"/>
+
+ - signin (allauth template)
+ 
+ <img src="readme-img/signin.html.png" alt="signin" style="width:600px;"/>
+
+ - signup (allauth template)
+ 
+ <img src="readme-img/signup.html.png" alt="signup" style="width:600px;"/>
+
+ - signout (allauth template)
+ 
+ <img src="readme-img/signout.html.png" alt="signout" style="width:600px;"/>
 
 #### **Database Design**
 
@@ -546,6 +657,8 @@ With Heroku's config var feature, all sensitive keys like stripe and AWS secret 
 The project also use Django allauth to set up a user authorization system to provide restricted access to certain features on the website that are not intended for unauthorized users. User need a valid e-mail to receive confirmation e-mail to confirm their e-mail to login to the website.
 
 All image file uploads from the user should store and be protected in AWS S3 bucket, but there are limit of the usage because it is still using AWS free tier service.
+
+The project use stripe to handle the payment method, with set up an account and to use the test service, the the project will handle the security in the payment process. All the related secret will store in env.py and heroku. The project also use their webhook feature to save the payment detail and send confirmation e-mail after a successful payment, so an endpoint setting are also created in the stripe account to resist the connection from others.
 
 ### **Surface Plane**
 
@@ -572,12 +685,25 @@ Navbar icon color: #D29D2B
 - Authentication system provided by allauth library.
 - Admin panel provided by Django framework with customized search and filter function.
 - Customer user profile.
+- Shopping cart using context and local storage
+- Checkout and payment method provide by stripe
+- Product list with filter, search and sorting
+- Report form for all user and quest
+- Contact form for all user and quest
+- Full Order, Report and contact list only superuser can access
+- Toggle button to check report list item checked or not
+- Order review system to let user write some suggestion about their previous order
+- A comment section in order review page only customer and superuser can use.
 - Page for Error 404.
 - Page for Error 500.
 
 ### **Features Left to Implement**
 
 <hr>
+
+- Improve user interfaces
+- Stock tracing system
+- Alarm system to let admin and user know there are new message in the order review.
 
 ## **Testing**
 
@@ -596,6 +722,11 @@ Navbar icon color: #D29D2B
 ### Issue found and solved
 
 <hr>
+
+- I accidently use a wrong logic and denied the customer to access their order review page.\
+Problem fixed after it was spotted.
+- Some type error was found and fixed.
+- Some close tag dulicate because of IDE auto-input feature, I spot these error by W3 HTML validator and fix it after that.
 
 <br>
 
@@ -648,6 +779,7 @@ and those python libraries install with [requirements.txt](requirements.txt):
 - GitHub
 - Git
 - Heroku
+- AWS S3 Bucket
 
 ### **Testing**
 
@@ -676,7 +808,7 @@ and those python libraries install with [requirements.txt](requirements.txt):
 
 - [My Project 4](https://github.com/cloki0610/CI-Portfolio-Project-4)
 
-  I reuse some code from my previous project to create the view as class-based view, and complete my test cases of my web application.
+  I reuse some code from my previous project to create the view as class-based view, and complete my unit tests of my web application.
   <hr>
 
 ## **Media**
