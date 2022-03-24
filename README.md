@@ -650,6 +650,8 @@ Implementation:
 
 #### **Database Design**
 
+<img src="readme-img/pp5_erd.png" alt="signout" style="width:600px;"/>
+
 #### **Security**
 
 With Heroku's config var feature, all sensitive keys like stripe and AWS secret key were stored in local env.py file are now stored in the Heroku server to prevent unwanted connections to the database or cloud service.
@@ -666,15 +668,23 @@ The project use stripe to handle the payment method, with set up an account and 
 
 #### **Color Sheme**
 
-Background color: #fafafa\
-font color: #3a3a3a\
+Background color: #FAFAFA\
+font color: #3A3A3A\
 Navbar background color: #075E31\
 Navbar font color: #FFF1CE\
 Navbar icon color: #D29D2B
 
 #### **Typography**
 
+The Brand text on the navigation bar use 'Rubik Mono One' font, and the rest are all using 'Rubik' as the main font.
+
 #### **Differences to Design**
+
+- All the margin and padding maybe not be as expected at last because I just simply use bootstrap feature to add these space to the box.
+
+- I try my best to fix all buttom size but there maybe still some problem in my work.
+
+- Different with the design, I finally add some icon from fontawesome to replace the text.
 
 ## **Feature**
 
