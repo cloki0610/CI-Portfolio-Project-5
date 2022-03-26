@@ -39,14 +39,14 @@ class TestOrderReviewForms(TestCase):
         self.assertFalse(form.is_valid())
 
     def test_commentform_is_valid(self):
-        """ Test order review form model with valid input """
+        """ Test comment form model with valid input """
         form = CommentForm({
             'comment': 'Test comment text'
         })
         self.assertTrue(form.is_valid())
 
     def test_commentform_is_required(self):
-        """ Test order review form model with blank input """
+        """ Test comment form model with blank input """
         form = CommentForm({
             'comment': ''
         })

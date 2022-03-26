@@ -114,7 +114,7 @@ class TestCartViews(TestCase):
 
     def test_post_removeitemview_remove_item(self):
         """
-        Test POST method in RemoveItemView to remove item by set qty to 0
+        Test POST method in RemoveItemView to remove item
         """
         session = self.client.session
         cart = {'1': 3}

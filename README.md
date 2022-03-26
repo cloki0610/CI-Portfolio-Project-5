@@ -538,119 +538,119 @@ Implementation:
 #### **Wireframes**
  - index
 
- <img src="readme-img/index.html.png" alt="index" style="width:600px;"/>
+ <img src="readme-img/wireframes/index.html.png" alt="index" style="width:600px;"/>
 
  - products
 
- <img src="readme-img/products.html.png" alt="products" style="width:600px;"/>
+ <img src="readme-img/wireframes/products.html.png" alt="products" style="width:600px;"/>
 
  - product_detail
 
- <img src="readme-img/product_detail.html.png" alt="product_detail" style="width:600px;"/>
+ <img src="readme-img/wireframes/product_detail.html.png" alt="product_detail" style="width:600px;"/>
 
  - add_product
 
- <img src="readme-img/add_product.html.png" alt="add_product" style="width:600px;"/>
+ <img src="readme-img/wireframes/add_product.html.png" alt="add_product" style="width:600px;"/>
 
  - edit_product
 
- <img src="readme-img/edit_product.html.png" alt="edit_product" style="width:600px;"/>
+ <img src="readme-img/wireframes/edit_product.html.png" alt="edit_product" style="width:600px;"/>
  
  - delete_product_confirm
 
- <img src="readme-img/delete_product_confirm.html.png" alt="delete_product_confirm" style="width:600px;"/>
+ <img src="readme-img/wireframes/delete_product_confirm.html.png" alt="delete_product_confirm" style="width:600px;"/>
  
  - checkout
 
- <img src="readme-img/checkout.html.png" alt="checkout" style="width:600px;"/>
+ <img src="readme-img/wireframes/checkout.html.png" alt="checkout" style="width:600px;"/>
 
  - checkout_success
  
- <img src="readme-img/checkout_success.html.png" alt="checkout_success" style="width:600px;"/>
+ <img src="readme-img/wireframes/checkout_success.html.png" alt="checkout_success" style="width:600px;"/>
 
  - cart
  
- <img src="readme-img/cart.html.png" alt="cart" style="width:600px;"/>
+ <img src="readme-img/wireframes/cart.html.png" alt="cart" style="width:600px;"/>
 
  - profile
  
- <img src="readme-img/profile.html.png" alt="v" style="width:600px;"/>
+ <img src="readme-img/wireframes/profile.html.png" alt="v" style="width:600px;"/>
 
  - delete_account
  
- <img src="readme-img/delete_account.html.png" alt="delete_account" style="width:600px;"/>
+ <img src="readme-img/wireframes/delete_account.html.png" alt="delete_account" style="width:600px;"/>
 
  - order_list
  
- <img src="readme-img/order_list.html.png" alt="order_list" style="width:600px;"/>
+ <img src="readme-img/wireframes/order_list.html.png" alt="order_list" style="width:600px;"/>
 
  - order_history
  
- <img src="readme-img/order_history.html.png" alt="order_history" style="width:600px;"/>
+ <img src="readme-img/wireframes/order_history.html.png" alt="order_history" style="width:600px;"/>
 
  - order_review
  
- <img src="readme-img/order_review.html.png" alt="order_review" style="width:600px;"/>
+ <img src="readme-img/wireframes/order_review.html.png" alt="order_review" style="width:600px;"/>
 
  - create_review
  
- <img src="readme-img/create_review.html.png" alt="create_review" style="width:600px;"/>
+ <img src="readme-img/wireframes/create_review.html.png" alt="create_review" style="width:600px;"/>
 
  - update_review
  
- <img src="readme-img/update_review.html.png" alt="update_review" style="width:600px;"/>
+ <img src="readme-img/wireframes/update_review.html.png" alt="update_review" style="width:600px;"/>
 
  - report
  
- <img src="readme-img/report.html.png" alt="report" style="width:600px;"/>
+ <img src="readme-img/wireframes/report.html.png" alt="report" style="width:600px;"/>
 
  - report_list
  
- <img src="readme-img/report_list.html.png" alt="report_list" style="width:600px;"/>
+ <img src="readme-img/wireframes/report_list.html.png" alt="report_list" style="width:600px;"/>
 
  - about
  
- <img src="readme-img/about.html.png" alt="about" style="width:600px;"/>
+ <img src="readme-img/wireframes/about.html.png" alt="about" style="width:600px;"/>
 
  - contact
  
- <img src="readme-img/contact.html.png" alt="contact" style="width:600px;"/>
+ <img src="readme-img/wireframes/contact.html.png" alt="contact" style="width:600px;"/>
 
  - newsletter
  
- <img src="readme-img/newsletter.html.png" alt="newsletter" style="width:600px;"/>
+ <img src="readme-img/wireframes/newsletter.html.png" alt="newsletter" style="width:600px;"/>
 
  - contact_list
  
- <img src="readme-img/contact_list.html.png" alt="contact_list" style="width:600px;"/>
+ <img src="readme-img/wireframes/contact_list.html.png" alt="contact_list" style="width:600px;"/>
 
  - email (allauth template)
  
- <img src="readme-img/email.html.png" alt="email" style="width:600px;"/>
+ <img src="readme-img/wireframes/email.html.png" alt="email" style="width:600px;"/>
 
  - password_reset (allauth template)
  
- <img src="readme-img/password_reset.html.png" alt="password_reset" style="width:600px;"/>
+ <img src="readme-img/wireframes/password_reset.html.png" alt="password_reset" style="width:600px;"/>
 
  - change_password (allauth template)
  
- <img src="readme-img/change_password.html.png" alt="change_password" style="width:600px;"/>
+ <img src="readme-img/wireframes/change_password.html.png" alt="change_password" style="width:600px;"/>
 
  - signin (allauth template)
  
- <img src="readme-img/signin.html.png" alt="signin" style="width:600px;"/>
+ <img src="readme-img/wireframes/signin.html.png" alt="signin" style="width:600px;"/>
 
  - signup (allauth template)
  
- <img src="readme-img/signup.html.png" alt="signup" style="width:600px;"/>
+ <img src="readme-img/wireframes/signup.html.png" alt="signup" style="width:600px;"/>
 
  - signout (allauth template)
  
- <img src="readme-img/signout.html.png" alt="signout" style="width:600px;"/>
+ <img src="readme-img/wireframes/signout.html.png" alt="signout" style="width:600px;"/>
 
 #### **Database Design**
 
-<img src="readme-img/pp5_erd.png" alt="signout" style="width:600px;"/>
+<img src="readme-img/pp5_erd.png" alt="Portfolio-Project-5-ERD" style="width:600px;"/>
 
 #### **Security**
 
@@ -721,13 +721,44 @@ The Brand text on the navigation bar use 'Rubik Mono One' font, and the rest are
 
 <hr>
 
+- HTML Code basically passes through the W3C HTML Validator by using the source code get from DevTool.
+- CSS Code in every static folder pass through the W3C CSS Validator.
+- Python Code passes through PEP8 Validator.
+- Lighthouse in Chrome Dev Tools have been used to test the performance of the website.
+<img src="readme-img/lighthouse-result.png" alt="lighthouse-result" style="width:600px;"/>
+
 ### Manual test
 
 <hr>
 
+- Google Chrome developer tools and WAVE Web Accessibility Evaluation Tool used for layout testing and solve style and display issues, to solve the contrast warning the navbar color was changed to a deeper color.
+- Github Project has been used to track tasks. I used to check the task completion through the process.
+- All links were tested with or without login during the development process and tested again after deployment.
+- Every fields in the forms was tested to ensure that they work as they should.
+- I also test the website in different sizes of the screen by Google Chrome developer tools and the layouts are seems fine.
+- Error 404 and 500 page work as expected.
+
 ### Automated test
 
 <hr>
+
+There are a total of 168 test cases that used test libraries provide by the Python and support by Django framework to test the view, form models, and data models in all of the applications. Details of test cases are listed below.
+
+- home application
+
+- products application
+
+- checkout application
+
+- cart application
+
+- profiles application
+
+- order_history application
+
+- about application
+
+- report application
 
 ### Issue found and solved
 
@@ -737,6 +768,7 @@ The Brand text on the navigation bar use 'Rubik Mono One' font, and the rest are
 Problem fixed after it was spotted.
 - Some type error was found and fixed.
 - Some close tag dulicate because of IDE auto-input feature, I spot these error by W3 HTML validator and fix it after that.
+- Overflow problem cause by font size and padding. Related css and bootstrap was change fix most of these problems, I tried my best to solve all of it.
 
 <br>
 
@@ -744,11 +776,43 @@ Problem fixed after it was spotted.
 
 <hr>
 
+- Maybe there are still some risk or security problem there but I've try my best to fix it.
+- I fixed some overflow problem because of padding or font size but maybe few of them are still there.
+
 ## **Deployment**
 
 ### **Create a new project**
 
 <hr>
+
+1. First, I use Code Institute gitpod full template to generate my new project.
+2. Then I open the new project by gitpod
+3. After a new workspace is opened, I follow the cheat sheet to install Django and all required libraries.
+4. Use 'pip3 freeze --local > requirements.txt' to generate requirements.txt file.
+5. Then I commit my files to GitHub repository to make my initial commit.
+
+### Deploy to Heroku
+
+<hr>
+
+1. Log in to Heroku account.
+2. Click the 'New' button on the dashboard and click 'create a new app'
+3. Enter the project name and select the region
+4. Click the 'create app' button
+5. To resources tag, Add-ons, search and add 'Heroku Postgres', I choose the free version for this project.
+6. To deploy tag, Deployment method and connect the GitHub project to Heroku.
+7. Then go to Setting tag, Config Vars, I copy the database link of the new Heroku Postgres to the setting.py file in my project.
+8. Copy the link to env.py in workspace, a file will not be tracked for development use to run the webpage locally.
+9. Then log in to my AWS account, for this project I create my own user, user group and policy by IAN and create a new bucket by S3.
+11. Copy the access key id and its secret key and save into heroku's config var as 'AWS_ACCESS_KEY_ID' and 'AWS_SECRET_ACCESS_KEY', and create a 'USE_AWS' variable and set it to 'True'
+10. Set up a stripe account, get and copy the public key and secret key, and save these key to heroku's config var as 'STRIPE_PUBLIC_KEY' and 'STRIPE_SECRET_KEY'.
+11. In the stripe account, create a end point for the deploy version domain address, and save the webhook key as 'STRIPE_WH_SECRET' in the heroku's config var.
+12. Then add 'DISABLE_COLLECTSTATIC' and set the value as 1 to config vars, when development is complete, this variable will be removed.
+13. Then add all the related settings to the setting.py in my workspace to connect the stripe and AWS S3 Bucket.
+14. I use my spare google account to send the email, after I get my pass secret from google account, I copy it into heroku's config var as 'EMAIL_HOST_PASS' and set email address as 'EMAIL_HOST_USER'.
+15. After completing the initial settings, I create the Procfile, commit and push to the main branch.
+16. Then to deploy tag, Manual Deploy, click the deploy branch to deploy my main branch.
+17. When my website is complete, I change 'DEBUG' variable in setting.py to 'False' before final deploy and remove the 'DISABLE_COLLECTSTATIC' variable in Heroku's Config Vars.
 
 ## **Technologies**
 
@@ -782,7 +846,6 @@ and those python libraries install with [requirements.txt](requirements.txt):
 - psycopg2
 - django-countries
 - Pillow
-- stripe
 
 ### **Project manage and deployment**
 
@@ -808,18 +871,19 @@ and those python libraries install with [requirements.txt](requirements.txt):
 
 ### **Code**
 
+<hr>
+
 - [Code Institute Buotique Ado walk-through project](https://github.com/cloki0610/boutique_ado_Walkthrough)
 
-  I use quite a lot of code in my clone of the code institute project with some change to complete the purchase and payment flow.
-
-- [How to create a UserProfile form in Django with first_name, last_name modifications?](https://stackoverflow.com/questions/1727564/how-to-create-a-userprofile-form-in-django-with-first-name-last-name-modificati)
-
-  To add the first name, last name and email to the profile form and edit them in user interface, I find this solution with some improvement to fulfill the requirement.
+  I use quite a lot of code in my clone of the code institute project with some change to complete the purchase and payment flow. I also reuse some related data model to finish the project.
 
 - [My Project 4](https://github.com/cloki0610/CI-Portfolio-Project-4)
 
   I reuse some code from my previous project to create the view as class-based view, and complete my unit tests of my web application.
-  <hr>
+
+- [Django document](https://docs.djangoproject.com/en/4.0/)
+
+  I try to create some view with django generic view for more understanding in django, so I get some idea from the example to try the generic class based views.
 
 ## **Media**
 
@@ -834,3 +898,7 @@ and those python libraries install with [requirements.txt](requirements.txt):
 ### **Acknowledgment**
 
 <hr>
+
+- Thanks to my mentor Daisy McGirr(again and again) for all support and guidance in the process. Without her suggestion and encourage I cannot get this far, words cannot express my gratitute for all these time in her mentor session.
+- Thanks StackOverflow's community already has the answers I need, that's helped me solve most of my problems before I ask for the community.
+- Thanks Code Institute's Slack community for some example and answers already in the chat record so that save some time fix some problem like webhook endpoint and its testing in project's early stage.

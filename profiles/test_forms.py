@@ -176,7 +176,7 @@ class TestUserProfileForms(TestCase):
         self.assertTrue(form.is_valid())
 
     def test_default_country_is_optional(self):
-        """ Test with blank default_county input """
+        """ Test with blank default_country input """
         form = UserProfileForm({
             'first_name': 'Test',
             'last_name': 'Test',

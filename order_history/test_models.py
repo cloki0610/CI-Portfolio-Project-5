@@ -58,18 +58,18 @@ class TestOrderHistoryModels(TestCase):
         self.comment.save()
 
     def test_orderreview_string_method(self):
-        """ Test string method output """
+        """ Test orderreview model string method output """
         orderreview = self.orderreview
         self.assertEqual(str(orderreview),
                          f"{str(self.user.userprofile)}-{str(self.order)}")
 
     def test_auto_generate_slug(self):
-        """ Test save method to create the slug when save record"""
+        """ Test save method to create the slug when save record """
         orderreview = self.orderreview
         self.assertEqual(orderreview.slug, slugify(orderreview))
 
     def test_comment_string_method(self):
-        """ Test string method output """
+        """ Test comment model string method output """
         comment = self.comment
         self.assertEqual(str(comment),
                          f"{str(self.user)} - Reply on {self.orderreview}")

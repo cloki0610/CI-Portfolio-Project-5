@@ -31,7 +31,7 @@ class TestProfileViews(TestCase):
                              '/accounts/login/?next=/profile/')
 
     def test_get_profilesview(self):
-        """ Test GET method to render profile.html template """
+        """ Test GET method to render profile.html template as user """
         self.client.login(username='test', password='password')
         response = self.client.get('/profile/')
         self.assertEqual(response.status_code, 200)
@@ -116,7 +116,7 @@ class TestProfileViews(TestCase):
                              '/accounts/login/?next=/profile/delete_account/')
 
     def test_get_delete_account(self):
-        """ Test GET method to render delete_account.html template """
+        """ Test GET method to render delete_account.html template as user """
         self.client.login(username='test', password='password')
         response = self.client.get('/profile/delete_account/')
         self.assertEqual(response.status_code, 200)
@@ -150,7 +150,7 @@ class TestProfileViews(TestCase):
                              '/accounts/login/?next=/profile/delete_action/')
 
     def test_post_delete_action(self):
-        """ Test POST method to delete user account """
+        """ Test POST method to delete user account as user """
         self.client.login(username='test', password='password')
         response = self.client.post('/profile/delete_action/')
         self.assertEqual(response.status_code, 302)
