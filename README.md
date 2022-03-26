@@ -279,11 +279,11 @@ User story:
 
 Acceptance Criteria:
 
-- After click the link to filter the result by category, user should still about to sort the result by price or by name.
+- After clicked the link to filter the result by category, user should able to sort the result by price or by name.
 
 Implementation:
 
-- The sort select box still place on the same place as before after filter the result.
+- The sort select box still place on the same place as before in the filter result.
 - The parameter will save in the context for the paginator links.
 
 <br>
@@ -783,8 +783,7 @@ There are a total of 168 test cases that used test libraries provide by the Pyth
 
 <hr>
 
-- I accidently use a wrong logic and denied the customer to access their order review page.\
-Problem fixed after it was spotted.
+- I accidently use a wrong logic and denied the customer to access their order review page. Problem fixed after it was spotted.
 - Some type error was found and fixed.
 - Some close tag dulicate because of IDE auto-input feature, I spot these error by W3 HTML validator and fix it after that.
 - Overflow problem cause by font size and padding. Related css and bootstrap was change fix most of these problems, I tried my best to solve all of it.
@@ -918,6 +917,6 @@ and those python libraries install with [requirements.txt](requirements.txt):
 
 <hr>
 
-- Thanks to my mentor Daisy McGirr(again and again) for all support and guidance in the process. Without her suggestion and encourage I cannot get this far, words cannot express my gratitute for all these time in her mentor session.
+- Thanks to my mentor Daisy McGirr (especially in the final project) for all support and guidance in the process. Without her suggestion and encourage I cannot get this far, words cannot express my gratitute for all these time in her mentor session.
 - Thanks StackOverflow's community already has the answers I need, that's helped me solve most of my problems before I ask for the community.
 - Thanks Code Institute's Slack community for some example and answers already in the chat record so that save some time fix some problem like webhook endpoint and its testing in project's early stage.
