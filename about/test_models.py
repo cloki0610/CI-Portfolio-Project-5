@@ -21,11 +21,11 @@ class TestAboutModels(TestCase):
         self.newsletter.save()
 
     def test_contact_string_method(self):
-        """ Test string method output"""
+        """ Test contact model string method output """
         contact = self.contact
         self.assertEqual(str(contact), 'Message from Test')
 
     def test_newsletter_string_method(self):
-        """ Test string method output """
+        """ Test newsletter model string method output """
         newsletter = self.newsletter
         self.assertEqual(str(newsletter), 'test@unittest.com')

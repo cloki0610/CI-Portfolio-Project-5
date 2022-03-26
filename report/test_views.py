@@ -128,7 +128,7 @@ class TestReportViews(TestCase):
                               '/report/report_list/1/checked/'))
 
     def test_post_report_checked_view_user(self):
-        """ Test  POST method to toggle checked value as user """
+        """ Test POST method to toggle checked value as user """
         self.client.login(username='test', password='password')
         response = self.client.post('/report/report_list/1/checked/')
         self.assertEqual(response.status_code, 302)
@@ -140,7 +140,7 @@ class TestReportViews(TestCase):
                                    'Only admin can access.'))
 
     def test_post_report_checked_view_superuser(self):
-        """ Test  POST method to toggle checked value as superuser """
+        """ Test POST method to toggle checked value as superuser """
         self.client.login(username='test_superuser', password='password')
         response = self.client.post('/report/report_list/1/checked/')
         self.assertEqual(response.status_code, 302)

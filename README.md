@@ -746,19 +746,38 @@ There are a total of 168 test cases that used test libraries provide by the Pyth
 
 - home application
 
+<img src="readme-img/tests/test_home.png" alt="home-app-checklist" style="width:600px;"/>
+
 - products application
+
+<img src="readme-img/tests/test_product_1.png" alt="products-app-checklist1" style="width:600px;"/>
+<img src="readme-img/tests/test_product_2.png" alt="products-app-checklist2" style="width:600px;"/>
 
 - checkout application
 
+<img src="readme-img/tests/test_checkout.png" alt="chekcout-app-checklist" style="width:600px;"/>
+
 - cart application
+
+<img src="readme-img/tests/test_cart.png" alt="cart-app-checklist" style="width:600px;"/>
 
 - profiles application
 
+<img src="readme-img/tests/test_profile_1.png" alt="profiles-app-checklist" style="width:600px;"/>
+<img src="readme-img/tests/test_profile_2.png" alt="profiles-app-checklist" style="width:600px;"/>
+
 - order_history application
+
+<img src="readme-img/tests/test_orderhistory_1.png" alt="orderhistory-app-checklist" style="width:600px;"/>
+<img src="readme-img/tests/test_orderhistory_2.png" alt="orderhistory-app-checklist" style="width:600px;"/>
 
 - about application
 
+<img src="readme-img/tests/test_about.png" alt="about-app-checklist" style="width:600px;"/>
+
 - report application
+
+<img src="readme-img/tests/test_report.png" alt="report-app-checklist" style="width:600px;"/>
 
 ### Issue found and solved
 

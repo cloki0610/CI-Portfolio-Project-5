@@ -27,7 +27,7 @@ class TestReportForms(TestCase):
         self.assertFalse(form.is_valid())
 
     def test_problem_type_is_required(self):
-        """ Test with blank name input """
+        """ Test with blank problem_type input """
         form = ReportForm({
             'name': 'Test',
             'problem_type': '',
@@ -37,7 +37,7 @@ class TestReportForms(TestCase):
         self.assertFalse(form.is_valid())
 
     def test_problem_description_is_required(self):
-        """ Test with blank name input """
+        """ Test with blank problem_description input """
         form = ReportForm({
             'name': 'Test',
             'problem_type': 0,
@@ -47,7 +47,7 @@ class TestReportForms(TestCase):
         self.assertFalse(form.is_valid())
 
     def test_contact_email_is_optional(self):
-        """ Test with blank name input """
+        """ Test with blank contact_email input """
         form = ReportForm({
             'name': 'Test',
             'problem_type': 0,
