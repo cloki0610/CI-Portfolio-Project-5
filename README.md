@@ -31,7 +31,7 @@ They can also sign up to track their previous order payment and product status.
 
 The project is about to begin a business based on social media and community that cooperate with a different collaborator from organizations, groups, or individuals who want to sell their product and unwanted item in their name or anonymously. Each collaborator will work with us for a maximum of two months to sell their stuff products on our e-commerce platform. Our team will provide an online e-commerce platform, support their social media promotion, and deliver if collaborator needed in some special situation.
 
-Based on the business strategy the e-commerce platform in the project will provide a solution to let users search and filter the products, store items into their shopping cart, create a new order, and complete the online payment. They could also sign up their account to track their previous order, manage their payment details, and directly connect with website admin through the platform. The application should also have responsive design and have a nice layout on mobile and desktop browser.
+Based on the business strategy the e-commerce platform in the project will provide a solution to let users search and filter the products, store items into their shopping cart, create a new order, and complete the online payment. They could also sign up their account to track their previous order, manage their payment details, and directly connect with website admin through the platform. The application should also have a responsive design and have a nice layout on mobile and desktop browsers.
 
 <br>
 
@@ -39,11 +39,11 @@ Based on the business strategy the e-commerce platform in the project will provi
 
 <hr>
 
-- Provide a full functional e-commerce platform with online payment.
-- Provide user validation to let user create their own account with personal profile.
-- Provide review and 1:1 communicate platform to review and discuss about their order.
-- Provide a report page to unauthenticated user to report the product which have problem.
-- Provide a pages to let all user to subscribe news letter and submit contact details.
+- Provide a fully functional e-commerce platform with online payment.
+- Provide user validation to let user create their account with a personal profile.
+- Provide review and a 1:1 communication platform to review and discuss their order.
+- Provide a report page to unauthenticated users to report the product which has a problem.
+- Provide a page to let all users subscribe to newsletters and submit contact details.
 
 <br>
 
@@ -80,14 +80,14 @@ User story:
 
 Acceptance Criteria:
 
-- The product page should display full list of product, and display some detail of these product with friendly user interface.
+- The product page should display a full list of products, and display some detail of these products with a friendly user interface.
 
 Implementation:
 
-- User can click the link on landing page or nav bar to visit the full item list.
-- The product list split to few pages divide by the paginator.
-- Each item display their name, price, category with product image as a card component.
-- User can click the card to visit detail page to add item to card or report the product if needed.
+- User can click the link on the landing page or nav bar to visit the full item list.
+- The products data is split into a few pages divided by the paginator.
+- Each item will display its name, price, the category with the product image in a card component.
+- User can click the card to visit the detail page to add the item to the cart or report the product if needed.
 
 <br>
 
@@ -97,13 +97,13 @@ User story:
 
 Acceptance Criteria:
 
-- User should able to filter the product list by category through click a link or button to view the list of item in specific category.
+- User should be able to filter the product list by category by clicking a link or button to view the list of items in a specific category.
 
 Implementation:
 
-- User can click the link on the nav bar to view the product list filter by category.
-- The product list split to few pages divide by the paginator as the full product list.
-- The filter parameter will save in the context for the paginator links.
+- User can click the link on the navbar to view the product list filter by category.
+- The product list is split into a few pages divided by the paginator.
+- The filter parameter will save in the context of the paginator links.
 
 <br>
 
@@ -113,12 +113,12 @@ User story:
 
 Acceptance Criteria:
 
-- When user click on the relavent link, they should be able to view the full detail of product with product image.
+- When users click on the relevant link, they should be able to view the full detail of the product with the product image.
 
 Implementation:
 
-- When user click on the link on the product card, they will able to visit the product detail on product_detail template.
-- The product detail page will display the full detail of products, with quantity form, add product button, return link, and a lint to report page.
+- When users click on the link on the product card, they will be able to visit the product detail on the product_detail template.
+- The product detail page will display the full detail of products, with quantity form, add product button, return link, and link to report page.
 
 <br>
 
@@ -128,13 +128,13 @@ User story:
 
 Acceptance Criteria:
 
-- User should able to see their current total cost on every page.
+- Users should be able to see their current total cost on every page.
 
 Implementation:
 
 - On the shopping cart navbar link, the current total cost will display below the 'shopping cart' text.
-- On the mobile version, the totoal cost will display with the link in the same line.
-- There also have a badge to display how many type of item customer purchase if their cart have item.
+- On the mobile version, the total cost will display with the link in the same line.
+- There is also have a badge to display how many types of item customer purchase if their cart has an item.
 
 <br>
 
@@ -144,13 +144,13 @@ User story:
 
 Acceptance Criteria:
 
-- User should be able to register a new account to use some feature only provide to authenticated user.
+- User should be able to register a new account to use some features only provide to an authenticated user.
 
 Implementation:
 
-- All feature related to user authentication are provide by allauth library.
-- The template style by bootstrap 5 and the folder are place under /templates folder.
-- The 'Sign Up' link show on the account sub-navbar.
+- All features related to user authentication are provided by the allauth library.
+- The template style by bootstrap 5 and the folder are placed under templates folder.
+- The 'Sign Up' link is shown on the account sub-navbar.
 
 <br>
 
@@ -160,13 +160,13 @@ User story:
 
 Acceptance Criteria:
 
-- User should be able to login and logout to use the services as quest or registered user base on their requirement.
+- Users should be able to log in and log out to use the services as a guest or registered users based on their requirements.
 
 Implementation:
 
-- All feature related to user authentication are provide by allauth library.
-- The template style by bootstrap 5 and the folder are place under /templates folder.
-- The 'Sign In' and 'Sign Out' link show on the account sub-navbar, if user successfully login, the sign out link will display and the sign in link will hide and vice versa.
+- All features related to user authentication are provided by the allauth library.
+- The template style by bootstrap 5 and the folder are placed under the templates folder.
+- The 'Sign In' and 'Sign Out' links show on the account sub-navbar, if the user successfully login, the sign-out link will display, and the sign-in link will hide and vice versa.
 
 <br>
 
@@ -176,13 +176,13 @@ User story:
 
 Acceptance Criteria:
 
-- User should be able to recover their password by input a valid e-mail address, and they should able to receive a email to set new account to access their account.
+- Users should be able to recover their password by inputting a valid e-mail address, and they should be able to receive an email to set up a new account to access their account.
 
 Implementation:
 
-- All feature related to user authentication are provide by allauth library.
-- The template style by bootstrap 5 and the folder are place under /templates folder.
-- The link display on the sign in template, there is the only way user can click to visit the password reset page to use this feature.
+- All features related to user authentication are provided by allauth library.
+- The template style by bootstrap5 and the folder are placed under the templates folder.
+- The link is displayed on the sign-in template. The link is the only way user can click to visit the password reset page to use this feature.
 
 <br>
 
@@ -192,12 +192,12 @@ User story:
 
 Acceptance Criteria:
 
-- User and admin should be able to receive a e-mail after registering, and only allow to login after confirmation.
+- After successful registration, the user and admin should be able to receive an e-mail, and only allow them to log in after confirmation.
 
 Implementation:
 
-- When user register a new account, the function provide by allauth library will send a e-mail to user.
-- E-mail account provided by google, and the information about the e-mail and the pass secret key store in the eny.py and heroku.
+- When a user registers a new account, the function provided by allauth library will send an e-mail to the user.
+- E-mail account provided by Google, and the information about the e-mail and the pass secret key store in the eny.py and Heroku.
 
 <br>
 
@@ -207,15 +207,15 @@ User story:
 
 Acceptance Criteria:
 
-- User should able to visit a profile page to check their profile details and order history.
+- Users should be able to visit a profile page to check their profile details and order history.
 
 Implementation:
 
-- A userprofile data model create in profiles application.
-- Some view to handle all of the get and post method to visit the profile page and post data to manage their record.
-- Templates style by customer css and bootstrap 5 style the user interface.
-- User can edit and submit their profile on the left side of the page, and check their order history on the right side.
-- Below the profile form, there are button to submit the form and a link to remove the account if user is not superuser
+- A userprofile data model creates in the profiles application.
+- Some view to handle all of the get and post methods to visit the profile page and post data to manage their record.
+- Templates style by customer CSS and bootstrap5 styles the user interface.
+- Users can edit and submit their profile on the left side of the page, and check their order history on the right side.
+- Below the profile form, there is a button to submit the form and a link to remove the account if the user is not a superuser.
 
 <br>
 
@@ -225,16 +225,16 @@ User story:
 
 Acceptance Criteria:
 
-- Authorized user should about to click the delete account on the profile page to remove their account.
+- Authorized users should be about to click the delete account on the profile page to remove their account.
 
 Implementation:
 
-- Below the profile form, if user is not superuser they will see the 'delete account' button next to the submit buttom.
+- Below the profile form, if the user is not a superuser they will see the 'delete account' button next to the submit button.
 - Once they click the button, they will visit a confirm page with some warning message.
-- They can also click return button to return to profile page.
-- Once they click the delete button, a modal component will pop up for the final confirm.
-- User can close the modal and return to the website, but once user click that button, they will redirect to landing page and their account will be removed.
-- Related message should show up once the action is made.
+- They can also click the return button to return to the profile page.
+- Once they click the delete button, a modal component will pop up for the final confirmation.
+- Users can close the modal and back to the website. If users click the delete button in the modal, their account will be removed, and they will redirect to the landing page.
+- The related message should show up once the action is complete.
 
 <br>
 
@@ -244,16 +244,16 @@ User story:
 
 Acceptance Criteria:
 
-- User should be able to create a order review to provide some feedback about their order.
-- The review page should have a section to show all comment about the review.
-- Only customer who place the order and the superuser allow to visit the review record.
+- Users should be able to create an order review to provide some feedback about their order.
+- The review page should have a section to show all comments about the review.
+- Only customers who place the order and the superuser allow to visit the review record.
 
 Implementation:
 
-- User can create a new review in profile page, or visit the review page if record exist.
-- In the review page, they can see the details of their review, or click update/delete link to manage their record.
-- User can leave comment on the review page by submit the comment form.
-- All comment will display on the right side in the review page.
+- Users can create a new review on their profile, or visit the review page if a record exists.
+- On the review page, they can see the details of their review, or click the update/delete link to manage their record.
+- Users can leave a comment on the review page by submitting the comment form.
+- All comments will display on the right side of the review page.
 
 <br>
 
@@ -263,13 +263,13 @@ User story:
 
 Acceptance Criteria:
 
-- User should be able to sort the product list to easily search the product they need.
+- Users should be able to sort the product list to easily search for the product they need.
 
 Implementation:
 
-- The sort select box place on top of the product list, in the same line with result details and paginator.
-- User can sort the result by name, price and category name.
-- The parameter will save in the context for the paginator links.
+- The sort select box is placed on top of the product list, in the same line with result details and paginator.
+- User can sort the result by name, price, and category name.
+- The parameter will save in the context of the paginator links.
 
 <br>
 
@@ -279,12 +279,12 @@ User story:
 
 Acceptance Criteria:
 
-- After clicked the link to filter the result by category, user should able to sort the result by price or by name.
+- After clicking the link to filter the result by category, the users should be able to sort the result by price or by name.
 
 Implementation:
 
-- The sort select box still place on the same place as before in the filter result.
-- The parameter will save in the context for the paginator links.
+- The sort select box is still placed in the same place as before in the filter result.
+- The parameter will save in the context of the paginator links.
 
 <br>
 
@@ -294,15 +294,15 @@ User story:
 
 Acceptance Criteria:
 
-- User should able to search the product by name or description and get the result to find the product they need.
+- Users should be able to search the product by name or description and get the result to find the product they need.
 
 Implementation:
 
-- The search bar create by a input box and submit button.
-- The search bar place on the sub menu of the navbar in desktop version.
-- The search bar place below the title in mobile version.
+- The search bar create by an input box and submit button.
+- The search bar is placed on the sub-menu of the navbar in the desktop version.
+- The search bar is placed below the title in the mobile version.
 - User can input some text to search the product by product name and description.
-- If user submit the form with blank input, they will see some warning message.
+- If users submit the form with blank input, they will see some warning message.
 
 <br>
 
@@ -312,11 +312,11 @@ User story:
 
 Acceptance Criteria:
 
-- User should able to see the number of search result on the product page.
+- User should be able to see the number of the search result on the product page.
 
 Implementation:
 
-- The number of result display on the same line with the sorting box and the paginator.
+- The number of results is displayed on the same line with the sorting box and the paginator.
 
 <br>
 
@@ -326,13 +326,13 @@ User story:
 
 Acceptance Criteria:
 
-- User should able to see the current item quantity they select, and able to change the item quantity by input or button.
+- Users should be able to see the current item quantity they select and change the item quantity by input or button.
 
 Implementation:
 
-- Add two button around the input field to change the quantity.
-- Add javascript to make these new button functional.
-- If selected quantity less than 1 or more than 99, related button will be disable.
+- Add two buttons around the input field to change the quantity.
+- Add javascript to make these new buttons functional.
+- If the selected quantity is less than one or more than 99, the related button will be disabled.
 
 <br>
 
@@ -342,13 +342,13 @@ User story:
 
 Acceptance Criteria:
 
-- User should able to view a full list of item they have added to their shopping cart.
+- Users should be able to view a complete list of the item they have added to their shopping cart.
 
 Implementation:
 
 - Create a context file to create a dictionary to store the added item.
-- When user click the link on the navbar, they will see a complete list of the items they added.
-- The shopping card page should have button to return to shop, ajust button and to payment page.
+- When users click the link on the navbar, they will see a complete list of the items they added.
+- The shopping cart page should have a button to return to the shop, a button to adjust and remove products, and a button to the payment page.
 
 <br>
 
@@ -358,13 +358,13 @@ User story:
 
 Acceptance Criteria:
 
-- User should able to adjust every item they added to the shopping cart in the shopping cart page.
+- Users should be able to adjust every item they put into the shopping cart on the shopping cart page.
 
 Implementation:
 
 - Reuse the existed quantity form and javascript.
-- Edit the exist javascript to handle all buttons in the shopping cart page.
-- If quantity is zero, the item will be remove from the shopping cart.
+- Edit the existing javascript to handle all buttons on the shopping cart page.
+- If the quantity is zero, the selected item will remove from the shopping cart.
 
 <br>
 
@@ -374,13 +374,13 @@ User story:
 
 Acceptance Criteria:
 
-- User should be able to enter their payment information on the checkout page to submit the data about the payment and delivery informations.
+- Users should be able to enter their payment information on the checkout page to submit the payment and delivery information.
 
 Implementation:
 
-- On the left side in the checkout page, user can submit a form to provide the payment detail.
-- If the form is valid, the payment information will send to stripe by webhook and the order record will store in database.
-- If user is authorized, they will allow to press a checkbox to save their payment information to save their input to their profile.
+- On the left side of the checkout page, users can submit a form to provide the payment detail.
+- If the form is valid, the payment information will send to stripe by webhook, and the order record will store in the database.
+- If the user is authorized, they will allow press a checkbox to save their payment information to save their input to their profile.
 
 <br>
 
@@ -390,13 +390,13 @@ User story:
 
 Acceptance Criteria:
 
-- After a successful checkout, user should be able to see the record about their successful purchase.
+- After a successful checkout, the user should be able to see the record about their successful purchase.
 
 Implementation:
 
-- A Order and order item record will be create to store all purchase record.
-- After checkout, user should be redirect to the checkout_success page.
-- The page will get the order record from database and display on template.
+- Order and order item records will create to store all purchase records.
+- After checkout, the user should redirect to the checkout_success page.
+- The page will get the order record from the database and display it on the template.
 
 <br>
 
@@ -406,12 +406,12 @@ User story:
 
 Acceptance Criteria:
 
-- User should receive email after checkout with order details.
+- User should receive an email after checkout with order details.
 
 Implementation:
 
-- The email content created and store in checkout application's template file.
-- Once the purchase is successfully complete, the stripe webhook will send a email from my google account.
+- The email content is created and stored in the checkout application's template file.
+- Once the purchase is complete, the stripe webhook will send an email from my google account.
 
 <br>
 
@@ -421,14 +421,14 @@ User story:
 
 Acceptance Criteria:
 
-- Website admin should able to submit a valid form to add a new product for sale.
+- Website admin should be able to submit a valid form to add a new product for sale.
 
 Implementation:
 
-- If user is not superuser, access will be denied and redirect to home page.
-- If input is invaild, some message will show up.
-- If input is valid, user will be redirect to new product's product detail page.
-- The link to add product will display in the sub menu of 'account' and only show up when user is a superuser.
+- If the user is not a superuser, access will be denied and redirect to the home page.
+- If the input is invalid, some message will show up.
+- If the input is valid, the user will redirect to the new product's product detail page.
+- The link to add product will display in the submenu of 'account' and only show up when the user is a superuser.
 
 <br>
 
@@ -438,16 +438,16 @@ User story:
 
 Acceptance Criteria:
 
-- Website admin should able to submit a valid form to update a exist product.
+- Website admin should be able to submit a valid form to update an existing product.
 
 Implementation:
 
 - The page is familiar with the add product page.
-- If user is not superuser, access will be denied and redirect to home page.
-- If input is invaild, some message will show up.
-- If input is valid, user will be redirect to new product's product detail page.
-- The link to update product will display in the product detail page and on the bottom of the product card component
-- The button only show up when user is a superuser.
+- If the user is not a superuser, access will be denied and redirect to the home page.
+- If the input is invalid, some message will show up.
+- If the input is valid, the user will redirect to the new product's product detail page.
+- The link to update the product will display on the product detail page and at the bottom of the product card component
+- The button only shows up when the user is a superuser.
 
 <br>
 
@@ -457,14 +457,14 @@ User story:
 
 Acceptance Criteria:
 
-- Website admin should able to delete a exist product to let customer know its not for sale anymore.
+- Website admin should be able to delete an existing product to let the customer know it is not for sale anymore.
 
 Implementation:
 
-- When admin click the delete button, they will rediect to a confirm page.
-- Admin can click the link to return to product detail page, or press delete button to remove product.
-- The link to update product will display in the product detail page and on the bottom of the product card component.
-- The button only show up when user is a superuser.
+- When the admin clicks the delete button, they will redirect to a confirm page.
+- The admin can click the link to return to the product detail page, or press the delete button to remove the product.
+- The link to update the product will display on the product detail page and the bottom of the product's card component.
+- The button only shows up when the user is a superuser.
 
 <br>
 
@@ -474,12 +474,12 @@ User story:
 
 Acceptance Criteria:
 
-- User should able to submit a form to report a product with some problem, whatever authorized or not.
+- User should be able to submit a form to report a product with some problem, whether authorized or not.
 
 Implementation:
 
 - Use can submit a report data to the database to report a product.
-- The link to the report form are in the product_detail page.
+- The link to the report form is on the product_detail page.
 
 <br>
 
@@ -489,13 +489,13 @@ User story:
 
 Acceptance Criteria:
 
-- User should able to submit a form with some data to allow admin to contact user out of the website.
+- User should be able to submit a form with some data to allow the admin to contact the user out of the website.
 
 Implementation:
 
-- A contact data model created to store the contact details.
-- A form can allow user to submit data about their contact details.
-- The link to the contact form are in the about submenu in the navbar.
+- A contact data model create to store the contact details.
+- A form can allow the user to submit data about their contact details.
+- The link to the contact form is in the about submenu in the navbar.
 
 <br>
 
@@ -505,14 +505,14 @@ User story:
 
 Acceptance Criteria:
 
-- Admin should able to view a list of contact detail and report to view all data in these table.
+- The admin should be able to view a list of contact detail and report to view all data in these tables.
 
 Implementation:
 
 - Contact detail page display the full details and style with bootstrap and jquery animation.
-- Report list style as a bootstrap component, and divide by paginator.
-- Report list provide a toggle button to mark the report as checked or not.
-- Link of these list are display in the sub menu of the account menu in navbar.
+- Report list-style as a bootstrap component, and divide by paginator.
+- Report list provides a toggle button to mark the report as checked or not.
+- The links to these lists are displayed in the sub-menu of the account menu in the navbar.
 
 <br>
 
@@ -522,12 +522,12 @@ User story:
 
 Acceptance Criteria:
 
-- User should able to submit their e-mail address to the admin for subscribe the newsletter for the latest information.
+- Users should be able to submit their e-mail address to the admin to subscribe to the newsletter for the latest information.
 
 Implementation:
 
-- A simple form with a field can allow user to send their email address to the database.
-- The link to the newsletter page will place in the sub menu in the about menu.
+- A simple form with a field can allow users to send their e-mail addresses to the database.
+- The link to the newsletter page will place in the submenu in the about menu.
 
 <br>
 
@@ -656,11 +656,11 @@ Implementation:
 
 With Heroku's config var feature, all sensitive keys like stripe and AWS secret key were stored in local env.py file are now stored in the Heroku server to prevent unwanted connections to the database or cloud service.
 
-The project also use Django allauth to set up a user authorization system to provide restricted access to certain features on the website that are not intended for unauthorized users. User need a valid e-mail to receive confirmation e-mail to confirm their e-mail to login to the website.
+The project also uses Django allauth to set up a user authorization system to provide restricted access to certain features on the website that are not intended for unauthorized users. Users need a valid e-mail to receive a confirmation e-mail to confirm their e-mail to log in to the website.
 
-All image file uploads from the user should store and be protected in AWS S3 bucket, but there are limit of the usage because it is still using AWS free tier service.
+All image file uploads from the user should store and be protected in the AWS S3 bucket, but there is a limit of usage because it is still using AWS free tier service.
 
-The project use stripe to handle the payment method, with set up an account and to use the test service, the the project will handle the security in the payment process. All the related secret will store in env.py and heroku. The project also use their webhook feature to save the payment detail and send confirmation e-mail after a successful payment, so an endpoint setting are also created in the stripe account to resist the connection from others.
+The project uses stripe to handle the payment method set up an account, and use the test service, the project will handle the security in the payment process. All the related secrets will store in env.py and Heroku. The project also uses their webhook feature to save the payment detail and send a confirmation e-mail after a successful payment, so endpoint settings are also created in the stripe account to resist the connection from others.
 
 ### **Surface Plane**
 
@@ -680,11 +680,11 @@ The Brand text on the navigation bar use 'Rubik Mono One' font, and the rest are
 
 #### **Differences to Design**
 
-- All the margin and padding maybe not be as expected at last because I just simply use bootstrap feature to add these space to the box.
+- Every margin and padding maybe not be as expected at last. Because I only use the bootstrap feature to add these spaces to the box.
 
-- I try my best to fix all buttom size but there maybe still some problem in my work.
+- I try my best to fix all button sizes, but there may be still some problems in my work.
 
-- Different with the design, I finally add some icon from fontawesome to replace the text.
+- I use some icons from font awesome to replace the text at last.
 
 ## **Feature**
 
@@ -734,15 +734,15 @@ The Brand text on the navigation bar use 'Rubik Mono One' font, and the rest are
 - Google Chrome developer tools and WAVE Web Accessibility Evaluation Tool used for layout testing and solve style and display issues, to solve the contrast warning the navbar color was changed to a deeper color.
 - Github Project has been used to track tasks. I used to check the task completion through the process.
 - All links were tested with or without login during the development process and tested again after deployment.
-- Every fields in the forms was tested to ensure that they work as they should.
-- I also test the website in different sizes of the screen by Google Chrome developer tools and the layouts are seems fine.
+- Every field in the forms was tested to ensure that they work as they should.
+- I also tested the website in different sizes of the screen by Google Chrome developer tools and the layouts are seems fine.
 - Error 404 and 500 page work as expected.
 
 ### Automated test
 
 <hr>
 
-There are a total of 168 test cases that used test libraries provide by the Python and support by Django framework to test the view, form models, and data models in all of the applications. Details of test cases are listed below.
+There are a total of 168 test cases that used test libraries provided by Python and supported by the Django framework to test the view, form models, and data models in all of the applications. Details of test cases are listed below.
 
 - home application
 
@@ -783,10 +783,10 @@ There are a total of 168 test cases that used test libraries provide by the Pyth
 
 <hr>
 
-- I accidently use a wrong logic and denied the customer to access their order review page. Problem fixed after it was spotted.
+- I accidentally use the wrong logic and denied the customer to access their order review page. Problem fixed after it was spotted.
 - Some type error was found and fixed.
-- Some close tag dulicate because of IDE auto-input feature, I spot these error by W3 HTML validator and fix it after that.
-- Overflow problem cause by font size and padding. Related css and bootstrap was change fix most of these problems, I tried my best to solve all of it.
+- Some close tag duplicates because of IDE auto-input feature, I spot these errors by W3 HTML validator and fix it after that.
+- Overflow problem caused by font size and padding. Related CSS and bootstrap were changed to fix most of these problems, I tried my best to solve all of them.
 
 <br>
 
@@ -794,8 +794,8 @@ There are a total of 168 test cases that used test libraries provide by the Pyth
 
 <hr>
 
-- Maybe there are still some risk or security problem there but I've try my best to fix it.
-- I fixed some overflow problem because of padding or font size but maybe few of them are still there.
+- Maybe there are still some risks or security problems there but I've tried my best to fix them.
+- I fixed some overflow problems because of padding or font size but maybe a few of them are still there.
 
 ## **Deployment**
 
@@ -807,7 +807,7 @@ There are a total of 168 test cases that used test libraries provide by the Pyth
 2. Then I open the new project by gitpod
 3. After a new workspace is opened, I follow the cheat sheet to install Django and all required libraries.
 4. Use 'pip3 freeze --local > requirements.txt' to generate requirements.txt file.
-5. Then I commit my files to GitHub repository to make my initial commit.
+5. Then I commit my files to the GitHub repository to make my initial commit.
 
 ### Deploy to Heroku
 
@@ -820,17 +820,17 @@ There are a total of 168 test cases that used test libraries provide by the Pyth
 5. To resources tag, Add-ons, search and add 'Heroku Postgres', I choose the free version for this project.
 6. To deploy tag, Deployment method and connect the GitHub project to Heroku.
 7. Then go to Setting tag, Config Vars, I copy the database link of the new Heroku Postgres to the setting.py file in my project.
-8. Copy the link to env.py in workspace, a file will not be tracked for development use to run the webpage locally.
-9. Then log in to my AWS account, for this project I create my own user, user group and policy by IAN and create a new bucket by S3.
-11. Copy the access key id and its secret key and save into heroku's config var as 'AWS_ACCESS_KEY_ID' and 'AWS_SECRET_ACCESS_KEY', and create a 'USE_AWS' variable and set it to 'True'
-10. Set up a stripe account, get and copy the public key and secret key, and save these key to heroku's config var as 'STRIPE_PUBLIC_KEY' and 'STRIPE_SECRET_KEY'.
-11. In the stripe account, create a end point for the deploy version domain address, and save the webhook key as 'STRIPE_WH_SECRET' in the heroku's config var.
+8. Copy the link to env.py in the workspace, a file will not be tracked for development use to run the webpage locally.
+9. Then log in to my AWS account, for this project I create my user, user group, and policy by IAN and create a new bucket by S3.
+11. Copy the access key id and its secret key and save into Heroku's config var as 'AWS_ACCESS_KEY_ID' and 'AWS_SECRET_ACCESS_KEY', and create a 'USE_AWS' variable and set it to 'True'
+10. Set up a stripe account, get and copy the public key and secret key, and save these keys to Heroku's config var as 'STRIPE_PUBLIC_KEY' and 'STRIPE_SECRET_KEY'.
+11. In the stripe account, create an endpoint for the deploy version domain address, and save the webhook key as 'STRIPE_WH_SECRET' in the Heroku's config var.
 12. Then add 'DISABLE_COLLECTSTATIC' and set the value as 1 to config vars, when development is complete, this variable will be removed.
 13. Then add all the related settings to the setting.py in my workspace to connect the stripe and AWS S3 Bucket.
-14. I use my spare google account to send the email, after I get my pass secret from google account, I copy it into heroku's config var as 'EMAIL_HOST_PASS' and set email address as 'EMAIL_HOST_USER'.
+14. I use my spare google account to send the email, after I get my pass secret from my google account, I copy it into Heroku's config var as 'EMAIL_HOST_PASS' and set the email address as 'EMAIL_HOST_USER'.
 15. After completing the initial settings, I create the Procfile, commit and push to the main branch.
 16. Then to deploy tag, Manual Deploy, click the deploy branch to deploy my main branch.
-17. When my website is complete, I change 'DEBUG' variable in setting.py to 'False' before final deploy and remove the 'DISABLE_COLLECTSTATIC' variable in Heroku's Config Vars.
+17. When my website is complete, I change the 'DEBUG' variable in setting.py to 'False' before final deploy and remove the 'DISABLE_COLLECTSTATIC' variable in Heroku's Config Vars.
 
 ## **Technologies**
 
@@ -893,30 +893,30 @@ and those python libraries install with [requirements.txt](requirements.txt):
 
 - [Code Institute Buotique Ado walk-through project](https://github.com/cloki0610/boutique_ado_Walkthrough)
 
-  I use quite a lot of code in my clone of the code institute project with some change to complete the purchase and payment flow. I also reuse some related data model to finish the project.
+  I use quite a lot of code in my clone of the code institute project with some changes to complete the purchase and payment flow. I also reuse some related data models to finish the project.
 
 - [My Project 4](https://github.com/cloki0610/CI-Portfolio-Project-4)
 
-  I reuse some code from my previous project to create the view as class-based view, and complete my unit tests of my web application.
+  I reuse some code from my previous project to create the view as a class-based view and complete the unit tests of my web application.
 
 - [Django document](https://docs.djangoproject.com/en/4.0/)
 
-  I try to create some view with django generic view for more understanding in django, so I get some idea from the example to try the generic class based views.
+  I try to create some views with Django generic view for more understanding in Django, so I get some idea from the example to try the generic class-based views.
 
 ## **Media**
 
 - Pexels
 
-  All images come from and copyrighted by Pexels, the images will be remove or replaced if their policy have changed.
+  All images come from and are copyrighted by Pexels, the images will be removed or replaced if their policy has changed.
 
 - Flaticon
 
-  The no image icon come from this website.
+  The no image icon comes from this website.
 
 ### **Acknowledgment**
 
 <hr>
 
-- Thanks to my mentor Daisy McGirr (especially in the final project) for all support and guidance in the process. Without her suggestion and encourage I cannot get this far, words cannot express my gratitute for all these time in her mentor session.
-- Thanks StackOverflow's community already has the answers I need, that's helped me solve most of my problems before I ask for the community.
-- Thanks Code Institute's Slack community for some example and answers already in the chat record so that save some time fix some problem like webhook endpoint and its testing in project's early stage.
+- Thanks to my mentor Daisy McGirr for all support in the process. Without her guidance and encouragement, I will never get this far. Words cannot express my gratitude for all of it.
+- The StackOverflow community already has the answers I need, thanks the community helped me solve most of my problems before I ask it.
+- Thanks to Code Institute's Slack community for some examples and answers already in the chat record so that save some time fix some problems like the webhook endpoint and its testing in the project's early stage.
