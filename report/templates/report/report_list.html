@@ -8,6 +8,7 @@
 <div class="container-fluid min-vh-100 pt-5 px-2 px-sm-5">
     <div class="row pt-5">
         <div class="col d-flex justify-content-center">
+            <!--Paginator-->
             <nav aria-label="page-navbar" class="page-navbar mx-auto">
                 <ul class="pagination pagination justify-content-end my-0">
                     {% for page_num in report_page.paginator.page_range %}
@@ -26,6 +27,7 @@
         </div>
     </div>
     <div class="row mx-auto mt-2" style="max-width: 800px">
+        <!--Accordion component to display the list-->
         <div class="accordion accordion-flush" id="ReportList">
             {% for report in report_page %}
             <div class="accordion-item border {% if report.checked %}border-secondary{% else %}border-success{% endif %}">

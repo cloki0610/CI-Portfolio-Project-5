@@ -41,7 +41,6 @@ class ProfileView(LoginRequiredMixin, View):
             messages.error(request,
                            mark_safe('Updated Invalid.<br/>'
                                      'Please check and try again!'))
-        # redirect to profile page
         return redirect(reverse('profile'))
 
 
@@ -49,8 +48,8 @@ class DeleteAccount(LoginRequiredMixin, View):
     """ confirm page for delete account """
 
     def get(self, request):
-        # return template for confirmation before delete
         """ get method """
+        # deny access if user is superuser
         if request.user.is_superuser:
             messages.error(request,
                            mark_safe('Request denied.<br/>Superuser '
@@ -71,6 +70,7 @@ class DeleteAction(LoginRequiredMixin, View):
 
     def post(self, request):
         """ POST method """
+        # deny access if user is superuser
         if request.user.is_superuser:
             messages.error(request,
                            mark_safe('Request denied.<br/>Superuser '
@@ -96,6 +96,7 @@ class OrderList(LoginRequiredMixin, generic.ListView):
 
     def get(self, request, *args, **kwargs):
         """ GET method """
+        # deny access if user is not superuser
         if not request.user.is_superuser:
             messages.error(request,
                            mark_safe('Request denied.<br/>'

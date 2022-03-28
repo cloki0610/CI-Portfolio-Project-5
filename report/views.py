@@ -32,6 +32,7 @@ class ReportView(View):
         """ POST method """
         product = get_object_or_404(Product, pk=product_pk)
         report_form = ReportForm(request.POST)
+        # form validation
         if report_form.is_valid():
             report = report_form.save(commit=False)
             report.product = product
@@ -53,6 +54,7 @@ class ReportListView(LoginRequiredMixin, View):
 
     def get(self, request):
         """ GET method """
+        # deny access if not superuser
         if not request.user.is_superuser:
             messages.error(request,
                            mark_safe('Request denied.<br/>'
@@ -77,6 +79,7 @@ class ReportChecked(LoginRequiredMixin, View):
 
     def post(self, request, report_id):
         """ POST method """
+        # deny access if not superuser
         if not request.user.is_superuser:
             messages.error(request,
                            mark_safe('Request denied.<br/>'

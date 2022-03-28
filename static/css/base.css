@@ -85,7 +85,7 @@ input[name='q']::placeholder {
 
 /* Product */
 .product-card {
-  width: 28rem;
+  max-width: 28rem;
 }
 
 .product-card:hover {

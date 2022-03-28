@@ -23,11 +23,13 @@ class ProductsView(View):
         sort = None
         direction = None
         param = ""
+        # catch category parameter
         if 'category' in request.GET:
             category = request.GET['category'].split(',')
             param += f"&category={request.GET['category']}"
             products = products.filter(category__name__in=category)
             category = Category.objects.filter(name__in=category)
+        # catch q parameter for searching
         if 'q' in request.GET:
             query = request.GET['q']
             param += f'&q={query}'
@@ -38,6 +40,7 @@ class ProductsView(View):
             queries = Q(name__icontains=query
                         ) | Q(description__icontains=query)
             products = products.filter(queries)
+        # catch sort and direction parameter for sorting
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             param += f'&sort={sortkey}'
@@ -93,6 +96,7 @@ class AddProductView(LoginRequiredMixin, View):
 
     def get(self, request):
         """ GET method """
+        # deny access if user is not superuser
         if not request.user.is_superuser:
             messages.error(request,
                            mark_safe('Request denied.<br/>'
@@ -109,12 +113,14 @@ class AddProductView(LoginRequiredMixin, View):
 
     def post(self, request):
         """ POST method """
+        # deny access if user is not superuser
         if not request.user.is_superuser:
             messages.error(request,
                            mark_safe('Request denied.<br/>'
                                      'Only admin can access.'))
             return redirect(reverse('home'))
         form = ProductForm(request.POST, request.FILES)
+        # form validation
         if form.is_valid():
             product = form.save()
             messages.success(request, 'New product added successfully.')
@@ -131,6 +137,7 @@ class EditProductView(LoginRequiredMixin, View):
 
     def get(self, request, product_pk):
         """ GET method """
+        # deny access if user is not superuser
         if not request.user.is_superuser:
             messages.error(request,
                            mark_safe('Request denied.<br/>'
@@ -149,6 +156,7 @@ class EditProductView(LoginRequiredMixin, View):
 
     def post(self, request, product_pk):
         """ POST method """
+        # deny access if user is not superuser
         if not request.user.is_superuser:
             messages.error(request,
                            mark_safe('Request denied.<br/>'
@@ -156,6 +164,7 @@ class EditProductView(LoginRequiredMixin, View):
             return redirect(reverse('home'))
         product = get_object_or_404(Product, pk=product_pk)
         form = ProductForm(request.POST, request.FILES, instance=product)
+        # form validation
         if form.is_valid():
             form.save()
             messages.success(request, f'Update { product.name } successfully.')
@@ -172,6 +181,7 @@ class DeleteProductView(LoginRequiredMixin, View):
 
     def post(self, request, product_pk):
         """ POST method """
+        # deny access if user is not superuser
         if not request.user.is_superuser:
             messages.error(request,
                            mark_safe('Request denied.<br/>'
@@ -192,6 +202,7 @@ class DeleteConfirmationView(LoginRequiredMixin, View):
 
     def get(self, request, product_pk):
         """ GET method """
+        # deny access if user is not superuser
         if not request.user.is_superuser:
             messages.error(request,
                            mark_safe('Request denied.<br/>'

@@ -24,11 +24,13 @@ class CheckoutView(View):
         stripe_public_key = settings.STRIPE_PUBLIC_KEY
         stripe_secret_key = settings.STRIPE_SECRET_KEY
         cart = request.session.get('cart', {})
+        # redirect if cart is empty
         if not cart:
             messages.error(
                 request, mark_safe("Your cart still empty.<br/>"
                                    "Please add some item before checkout."))
             return redirect(reverse('products'))
+        # redirect if no stripe key
         if not stripe_public_key:
             messages.warning(request,
                              mark_safe('Stripe public key is missing.<br/>'
@@ -44,6 +46,7 @@ class CheckoutView(View):
             currency=settings.STRIPE_CURRENCY,
         )
 
+        # if user has successfully login use their info in profile
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
@@ -86,6 +89,7 @@ class CheckoutView(View):
             'county': request.POST['county'],
         }
         order_form = OrderForm(form_data)
+        # form validation
         if order_form.is_valid():
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
@@ -109,6 +113,7 @@ class CheckoutView(View):
                     order.delete()
                     return redirect(reverse('view_cart'))
 
+            # add context to session to save info
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success',
                                     args=[order.order_number]))

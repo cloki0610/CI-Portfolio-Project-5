@@ -7,12 +7,14 @@
 <div class="bg-main"></div>
 <div class="container-fluid min-vh-100 pt-5 px-2 px-sm-5">
     <div class="row pt-5 mb-2">
+        <!--Title-->
         <div class="col text-center">
             <h1 class="no-select fs-4">Product Management - New Product</h1>
         </div>
     </div>
     <div class="row mx-auto" style="max-width: 900px">
         <div class="col-12 offset-0 col-lg-8 offset-lg-2">
+            <!--Product form to add new product-->
             <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in product_form %}
@@ -23,8 +25,10 @@
                     {% endif %}
                 {% endfor %}
                 <div class="text-center">
+                    <!--return button-->
                     <a class="btn btn-outline-success rounded-0 text-uppercase me-3"
                         href="{% url 'products' %}">Return</a>
+                    <!--submit button-->
                     <button class="btn btn-success rounded-0 text-uppercase" type="submit">Add Product</button>
                 </div>
             </form>

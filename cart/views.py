@@ -20,6 +20,8 @@ class AddToCartView(View):
         redirect_url = request.POST.get('redirect_url')
         cart = request.session.get('cart', {})
 
+        # update quantity if item already in cart
+        # else add item to the cart
         if item_id in list(cart.keys()):
             cart[item_id] += quantity
             messages.success(request,

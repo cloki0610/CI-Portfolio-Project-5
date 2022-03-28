@@ -16,6 +16,7 @@ class OrderHistoryView(LoginRequiredMixin, View):
     def get(self, request, order_number):
         """ GET method """
         order = get_object_or_404(Order, order_number=order_number)
+        # deny access if user is not superuser or order owner
         if (not request.user.userprofile == order.user_profile and not
                 request.user.is_superuser):
             messages.warning(request,
@@ -45,6 +46,7 @@ class OrderReView(LoginRequiredMixin, View):
     def get(self, request, order_number, slug):
         """ GET method """
         order = get_object_or_404(Order, order_number=order_number)
+        # deny access if user is not superuser or order owner
         if (not request.user.userprofile == order.user_profile and not
                 request.user.is_superuser):
             messages.warning(request,
@@ -88,6 +90,7 @@ class OrderReView(LoginRequiredMixin, View):
         order = get_object_or_404(Order, order_number=order_number)
         order_review = get_object_or_404(OrderReview, slug=slug)
         form = CommentForm(data=request.POST)
+        # deny access if user is not superuser or order owner
         if (not request.user.userprofile == order.user_profile and not
                 request.user.is_superuser):
             messages.warning(request,
@@ -95,6 +98,7 @@ class OrderReView(LoginRequiredMixin, View):
                                        "Only order owner and admin "
                                        "can read this record."))
             return redirect(reverse('home'))
+        # form validtion
         if form.is_valid():
             comment = form.save(commit=False)
             comment.order_review = order_review
@@ -115,6 +119,7 @@ class CreateOrderReView(LoginRequiredMixin, View):
     def get(self, request, order_number):
         """ GET method """
         order = get_object_or_404(Order, order_number=order_number)
+        # deny access if user is not superuser or order owner
         if (not request.user.userprofile == order.user_profile and not
                 request.user.is_superuser):
             messages.warning(request,
@@ -133,6 +138,7 @@ class CreateOrderReView(LoginRequiredMixin, View):
     def post(self, request, order_number):
         """ POST method """
         order = get_object_or_404(Order, order_number=order_number)
+        # deny access if user is not superuser or order owner
         if (not request.user.userprofile == order.user_profile and not
                 request.user.is_superuser):
             messages.warning(request,
@@ -141,6 +147,7 @@ class CreateOrderReView(LoginRequiredMixin, View):
                                        "can do this action."))
             return redirect(reverse('home'))
         form = OrderReviewForm(request.POST)
+        # form validation
         if form.is_valid():
             form = form.save(commit=False)
             form.order = order
@@ -167,6 +174,7 @@ class UpdateOrderReView(LoginRequiredMixin, View):
         """ GET method """
         order = get_object_or_404(Order, order_number=order_number)
         order_review = get_object_or_404(OrderReview, slug=slug)
+        # deny access if user is not superuser or order owner
         if (not request.user.userprofile == order.user_profile and not
                 request.user.is_superuser):
             messages.warning(request,
@@ -187,6 +195,7 @@ class UpdateOrderReView(LoginRequiredMixin, View):
         """ POST method """
         order = get_object_or_404(Order, order_number=order_number)
         order_review = get_object_or_404(OrderReview, slug=slug)
+        # deny access if user is not superuser or order owner
         if (not request.user.userprofile == order.user_profile and not
                 request.user.is_superuser):
             messages.warning(request,
@@ -195,6 +204,7 @@ class UpdateOrderReView(LoginRequiredMixin, View):
                                        "can do this action."))
             return redirect(reverse('home'))
         form = OrderReviewForm(request.POST, instance=order_review)
+        # form validation
         if form.is_valid():
             form = form.save(commit=False)
             form.order = order
@@ -216,6 +226,7 @@ class DeleteOrderReView(LoginRequiredMixin, View):
         """ POST method """
         order = get_object_or_404(Order, order_number=order_number)
         order_review = get_object_or_404(OrderReview, slug=slug)
+        # deny access if user is not superuser or order owner
         if (not request.user.userprofile == order.user_profile and not
                 request.user.is_superuser):
             messages.warning(request,

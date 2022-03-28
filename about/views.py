@@ -22,6 +22,7 @@ class ContactUs(generic.FormView):
     success_url = reverse_lazy('products')
 
     def form_valid(self, form):
+        # inherit form valid function, save the form and add message
         form.save()
         messages.success(self.request, 'Thank you for your support!')
         return super().form_valid(form)
@@ -33,6 +34,7 @@ class ContactList(LoginRequiredMixin, generic.ListView):
 
     def get(self, request, *args, **kwargs):
         """ GET method """
+        # inherit the get method and deny user who is not superuser
         if not request.user.is_superuser:
             messages.error(request,
                            mark_safe('Request denied.<br/>'
@@ -49,6 +51,7 @@ class NewsletterSubscribe(generic.FormView):
     success_url = reverse_lazy('products')
 
     def form_valid(self, form):
+        # inherit form valid function, save the form and add message
         form.save()
         messages.success(self.request, 'Thank you for your subscribion!')
         return super().form_valid(form)

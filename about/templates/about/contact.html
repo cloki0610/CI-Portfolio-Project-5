@@ -11,12 +11,14 @@
 <div class="container-fluid min-vh-100 pt-5 px-2 px-sm-5 bg-index">
     <div class="row mx-auto mt-5 pt-3 pb-5 px-0 px-lg-5 about-card rounded" style="max-width: 600px">
         <div class="row">
+            <!--Title-->
             <div class="col text-center">
                 <h1 class="no-select fs-2 about-title">Contact Us</h1>
             </div>
         </div>
         <div class="row mx-auto mt-2" style="max-width: 800px">
             <div class="col-12">
+                <!--form to submit contact details-->
                 <form method="POST" action="{% url 'contact' %}" class="form mb-2">
                     {% csrf_token %}
                     {{ form | crispy }}

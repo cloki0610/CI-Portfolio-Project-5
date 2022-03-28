@@ -12,6 +12,7 @@
 <div class="container-fluid min-vh-100 pt-5 px-2 px-sm-5">
     <div class="row pt-5">
         <div class="col text-center">
+            <!--Title-->
             <p class="text-dark mb-0">Please check your order information as below.</p>
             <p class="text-dark mb-0">Your e-mail: <strong>{{ order.email }}</strong>.</p>
         </div>
@@ -19,6 +20,7 @@
     <div class="row">
         <div class="col-12 col-lg-6 mx-auto">
             <p class="text-muted small no-select">Order Information</p>
+            <!--full detail of order information-->
             <div class="p-2 border">
                 <div class="row ps-2 mb-3 mb-md-0 ps-md-0">
                     <div class="col-12 col-md-4 text-md-end">
@@ -179,6 +181,7 @@
     </div>
     <div class="row">
         <div class="col text-center">
+            <!--link to return profile page-->
             <a href="{% url 'profile' %}" class="btn btn-success rounded-0 my-2">
                 <span class="ms-2">
                     <i class="fas fa-home"></i>
@@ -186,6 +189,7 @@
                 <span class="text-uppercase">Back to Profile</span>
             </a>
             {% if request.user.is_superuser %}
+            <!--link to return order list page(superuser only)-->
             <a href="{% url 'order_list' %}" class="btn btn-success rounded-0 my-2">
                 <span class="ms-2">
                     <i class="fas fa-list-alt"></i>

@@ -31,7 +31,31 @@ They can also sign up to track their previous order payment and product status.
 
 The project is about to begin a business based on social media and community that cooperate with a different collaborator from organizations, groups, or individuals who want to sell their product and unwanted item in their name or anonymously. Each collaborator will work with us for a maximum of two months to sell their stuff products on our e-commerce platform. Our team will provide an online e-commerce platform, support their social media promotion, and deliver if collaborator needed in some special situation.
 
-Based on the business strategy the e-commerce platform in the project will provide a solution to let users search and filter the products, store items into their shopping cart, create a new order, and complete the online payment. They could also sign up their account to track their previous order, manage their payment details, and directly connect with website admin through the platform. The application should also have a responsive design and have a nice layout on mobile and desktop browsers.
+Based on the business strategy the e-commerce platform in the project will provide a solution to let users search and filter the products, store items into their shopping cart, create a new order, and complete the online payment. They could also sign up their account to track their previous order, manage their payment details, and directly connect with site admin through the platform. The application should also have a responsive design and have a nice layout on mobile and desktop browsers.
+
+#### **Business Model**
+
+<hr>
+
+The web application provide a B2C service to sell collaborator's products to customers. All the products might be provide by our collaborators from organizations, groups, or individuals except some promotions or some special marketing plan, that means we also provide B2B services to collaborators to provide them a platform to sell their items and customer support in both web marketing strategy and other related services. So in our plan we will contact those product providers to discuss about which product they would like to sell on our platform at first, then plan the web market strategy before our products on sale. At last the web application will handle selling and payment process for the end customer.
+
+### **Marketing**
+
+<hr>
+
+<img src="readme-img/facebookpage.png" alt="fake-facebook-page" style="width:600px;"/>
+
+The web application has its own Facebook Business page, and the link to the facebook page can be found on about page.
+
+We have a seperate subscribe page to let all user's subscribe our newsletter.
+
+We also send the newsletter with secret code to provide discount to our members. We also work with some influencer to advert our web store.
+
+### **Search Engine Optimisation**
+
+<hr>
+
+The sitemap.xml generate by [xml-sitemaps](https://www.xml-sitemaps.com/), and the web application have its own robots.txt file, some keywords was also added to the meta tag on the page header.
 
 <br>
 
@@ -51,7 +75,7 @@ Based on the business strategy the e-commerce platform in the project will provi
 
 <hr>
 
-Planned Features the website should have:
+Planned Features the web application should have:
 
 - Responsive Design
 - Navigation Bar
@@ -233,7 +257,7 @@ Implementation:
 - Once they click the button, they will visit a confirm page with some warning message.
 - They can also click the return button to return to the profile page.
 - Once they click the delete button, a modal component will pop up for the final confirmation.
-- Users can close the modal and back to the website. If users click the delete button in the modal, their account will be removed, and they will redirect to the landing page.
+- Users can close the modal and back to the page. If users click the delete button in the modal, their account will be removed, and they will redirect to the landing page.
 - The related message should show up once the action is complete.
 
 <br>
@@ -489,7 +513,7 @@ User story:
 
 Acceptance Criteria:
 
-- User should be able to submit a form with some data to allow the admin to contact the user out of the website.
+- User should be able to submit a form with some data to allow the admin to contact the user out of the web application.
 
 Implementation:
 
@@ -656,7 +680,7 @@ Implementation:
 
 With Heroku's config var feature, all sensitive keys like stripe and AWS secret key were stored in local env.py file are now stored in the Heroku server to prevent unwanted connections to the database or cloud service.
 
-The project also uses Django allauth to set up a user authorization system to provide restricted access to certain features on the website that are not intended for unauthorized users. Users need a valid e-mail to receive a confirmation e-mail to confirm their e-mail to log in to the website.
+The project also uses Django allauth to set up a user authorization system to provide restricted access to certain features on the web application that are not intended for unauthorized users. Users need a valid e-mail to receive a confirmation e-mail to confirm their e-mail to log in as a member.
 
 All image file uploads from the user should store and be protected in the AWS S3 bucket, but there is a limit of usage because it is still using AWS free tier service.
 
@@ -724,7 +748,7 @@ The Brand text on the navigation bar use 'Rubik Mono One' font, and the rest are
 - HTML Code basically passes through the W3C HTML Validator by using the source code get from DevTool.
 - CSS Code in every static folder pass through the W3C CSS Validator.
 - Python Code passes through PEP8 Validator.
-- Lighthouse in Chrome Dev Tools have been used to test the performance of the website.
+- Lighthouse in Chrome Dev Tools have been used to test the performance of the web application.
 <img src="readme-img/lighthouse-result.png" alt="lighthouse-result" style="width:600px;"/>
 
 ### Manual test
@@ -735,7 +759,7 @@ The Brand text on the navigation bar use 'Rubik Mono One' font, and the rest are
 - Github Project has been used to track tasks. I used to check the task completion through the process.
 - All links were tested with or without login during the development process and tested again after deployment.
 - Every field in the forms was tested to ensure that they work as they should.
-- I also tested the website in different sizes of the screen by Google Chrome developer tools and the layouts are seems fine.
+- I also tested every pages in different sizes of the screen by Google Chrome developer tools and the layouts are seems fine.
 - Error 404 and 500 page work as expected.
 
 ### Automated test
@@ -820,17 +844,18 @@ There are a total of 168 test cases that used test libraries provided by Python 
 5. To resources tag, Add-ons, search and add 'Heroku Postgres', I choose the free version for this project.
 6. To deploy tag, Deployment method and connect the GitHub project to Heroku.
 7. Then go to Setting tag, Config Vars, I copy the database link of the new Heroku Postgres to the setting.py file in my project.
-8. Copy the link to env.py in the workspace, a file will not be tracked for development use to run the webpage locally.
-9. Then log in to my AWS account, for this project I create my user, user group, and policy by IAN and create a new bucket by S3.
+8. Then I generate a new project secret key and copy it into my eny.py and Heroku's config var.
+9. Copy the link to env.py in the workspace, a file will not be tracked for development use to run the webpage locally.
+10. Then log in to my AWS account, for this project I create my user, user group, and policy by IAN and create a new bucket by S3.
 11. Copy the access key id and its secret key and save into Heroku's config var as 'AWS_ACCESS_KEY_ID' and 'AWS_SECRET_ACCESS_KEY', and create a 'USE_AWS' variable and set it to 'True'
-10. Set up a stripe account, get and copy the public key and secret key, and save these keys to Heroku's config var as 'STRIPE_PUBLIC_KEY' and 'STRIPE_SECRET_KEY'.
-11. In the stripe account, create an endpoint for the deploy version domain address, and save the webhook key as 'STRIPE_WH_SECRET' in the Heroku's config var.
-12. Then add 'DISABLE_COLLECTSTATIC' and set the value as 1 to config vars, when development is complete, this variable will be removed.
-13. Then add all the related settings to the setting.py in my workspace to connect the stripe and AWS S3 Bucket.
-14. I use my spare google account to send the email, after I get my pass secret from my google account, I copy it into Heroku's config var as 'EMAIL_HOST_PASS' and set the email address as 'EMAIL_HOST_USER'.
-15. After completing the initial settings, I create the Procfile, commit and push to the main branch.
-16. Then to deploy tag, Manual Deploy, click the deploy branch to deploy my main branch.
-17. When my website is complete, I change the 'DEBUG' variable in setting.py to 'False' before final deploy and remove the 'DISABLE_COLLECTSTATIC' variable in Heroku's Config Vars.
+12. Set up a stripe account, get and copy the public key and secret key, and save these keys to Heroku's config var as 'STRIPE_PUBLIC_KEY' and 'STRIPE_SECRET_KEY'.
+13. In the stripe account, create an endpoint for the deploy version domain address, and save the webhook key as 'STRIPE_WH_SECRET' in the Heroku's config var.
+14. Then add 'DISABLE_COLLECTSTATIC' and set the value as 1 to config vars, when development is complete, this variable will be removed.
+15. Then add all the related settings to the setting.py in my workspace to connect the stripe and AWS S3 Bucket.
+16. I use my spare google account to send the email, after I get my pass secret from my google account, I copy it into Heroku's config var as 'EMAIL_HOST_PASS' and set the email address as 'EMAIL_HOST_USER'.
+17. After completing the initial settings, I create the Procfile, commit and push to the main branch.
+18. Then to deploy tag, Manual Deploy, click the deploy branch to deploy my main branch.
+19. When everything is complete, I change the 'DEBUG' variable in setting.py to 'False' before final deploy and remove the 'DISABLE_COLLECTSTATIC' variable in Heroku's Config Vars.
 
 ## **Technologies**
 

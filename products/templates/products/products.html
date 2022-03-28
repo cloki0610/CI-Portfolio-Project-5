@@ -15,6 +15,7 @@ Category
 <div class="bg-main"></div>
 <div class="container-fluid min-vh-100 card-group pt-5">
     <div class="row mx-auto w-75 pt-5 align-items-baseline">
+        <!--Paginator-->
         <nav aria-label="page-navbar" class="page-navbar col-md-3 order-md-last my-2 my-md-0 px-0">
             <ul class="pagination pagination-sm justify-content-end my-0">
                 {% for page_num in products_page.paginator.page_range %}
@@ -31,6 +32,7 @@ Category
             </ul>
         </nav>
         <div class="col-md-6 text-center my-2 my-md-0 px-0">
+            <!--Information of search results-->
             <div class="row no-select">
                 <div class="col-md-9 fw-bolder fs-6 px-0">
                     {% if category %}
@@ -52,6 +54,7 @@ Category
                 </div>
             </div>
         </div>
+        <!--Select box for sorting-->
         <select id="sort-selector" class="col-md-3 border-light order-md-first my-2 my-md-0" style="max-height: 40px;">
             <option value="reset" {% if current_sort == 'None_None' %}selected{% endif %}>Sort by
             </option>
@@ -70,6 +73,7 @@ Category
         </select>
     </div>
     <div class="row gx-0 mx-auto">
+        <!--List of products or search results-->
         {% for product in products_page %}
         <div class="col-md-3">
                 <div class="card border-0 product-card mx-auto mb-5 mb-md-0">
@@ -106,8 +110,8 @@ Category
                 </div>
         </div>
         {% if forloop.counter|divisibleby:4 and forloop.counter is not 8 %}
-    </div>
-    <div class="row gx-0 mx-auto">
+        </div>
+        <div class="row gx-0 mx-auto">
         {% endif %}
         {% empty %}
         <p class="text-center fs-2">Here is no any product yet.</p>

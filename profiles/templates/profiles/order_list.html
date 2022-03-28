@@ -8,6 +8,7 @@
 <div class="container-fluid min-vh-100 pt-5 px-2 px-sm-5">
     <div class="row mx-auto mt-2 pt-5" style="max-width: 700px">
         <div class="accordion accordion-flush" id="OrderList">
+            <!--Table to list the order informations -->
             <table class="table-sm table-borderless no-select">
                 <thead>
                     <tr>
@@ -60,12 +61,14 @@
     </div>
     <div class="row">
         <div class="col text-center">
+            <!--Link to return profile-->
             <a href="{% url 'profile' %}" class="btn btn-success rounded-0 my-2">
                 <span class="ms-2">
                     <i class="fas fa-home"></i>
                 </span>
                 <span class="text-uppercase">To Profile</span>
             </a>
+            <!--Link to return product page-->
             <a href="{% url 'products' %}" class="btn btn-success rounded-0 my-2">
                 <span class="ms-2">
                     <i class="fas fa-shopping-cart"></i>

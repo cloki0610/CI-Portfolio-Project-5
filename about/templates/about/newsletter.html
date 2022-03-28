@@ -16,6 +16,7 @@
                 <div class="row gx-0 text-center text-light fs-5">
                     <i class="fas fa-cog fa-spin me-3" style="color:#D29D2B;"></i>
                     <p class="mt-3">Subscribe and receive our latest news!</p>
+                    <!--form to submit email address-->
                     <form method="POST" action="{% url 'newsletter' %}" class="form mb-2">
                         {% csrf_token %}
                         {{ form | crispy }}

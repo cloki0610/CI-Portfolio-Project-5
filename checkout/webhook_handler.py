@@ -99,6 +99,8 @@ class StripeWHHandler:
             except Order.DoesNotExist:
                 attempt += 1
                 time.sleep(1)
+        # send confirmation email if order exist
+        # else create a new order record
         if order_exists:
             self._send_confirmation_email(order)
             return HttpResponse(

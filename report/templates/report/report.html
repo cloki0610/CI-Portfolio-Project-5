@@ -7,6 +7,7 @@
 <div class="bg-main"></div>
 <div class="container-fluid min-vh-100 pt-5 px-2 px-sm-5">
     <div class="row pt-5">
+        <!--Title-->
         <div class="col text-center">
             <h1 class="no-select fs-2">Report Product</h1>
             <p class="no-select">Product name: {{ product.name }}</p>
@@ -14,6 +15,7 @@
     </div>
     <div class="row mx-auto mt-2" style="max-width: 800px">
         <div class="col-12 offset-0 col-lg-8 offset-lg-2">
+            <!--Report form-->
             <form method="POST" action="{% url 'report' product.id %}" class="form mb-2">
                 {% csrf_token %}
                 {{ report_form | crispy }}

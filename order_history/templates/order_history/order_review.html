@@ -13,6 +13,7 @@
     <div class="row pt-5">
         <div class="col-12 col-lg-6 mx-auto">
             <p class="text-muted small no-select">Your Order Review</p>
+            <!--order review details-->
             <div class="p-2 border" id="review-body">
                 <div class="row gx-0 my-3 ps-md-0">
                     <div class="col-12 col-md-4 text-md-end">
@@ -63,10 +64,12 @@
             </div>
             <div class="row mt-2">
                 <div class="col">
+                    <!--delete order review-->
                     <button type="button" class="btn btn-danger rounded-0 text-uppercase" data-bs-toggle="modal"
                         data-bs-target="#delete_review">
                         Delete
                     </button>
+                    <!--Link to update current order review-->
                     <a href="{% url 'update_review' order_review.order.order_number order_review.slug %}"
                         class="btn btn-success rounded-0 text-uppercase">Update</a>
                 </div>
@@ -76,6 +79,7 @@
             <p class="text-muted small no-select">Comment & Reply</p>
             <div class="p-2 border" id="comments">
                 <div class="row gx-0" id="comment-text">
+                    <!--display all comments-->
                     {% for comment in comments %}
                     <div class="mb-3">
                         <p class="mb-1 no-select"><strong>{{ comment.user.user.username }}</strong>
@@ -89,6 +93,7 @@
                     {% endfor %}
                 </div>
                 <div class="row gx-0" id="comment-form">
+                    <!--form to add new comment-->
                     <form id="comment-form-item" method="POST"
                         action="{% url 'order_review'  order_review.order.order_number order_review.slug %}">
                         {% csrf_token %}
@@ -103,6 +108,7 @@
     </div>
     <div class="row">
         <div class="col-12 text-md-end">
+            <!--show review's create and last edit date-->
             <div class="row gx-0 justify-content-md-start justify-content-md-end text-muted fs-list fst-italic mb-0">
                 <div class="col-12 no-select">Create: {{ order_review.date | date:"j M Y f A"}} </div>
                 <div class="col-12 no-select">Last edit: {{ order_review.last_edit | date:"j M Y f A" }}</div>
@@ -111,6 +117,7 @@
     </div>
     <div class="row">
         <div class="col text-center">
+            <!--link to return profile-->
             <a href="{% url 'profile' %}" class="btn btn-success rounded-0 my-2">
                 <span class="ms-2">
                     <i class="fas fa-home"></i>
@@ -118,6 +125,7 @@
                 <span class="text-uppercase">Return Profile</span>
             </a>
             {% if request.user.is_superuser %}
+            <!--link to return order list(superuser only)-->
             <a href="{% url 'order_list' %}" class="btn btn-success rounded-0 my-2">
                 <span class="ms-2">
                     <i class="fas fa-list-alt"></i>
