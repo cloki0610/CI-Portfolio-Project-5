@@ -6,7 +6,7 @@
 User can purchase items from our collaborator and use stripe to complete online payment.\
 They can also sign up to track their previous order payment and product status.
 
-**Active website**: https://ci-portfolio-project-5.herokuapp.com/ \
+**Active website**: https://ci-portfolio-project-5.herokuapp.com/ (deprecated)\
 **Git Repository**: https://github.com/cloki0610/CI-Portfolio-Project-5
 ![screen-capture](readme-img/screenshot_sc.png)
 
